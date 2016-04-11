@@ -1,7 +1,9 @@
 #dyn.load(paste("adolc", .Platform$dynlib.ext, sep=""))
 
 
+#rm(list=ls())
 
+source('init_adolc.R')
 
 trace_on(1)
 
