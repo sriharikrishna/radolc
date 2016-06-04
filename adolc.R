@@ -534,16 +534,23 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble')) {
-      f <- badouble_declareIndependent__SWIG_1; 
+      f <- badouble_declareIndependent__SWIG_1;
+      return(f(...));
+    } else if(is.vector(argv[[1]]) ) {
+            loclist <-argv[[1]]
+            if(extends(class(loclist[[1]]), '_p_badouble')) {
+              f <- badouble_declareIndependent__SWIG_1;
+              return(sapply(argv[[1]],f))
+            }
     }
   } else if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
-      f <- badouble_declareIndependent__SWIG_0; 
+      f <- badouble_declareIndependent__SWIG_0;
+      return(f(...));
     }
   } else {
     stop("cannot find overloaded function for badouble_declareIndependent with argtypes (",toString(argtypes),")");
   };
-  f(...);
 }
 
 # Dispatch function
@@ -8712,10 +8719,24 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if(is.list(argv[1])){
+      loclist<-argv[[1]]
+      if(is.list(loclist)){
+          argtypes[1] <- class(loclist[[1]])
+      }
+  }
+  if(argc>1 && is.list(argv[2])){
+      loclist<-argv[[2]]
+      if(is.list(loclist)){
+          argtypes[2] <- class(loclist[[1]])
+      }
+  }
 # dispatch functions 8
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
       f <- Plus__SWIG_0; 
+    } else {
+        f <- oldminus;
     }
   } else if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
@@ -8744,7 +8765,23 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
   } else {
       f <- oldplus;
   };
-  f(...);
+  if (argc == 1) {
+      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]]))
+      } else {
+          return(f(...));
+      }
+  } else if (argc == 2) {
+    if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+        return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
+    } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+        return(f( (argv[[1]])[[1]], argv[[2]]));
+    } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+        return(f( argv[[1]], (argv[[2]])[[1]]));
+    } else {
+        return(f(...));
+    }
+  }
 }
 
 # Dispatch function
@@ -8821,6 +8858,18 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if(is.list(argv[1])){
+      loclist<-argv[[1]]
+      if(is.list(loclist)){
+        argtypes[1] <- class(loclist[[1]])
+      }
+  }
+  if(argc>1 && is.list(argv[2])){
+      loclist<-argv[[2]]
+      if(is.list(loclist)){
+        argtypes[2] <- class(loclist[[1]])
+      }
+  }
 # dispatch functions 9
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -8828,6 +8877,8 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
     }
     else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1) {
       f <- Minus__SWIG_1; 
+    } else {
+        f <- oldminus;
     }
   } else if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
@@ -8856,7 +8907,23 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
   } else {
       f <- oldminus;
   };
-  f(...);
+  if (argc == 1) {
+      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]]))
+      } else {
+          return(f(...));
+      }
+  } else if (argc == 2) {
+      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
+      } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]], argv[[2]]));
+      } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+          return(f( argv[[1]], (argv[[2]])[[1]]));
+      } else {
+          return(f(...));
+      }
+  }
 }
 
 # Dispatch function
@@ -8933,6 +9000,18 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if(is.list(argv[1])){
+      if(is.list(argv[[1]])){
+        loclist<-argv[[1]]
+        argtypes[1] <- class(loclist[[1]])
+      }
+  }
+  if(argc>1 && is.list(argv[2])){
+      loclist<-argv[[2]]
+      if(is.list(loclist)){
+          argtypes[2] <- class(loclist[[1]])
+      }
+  }
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
@@ -8961,7 +9040,34 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   } else {
       f <- oldmultiply;
   };
-  f(...);
+  if (argc == 1) {
+      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]]))
+      } else {
+          return(f(...));
+      }
+  } else if (argc == 2) {
+      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
+      } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+          return(f( (argv[[1]])[[1]], argv[[2]]));
+      } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+          return(f( argv[[1]], (argv[[2]])[[1]]));
+      } else {
+          return(f(...));
+      }
+  }
+
+  if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+      return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
+  } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+      return(f( (argv[[1]])[[1]], argv[[2]]));
+  } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+      return(f( argv[[1]], (argv[[2]])[[1]]));
+  } else {
+      return(f(...));
+  }
+
 }
 
 # Dispatch function
@@ -9054,6 +9160,18 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if(is.list(argv[1])){
+      if(is.list(argv[[1]])){
+          loclist<-argv[[1]]
+          argtypes[1] <- class(loclist[[1]])
+      }
+  }
+  if(argc>1 && is.list(argv[2])){
+      loclist<-argv[[2]]
+      if(is.list(loclist)){
+          argtypes[2] <- class(loclist[[1]])
+      }
+  }
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
@@ -9082,7 +9200,15 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   } else {
       f <- olddivide;
   };
-  f(...);
+  if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+      return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
+  } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+      return(f( (argv[[1]])[[1]], argv[[2]]));
+  } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+      return(f( argv[[1]], (argv[[2]])[[1]]));
+  } else {
+      return(f(...));
+  }
 }
 
 # Dispatch function
