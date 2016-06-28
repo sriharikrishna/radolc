@@ -239,7 +239,9 @@ x
 setAs('ExternalReference', 'character',
 function(from) {if (!is.null(from$"__str__")) from$"__str__"()})
 
-suppressWarnings(setMethod('print', 'ExternalReference',
+
+#suppressWarnings(setMethod('print', 'ExternalReference',
+suppressWarnings(setMethod('print', 'externalptr',
 function(x) {print(as(x, "character"))}))
 
 # Start of new_swlocaldouble
@@ -541,7 +543,11 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
             if(extends(class(loclist[[1]]), '_p_badouble')) {
               f <- badouble_declareIndependent__SWIG_1;
               return(sapply(argv[[1]],f))
+            } else {
+                stop("cannot find overloaded function for badouble_declareIndependent with argtypes (",toString(argtypes),")");
             }
+    } else {
+        stop("cannot find overloaded function for badouble_declareIndependent with argtypes (",toString(argtypes),")");
     }
   } else if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
@@ -573,13 +579,21 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
   argc <- length(argtypes);
 # dispatch functions 2
   if (argc == 1) {
-    if (extends(argtypes[1], '_p_badouble')) {
-      f <- badouble_declareDependent__SWIG_1; 
-    }
+      if(is.list(argv[[1]])){
+          return(sapply(argv[[1]],badouble_declareDependent))
+      } else {
+          if (extends(argtypes[1], '_p_badouble')) {
+            f <- badouble_declareDependent__SWIG_1;
+          }
+      }
   } else if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]]) && length(argv[[2]]) == 1) {
-      f <- badouble_declareDependent__SWIG_0; 
-    }
+      if(is.list(argv[[1]])){
+          return(sapply(argv[[1]],badouble_declareDependent, argv[[2]]))
+      } else {
+        if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]]) && length(argv[[2]]) == 1) {
+          f <- badouble_declareDependent__SWIG_0;
+        }
+      }
   } else {
     stop("cannot find overloaded function for badouble_declareDependent with argtypes (",toString(argtypes),")");
   };
@@ -8736,28 +8750,28 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
       f <- Plus__SWIG_0; 
     } else {
-        f <- oldminus;
+        f <- oldplus;
     }
   } else if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_1; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Plus__SWIG_7; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Plus__SWIG_5; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Plus__SWIG_3; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]])  && extends(argtypes[2], '_p_pdouble')) {
       f <- Plus__SWIG_6; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_2; 
     } else {
         f <- oldplus;
@@ -8765,23 +8779,7 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
   } else {
       f <- oldplus;
   };
-  if (argc == 1) {
-      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]]))
-      } else {
-          return(f(...));
-      }
-  } else if (argc == 2) {
-    if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-        return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
-    } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-        return(f( (argv[[1]])[[1]], argv[[2]]));
-    } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-        return(f( argv[[1]], (argv[[2]])[[1]]));
-    } else {
-        return(f(...));
-    }
-  }
+  return(adolc_operator_dispatch(..., f=f))
 }
 
 # Dispatch function
@@ -8881,25 +8879,25 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
         f <- oldminus;
     }
   } else if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Minus__SWIG_5; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Minus__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_8; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Minus__SWIG_6; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (( is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_pdouble')) {
       f <- Minus__SWIG_7; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (( is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_4; 
     } else {
         f <- oldminus;
@@ -8907,23 +8905,7 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
   } else {
       f <- oldminus;
   };
-  if (argc == 1) {
-      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]]))
-      } else {
-          return(f(...));
-      }
-  } else if (argc == 2) {
-      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
-      } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]], argv[[2]]));
-      } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-          return(f( argv[[1]], (argv[[2]])[[1]]));
-      } else {
-          return(f(...));
-      }
-  }
+  return(adolc_operator_dispatch(..., f=f))
 }
 
 # Dispatch function
@@ -9014,25 +8996,25 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   }
 # dispatch functions 7
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Multiply__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Multiply__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Multiply__SWIG_5; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if ( is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_1; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if ( is.numeric(argv[[1]]) && extends(argtypes[2], '_p_pdouble')) {
       f <- Multiply__SWIG_6; 
     } else {
         f <- oldmultiply;
@@ -9040,34 +9022,7 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   } else {
       f <- oldmultiply;
   };
-  if (argc == 1) {
-      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]]))
-      } else {
-          return(f(...));
-      }
-  } else if (argc == 2) {
-      if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
-      } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-          return(f( (argv[[1]])[[1]], argv[[2]]));
-      } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-          return(f( argv[[1]], (argv[[2]])[[1]]));
-      } else {
-          return(f(...));
-      }
-  }
-
-  if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-      return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
-  } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-      return(f( (argv[[1]])[[1]], argv[[2]]));
-  } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-      return(f( argv[[1]], (argv[[2]])[[1]]));
-  } else {
-      return(f(...));
-  }
-
+  return(adolc_operator_dispatch(..., f=f))
 }
 
 # Dispatch function
@@ -9174,25 +9129,25 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   }
 # dispatch functions 7
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_1; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Divide__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Divide__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_6; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Divide__SWIG_5; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_2; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_pdouble')) {
       f <- Divide__SWIG_4; 
     } else {
         f <- olddivide;
@@ -9200,15 +9155,7 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   } else {
       f <- olddivide;
   };
-  if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-      return(f( (argv[[1]])[[1]], (argv[[2]])[[1]]));
-  } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
-      return(f( (argv[[1]])[[1]], argv[[2]]));
-  } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
-      return(f( argv[[1]], (argv[[2]])[[1]]));
-  } else {
-      return(f(...));
-  }
+  return(adolc_operator_dispatch(..., f=f))
 }
 
 # Dispatch function
@@ -9262,14 +9209,14 @@ class(`sqrt`) = c("SWIGFunction", class('sqrt'))
 
 # Start of sin
 
+`oldsin` <- `sin`
+
 `sin` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sin', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldsin, R_swig_sin)
+    
+    ans
+    
 }
 
 attr(`sin`, 'returnType') = '_p_adub'
@@ -9278,11 +9225,11 @@ class(`sin`) = c("SWIGFunction", class('sin'))
 
 # Start of cos
 
+`oldcos` <- `cos`
+
 `cos` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cos', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
+  ans <- adolc_dispatch(s_arg1, oldcos, R_swig_cos)
   
   ans
   
@@ -9294,14 +9241,14 @@ class(`cos`) = c("SWIGFunction", class('cos'))
 
 # Start of tan
 
+`oldtan` <- `tan`
+
 `tan` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tan', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldtan, R_swig_tan)
+    
+    ans
+    
 }
 
 attr(`tan`, 'returnType') = '_p_adub'
@@ -9310,14 +9257,14 @@ class(`tan`) = c("SWIGFunction", class('tan'))
 
 # Start of asin
 
+`oldasin` <- `asin`
+
 `asin` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_asin', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldasin, R_swig_asin)
+    
+    ans
+    
 }
 
 attr(`asin`, 'returnType') = '_p_adub'
@@ -9326,14 +9273,14 @@ class(`asin`) = c("SWIGFunction", class('asin'))
 
 # Start of acos
 
+`oldacos` <- `acos`
+
 `acos` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_acos', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldacos, R_swig_acos)
+    
+    ans
+    
 }
 
 attr(`acos`, 'returnType') = '_p_adub'
@@ -9342,14 +9289,14 @@ class(`acos`) = c("SWIGFunction", class('acos'))
 
 # Start of atan
 
+`oldatan` <- `atan`
+
 `atan` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_atan', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldatan, R_swig_atan)
+    
+    ans
+    
 }
 
 attr(`atan`, 'returnType') = '_p_adub'
@@ -9375,14 +9322,15 @@ class(`pow__SWIG_3`) = c("SWIGFunction", class('pow__SWIG_3'))
 
 # Start of log10
 
+
+`oldlog10` <- `log10`
+
 `log10` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log10', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldlog10, R_swig_log10)
+    
+    ans
+    
 }
 
 attr(`log10`, 'returnType') = '_p_adub'
@@ -9436,14 +9384,14 @@ class(`pow__SWIG_4`) = c("SWIGFunction", class('pow__SWIG_4'))
 # Dispatch function
 # Start of sinh
 
+`oldsinh` <- `sinh`
+
 `sinh` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sinh', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldsinh, R_swig_sinh)
+    
+    ans
+    
 }
 
 attr(`sinh`, 'returnType') = '_p_adub'
@@ -9452,14 +9400,14 @@ class(`sinh`) = c("SWIGFunction", class('sinh'))
 
 # Start of cosh
 
+`oldcosh` <- `cosh`
+
 `cosh` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cosh', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldcosh, R_swig_cosh)
+    
+    ans
+    
 }
 
 attr(`cosh`, 'returnType') = '_p_adub'
@@ -9468,14 +9416,14 @@ class(`cosh`) = c("SWIGFunction", class('cosh'))
 
 # Start of tanh
 
+`oldtanh` <- `tanh`
+
 `tanh` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tanh', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldtanh, R_swig_tanh)
+    
+    ans
+    
 }
 
 attr(`tanh`, 'returnType') = '_p_adub'
@@ -9484,46 +9432,46 @@ class(`tanh`) = c("SWIGFunction", class('tanh'))
 
 # Start of fabs
 
-`fabs` = function(s_arg1)
+`oldabs` <- `abs`
+
+`abs` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_fabs', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldabs, R_swig_fabs)
+
+    ans
+
 }
 
-attr(`fabs`, 'returnType') = '_p_adub'
-attr(`fabs`, "inputTypes") = c('_p_badouble')
-class(`fabs`) = c("SWIGFunction", class('fabs'))
+attr(`abs`, 'returnType') = '_p_adub'
+attr(`abs`, "inputTypes") = c('_p_badouble')
+class(`abs`) = c("SWIGFunction", class('abs'))
 
 # Start of ceil
 
-`ceil` = function(s_arg1)
+`oldceiling` <- `ceiling`
+
+`ceiling` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_ceil', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldceiling, R_swig_ceil)
+
+    ans
+
 }
 
-attr(`ceil`, 'returnType') = '_p_adub'
-attr(`ceil`, "inputTypes") = c('_p_badouble')
-class(`ceil`) = c("SWIGFunction", class('ceil'))
+attr(`ceiling`, 'returnType') = '_p_adub'
+attr(`ceiling`, "inputTypes") = c('_p_badouble')
+class(`ceiling`) = c("SWIGFunction", class('ceiling'))
 
 # Start of floor
 
+`oldfloor` <- `floor`
+
 `floor` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_floor', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldfloor, R_swig_floor)
+    
+    ans
+    
 }
 
 attr(`floor`, 'returnType') = '_p_adub'
