@@ -9193,14 +9193,14 @@ class(`log`) = c("SWIGFunction", class('log'))
 
 # Start of sqrt
 
+oldsqrt <- sqrt
+
 `sqrt` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sqrt', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
-  
+    ans <- adolc_dispatch(s_arg1, oldsqrt, R_swig_sqrt)
+    
+    ans
+    
 }
 
 attr(`sqrt`, 'returnType') = '_p_adub'
