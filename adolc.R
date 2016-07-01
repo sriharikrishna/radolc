@@ -9354,32 +9354,54 @@ attr(`pow__SWIG_4`, 'returnType') = '_p_adub'
 attr(`pow__SWIG_4`, "inputTypes") = c('_p_badouble', '_p_pdouble')
 class(`pow__SWIG_4`) = c("SWIGFunction", class('pow__SWIG_4'))
 
+`oldcarat` <- `^`
+
+`^` <- function(...) {
+    return(pow(...))
+}
+
 `pow` <- function(...) {
-  argtypes <- mapply(class, list(...));
-  argv <- list(...);
-  argc <- length(argtypes);
+    argtypes <- mapply(class, list(...));
+    argv <- list(...);
+    argc <- length(argtypes);
+    if(is.list(argv[1])){
+        if(is.list(argv[[1]])){
+            loclist<-argv[[1]]
+            argtypes[1] <- class(loclist[[1]])
+        }
+    }
+    if(argc>1 && is.list(argv[2])){
+        loclist<-argv[[2]]
+        if(is.list(loclist)){
+            argtypes[2] <- class(loclist[[1]])
+        }
+    }
 # dispatch functions 5
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- pow__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- pow__SWIG_3; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_1; 
+    } else {
+      f <- oldcarat
     }
   } else {
     stop("cannot find overloaded function for pow with argtypes (",toString(argtypes),")");
   };
+  return(adolc_operator_dispatch(..., f=f))
   f(...);
 }
+
 
 # Dispatch function
 # Start of sinh
