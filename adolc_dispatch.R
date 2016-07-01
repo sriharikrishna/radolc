@@ -111,7 +111,7 @@
             if(index == 1)
             ans =(f(s_arg1[[index]],s_arg2[[index]]))
             else
-            ans = c(f(s_arg1[[index]] *s_arg2[[index]]), ans)
+            ans = c(f(s_arg1[[index]],s_arg2[[index]]), ans)
             
         }
         return(ans)
@@ -148,7 +148,7 @@
             if(index == 1)
             ans =(f(s_arg1[index],s_arg2[[index]]))
             else
-            ans = c(f(s_arg1[index] *s_arg2[[index]]), ans)
+            ans = c(f(s_arg1[index], s_arg2[[index]]), ans)
             
         }
         return(ans)
@@ -183,9 +183,9 @@
         #print("adolc_list_vec_dispatch: CASE1 ")
         for(index in seq(1,length(s_arg1),1)){
             if(index == 1)
-            ans =(f(s_arg1[[index]],s_arg2[index]))
+              ans =(f(s_arg1[[index]],s_arg2[index]))
             else
-            ans = c(f(s_arg1[[index]] *s_arg2[index]), ans)
+              ans = c(f(s_arg1[[index]],s_arg2[index]), ans)
             
         }
         return(ans)
@@ -222,7 +222,7 @@
             if(index == 1)
             ans =(f(s_arg1[index],s_arg2[index]))
             else
-            ans = c(f(s_arg1[index] *s_arg2[index]), ans)
+            ans = c(f(s_arg1[index],s_arg2[index]), ans)
             
         }
         return(ans)
