@@ -9197,7 +9197,7 @@ oldsqrt <- sqrt
 
 `sqrt` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldsqrt, R_swig_sqrt)
+    ans <- adolc_dispatch(s_arg1, oldsqrt, "R_swig_sqrt")
     
     ans
     
@@ -9213,7 +9213,7 @@ class(`sqrt`) = c("SWIGFunction", class('sqrt'))
 
 `sin` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldsin, R_swig_sin)
+    ans <- adolc_dispatch(s_arg1, oldsin, "R_swig_sin")
     
     ans
     
@@ -9229,7 +9229,7 @@ class(`sin`) = c("SWIGFunction", class('sin'))
 
 `cos` = function(s_arg1)
 {
-  ans <- adolc_dispatch(s_arg1, oldcos, R_swig_cos)
+  ans <- adolc_dispatch(s_arg1, oldcos, "R_swig_cos")
   
   ans
   
@@ -9245,7 +9245,7 @@ class(`cos`) = c("SWIGFunction", class('cos'))
 
 `tan` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldtan, R_swig_tan)
+    ans <- adolc_dispatch(s_arg1, oldtan, "R_swig_tan")
     
     ans
     
@@ -9261,7 +9261,7 @@ class(`tan`) = c("SWIGFunction", class('tan'))
 
 `asin` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldasin, R_swig_asin)
+    ans <- adolc_dispatch(s_arg1, oldasin, "R_swig_asin")
     
     ans
     
@@ -9277,7 +9277,7 @@ class(`asin`) = c("SWIGFunction", class('asin'))
 
 `acos` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldacos, R_swig_acos)
+    ans <- adolc_dispatch(s_arg1, oldacos, "R_swig_acos")
     
     ans
     
@@ -9293,7 +9293,7 @@ class(`acos`) = c("SWIGFunction", class('acos'))
 
 `atan` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldatan, R_swig_atan)
+    ans <- adolc_dispatch(s_arg1, oldatan, "R_swig_atan")
     
     ans
     
@@ -9327,7 +9327,7 @@ class(`pow__SWIG_3`) = c("SWIGFunction", class('pow__SWIG_3'))
 
 `log10` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldlog10, R_swig_log10)
+    ans <- adolc_dispatch(s_arg1, oldlog10, "R_swig_log10")
     
     ans
     
@@ -9410,7 +9410,7 @@ class(`pow__SWIG_4`) = c("SWIGFunction", class('pow__SWIG_4'))
 
 `sinh` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldsinh, R_swig_sinh)
+    ans <- adolc_dispatch(s_arg1, oldsinh, "R_swig_sinh")
     
     ans
     
@@ -9426,7 +9426,7 @@ class(`sinh`) = c("SWIGFunction", class('sinh'))
 
 `cosh` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldcosh, R_swig_cosh)
+    ans <- adolc_dispatch(s_arg1, oldcosh, "R_swig_cosh")
     
     ans
     
@@ -9442,7 +9442,7 @@ class(`cosh`) = c("SWIGFunction", class('cosh'))
 
 `tanh` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldtanh, R_swig_tanh)
+    ans <- adolc_dispatch(s_arg1, oldtanh, "R_swig_tanh")
     
     ans
     
@@ -9458,7 +9458,7 @@ class(`tanh`) = c("SWIGFunction", class('tanh'))
 
 `abs` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldabs, R_swig_fabs)
+    ans <- adolc_dispatch(s_arg1, oldabs, "R_swig_fabs")
 
     ans
 
@@ -9474,7 +9474,7 @@ class(`abs`) = c("SWIGFunction", class('abs'))
 
 `ceiling` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldceiling, R_swig_ceil)
+    ans <- adolc_dispatch(s_arg1, oldceiling, "R_swig_ceil")
 
     ans
 
@@ -9490,7 +9490,7 @@ class(`ceiling`) = c("SWIGFunction", class('ceiling'))
 
 `floor` = function(s_arg1)
 {
-    ans <- adolc_dispatch(s_arg1, oldfloor, R_swig_floor)
+    ans <- adolc_dispatch(s_arg1, oldfloor, "R_swig_floor")
     
     ans
     
