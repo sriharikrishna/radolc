@@ -1,4 +1,15 @@
 
+`get_argtype` = function(s_arg1) {
+    argtype <- class(s_arg1);
+    if(is.list(s_arg1)){
+        if(is.list(s_arg1[1])){
+            loclist<-s_arg1[1]
+            argtype <- class(s_arg1[[1]])
+        }
+    }
+    argtype
+}
+
 `adolc_dispatch` = function(s_arg1, f_name_passive, f_name) {
     argtype <- class(s_arg1);
     if(is.list(s_arg1)){
@@ -42,12 +53,12 @@
             return(f(...));
         }
     } else if (argc == 2) {
-        if(length(argv[[1]])!=1 && length(argv[[2]])!=1) {
-            stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1) ")
+        if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
+            stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
         }
-        if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble') && is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+        if((is.list(argv[[1]]) || is.vector(argv[[1]])) && extends(argtypes[1], '_p_badouble') && (is.list(argv[[2]]) || is.vector(argv[[2]])) && extends(argtypes[2], '_p_badouble')) {
             return(adolc_vec_dispatch(argv[[1]], argv[[2]], f))
-        } else if (is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+        } else if ((is.list(argv[[1]]) || is.vector(argv[[1]])) && extends(argtypes[1], '_p_badouble')) {
             if(is.vector(argv[[2]])) {
                 if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
                     stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
@@ -60,9 +71,11 @@
                     else
                     ans = c(f(argv[[1]][[index]], argv[[2]]), ans)
                 }
+                #if(is.list(ans))
+                #  ans = do.call(c, unlist(ans, recursive=TRUE))
                 return(ans)
             }
-        } else if (is.list(argv[[2]]) && extends(argtypes[2], '_p_badouble')) {
+        } else if ((is.list(argv[[2]]) || is.vector(argv[[2]])) && extends(argtypes[2], '_p_badouble')) {
             if(is.vector(argv[[1]])){
                 if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
                     stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
@@ -75,6 +88,8 @@
                     else
                       ans = c(f(argv[[1]], argv[[2]][[index]]), ans)
                 }
+                #if(is.list(ans))
+                #  ans = do.call(c, unlist(ans, recursive=TRUE))
                 return(ans)
             }
         } else {
@@ -85,167 +100,81 @@
 }
 
 `adolc_vec_dispatch` = function(s_arg1, s_arg2, f) {
+    
     if(length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)){
         stop("adolc_vec_dispatch: Unhandled case: (length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)) ")
     }
-    if (is.list(s_arg1) && is.list(s_arg2))
-      return(adolc_list_list_dispatch(s_arg1,s_arg2,f))
-    if (is.list(s_arg1) && is.vector(s_arg2))
-      return(adolc_list_vec_dispatch(s_arg1,s_arg2,f))
-    if (is.vector(s_arg1) && is.list(s_arg2))
-      return(adolc_vec_list_dispatch(s_arg1,s_arg2,f))
-    if (is.vector(s_arg1) && is.vector(s_arg2))
-      return(adolc_vec_vec_dispatch(s_arg1,s_arg2,f))
-    stop("adolc_vec_dispatch: Unhandled case ")
- 
-}
-
-
-`adolc_list_list_dispatch` = function(s_arg1, s_arg2, f) {
-    if(length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)){
-        stop("adolc_list_list_dispatch: Unhandled case: (length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)) ")
-    }
+    argtype1 = get_argtype(s_arg1)
+    argtype2 = get_argtype(s_arg2)
     if(length(s_arg1)!=1 && length(s_arg1)==length(s_arg2)){
-        #print("adolc_list_list_dispatch: CASE1 ")
+        #print("aadolc_my_dispatch: CASE1 ")
         for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[[index]],s_arg2[[index]]))
+            if (extends(argtype1, '_p_badouble'))
+                l_sarg1 <- s_arg1[[index]]
             else
-            ans = c(f(s_arg1[[index]],s_arg2[[index]]), ans)
+                l_sarg1 <- s_arg1[index]
+            if (extends(argtype2, '_p_badouble'))
+                l_sarg2 <- s_arg2[[index]]
+            else
+                l_sarg2 <- s_arg2[index]
+            if(index == 1)
+              ans =(f(l_sarg1,l_sarg2))
+            else
+              ans = c(f(l_sarg1,l_sarg2), ans)
             
         }
+        #if(is.list(ans))
+        #ans = do.call(c, unlist(ans, recursive=TRUE))
         return(ans)
     } else if(length(s_arg1)!=1){
-        #print("adolc_list_list_dispatch: CASE2 ")
-        for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[[index]], s_arg2[[1]]))
-            else
-            ans = c(f(s_arg1[[index]], s_arg2[[1]]), ans)
-        }
-        return(ans)
-    } else if(length(s_arg2)!=1){
-        #print("adolc_list_list_dispatch: CASE3 ")
-        for(index in seq(1,length(s_arg2),1)){
-            if(index == 1)
-            ans =(f(s_arg1[[1]], s_arg2[[index]]))
-            else
-            ans = c(f(s_arg1[[1]], s_arg2[[index]]), ans)
-        }
-        return(ans)
-    }
-    #print("adolc_list_list_dispatch: CASE4 ")
-    return(f(s_arg1[[1]],s_arg2[[1]]))
-}
+        if (extends(argtype2, '_p_badouble'))
+          l_sarg2 <- s_arg2[[1]]
+        else
+          l_sarg2 <- s_arg2[1]
 
-`adolc_vec_list_dispatch` = function(s_arg1, s_arg2, f) {
-    if(length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)){
-        stop("adolc_vec_list_dispatch: Unhandled case: (length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)) ")
-    }
-    if(length(s_arg1)!=1 && length(s_arg1)==length(s_arg2)){
-        #print("adolc_vec_list_dispatch: CASE1 ")
+        #print("adolc_my_dispatch: CASE2 ")
         for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[index],s_arg2[[index]]))
+            if (extends(argtype1, '_p_badouble'))
+              l_sarg1 <- s_arg1[[index]]
             else
-            ans = c(f(s_arg1[index], s_arg2[[index]]), ans)
-            
-        }
-        return(ans)
-    } else if(length(s_arg1)!=1){
-        #print("adolc_vec_list_dispatch: CASE2 ")
-        for(index in seq(1,length(s_arg1),1)){
+              l_sarg1 <- s_arg1[index]
             if(index == 1)
-              ans =(f(s_arg1[index], s_arg2[[1]]))
+              ans =(f(l_sarg1,l_sarg2))
             else
-              ans = c(f(s_arg1[index], s_arg2[[1]]), ans)
+              ans = c(f(l_sarg1,l_sarg2), ans)
         }
+        #if(is.list(ans))
+        #ans = do.call(c, unlist(ans, recursive=TRUE))
         return(ans)
     } else if(length(s_arg2)!=1){
-        #print("adolc_vec_list_dispatch: CASE3 ")
+        if (extends(argtype1, '_p_badouble'))
+          l_sarg1 <- s_arg1[[1]]
+        else
+          l_sarg1 <- s_arg1[1]
+        #print("adolc_my_dispatch: CASE3 ")
         for(index in seq(1,length(s_arg2),1)){
-            if(index == 1)
-            ans =(f(s_arg1[1], s_arg2[[index]]))
+            if (extends(argtype2, '_p_badouble'))
+              l_sarg2 <- s_arg2[[index]]
             else
-            ans = c(f(s_arg1[1], s_arg2[[index]]), ans)
+              l_sarg2 <- s_arg2[index]
+            if(index == 1)
+              ans =(f(l_sarg1,l_sarg2))
+            else
+              ans = c(f(l_sarg1,l_sarg2), ans)
         }
+        #if(is.list(ans))
+        #ans = do.call(c, unlist(ans, recursive=TRUE))
         return(ans)
     }
-    #print("adolc_vec_list_dispatch: CASE4 ")
-    return(f(s_arg1[1],s_arg2[[1]]))
-}
-
-`adolc_list_vec_dispatch` = function(s_arg1, s_arg2, f) {
-    if(length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)){
-        stop("adolc_list_vec_dispatch: Unhandled case: (length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)) ")
-    }
-    if(length(s_arg1)!=1 && length(s_arg1)==length(s_arg2)){
-        #print("adolc_list_vec_dispatch: CASE1 ")
-        for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-              ans =(f(s_arg1[[index]],s_arg2[index]))
-            else
-              ans = c(f(s_arg1[[index]],s_arg2[index]), ans)
-            
-        }
-        return(ans)
-    } else if(length(s_arg1)!=1){
-        #print("adolc_list_vec_dispatch: CASE2 ")
-        for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[[index]], s_arg2[1]))
-            else
-            ans = c(f(s_arg1[[index]], s_arg2[1]), ans)
-        }
-        return(ans)
-    } else if(length(s_arg2)!=1){
-        #print("adolc_list_vec_dispatch: CASE3 ")
-        for(index in seq(1,length(s_arg2),1)){
-            if(index == 1)
-            ans =(f(s_arg1[[1]], s_arg2[index]))
-            else
-            ans = c(f(s_arg1[[1]], s_arg2[index]), ans)
-        }
-        return(ans)
-    }
-    #print("adolc_list_vec_dispatch: CASE4 ")
-    return(f(s_arg1[[1]],s_arg2[1]))
-}
-
-`adolc_vec_vec_dispatch` = function(s_arg1, s_arg2, f) {
-    if(length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)){
-        stop("adolc_vec_vec_dispatch: Unhandled case: (length(s_arg1)!=1 && length(s_arg2)!=1 && length(s_arg1)!=length(s_arg2)) ")
-    }
-    if(length(s_arg1)!=1 && length(s_arg1)==length(s_arg2)){
-        #print("adolc_vec_vec_dispatch: CASE1 ")
-        for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[index],s_arg2[index]))
-            else
-            ans = c(f(s_arg1[index],s_arg2[index]), ans)
-            
-        }
-        return(ans)
-    } else if(length(s_arg1)!=1){
-        #print("adolc_vec_vec_dispatch: CASE2 ")
-        for(index in seq(1,length(s_arg1),1)){
-            if(index == 1)
-            ans =(f(s_arg1[index], s_arg2[1]))
-            else
-            ans = c(f(s_arg1[index], s_arg2[1]), ans)
-        }
-        return(ans)
-    } else if(length(s_arg2)!=1){
-        #print("adolc_vec_vec_dispatch: CASE3 ")
-        for(index in seq(1,length(s_arg2),1)){
-            if(index == 1)
-            ans =(f(s_arg1[1], s_arg2[index]))
-            else
-            ans = c(f(s_arg1[1], s_arg2[index]), ans)
-        }
-        return(ans)
-    }
-    #print("adolc_vec_vec_dispatch: CASE4 ")
-    return(f(s_arg1[1],s_arg2[1]))
+    #print("adolc_my_dispatch: CASE4 ")
+    if (extends(argtype1, '_p_badouble'))
+      l_sarg1 <- s_arg1[[1]]
+    else
+      l_sarg1 <- s_arg1[1]
+    if (extends(argtype2, '_p_badouble'))
+      l_sarg2 <- s_arg2[[1]]
+    else
+      l_sarg2 <- s_arg2[1]
+    return(f(l_sarg1,l_sarg2))
 }
 
