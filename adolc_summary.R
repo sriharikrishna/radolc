@@ -35,14 +35,14 @@
                   ans =  sumvec(dots[[index]])
                   initflag = 1
                 } else {
-                   ans = ans + sumvec(dots[[index]]) + arg1
+                   ans = ans + sumvec(dots[[index]])
                 }
             } else if(is.vector(dots[[index]])) {
                 if(initflag == 0){
                     ans =  sumvec(dots[[index]])
                     initflag = 1
                 } else {
-                    ans = ans + sumvec(dots[[index]]) + arg1
+                    ans = ans + sumvec(dots[[index]])
                 }
             } else if(is.array(dots[[index]]) || is.matrix(dots[[index]])) {
                 stop("sum(): Unhandled case of matrix/ array argument")
