@@ -9161,11 +9161,11 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
 # Dispatch function
 # Start of exp
 
+`oldexp` <- `exp`
+
 `exp` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_exp', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
+  ans <- adolc_dispatch(s_arg1, oldexp, "R_swig_exp")
   
   ans
   
@@ -9177,13 +9177,13 @@ class(`exp`) = c("SWIGFunction", class('exp'))
 
 # Start of log
 
+oldlog <- log
+
 `log` = function(s_arg1)
 {
-  if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log', s_arg1, PACKAGE='adolc');
-  ans <- new("_p_adub", ref=ans) ;
-  
-  ans
+    ans <- adolc_dispatch(s_arg1, oldlog, "R_swig_log")
+    
+    ans
   
 }
 
