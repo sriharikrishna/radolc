@@ -21,12 +21,9 @@
 
 `sum` = function(..., na.rm = FALSE)
 {
-    argtypes <- mapply(class, list(...));
     dots <- list(...);
     ndots <- length(dots)
-    if(is.list(dots[[1]])){
-      argtypes[1] <- class(dots[[1]][[1]])
-    }
+    argtypes <- get_argtype(...);
      if (extends(argtypes[1], '_p_badouble')){
         initflag <- 0
         for(index in seq(1,ndots,1)) {

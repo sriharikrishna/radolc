@@ -1,23 +1,49 @@
 
-`get_argtype` = function(s_arg1) {
-    argtype <- class(s_arg1);
-    if(is.list(s_arg1)){
-        if(is.list(s_arg1[1])){
-            loclist<-s_arg1[1]
-            argtype <- class(s_arg1[[1]])
+#`get_argtype` = function(s_arg1) {
+#    argtype <- class(s_arg1);
+#    if(is.list(s_arg1)){
+#        if(is.list(s_arg1[1])){
+#            loclist<-s_arg1[1]
+#            argtype <- class(s_arg1[[1]])
+#        }
+#    } else if(is.matrix(s_arg1)){
+#        argtype <- class(s_arg1[1,1]))
+#    }
+#    argtype
+#}
+
+`get_argtype` <- function(...) {
+        argtypes <- mapply(class, list(...));
+        argv <- list(...);
+        argc <- length(argtypes);
+        if(is.list(argv[1])){
+            loclist<-argv[[1]]
+            if(is.list(loclist)){
+                argtypes[1] <- class(loclist[[1]])
+            }
+        }else if(is.matrix(argv[1])){
+            locmatrix<-argv[[1]]
+            if(is.matrix(locmatrix)){
+              argtypes[1] <- class(locmatrix[1,1])
+            }
         }
-    }
-    argtype
+        if(argc>1 && is.list(argv[2])){
+            loclist<-argv[[2]]
+            if(is.list(loclist)){
+                argtypes[2] <- class(loclist[[1]])
+            }
+        }else if(argc>1 && is.matrix(argv[2])){
+            locmatrix<-argv[[2]]
+            if(is.matrix(locmatrix)){
+                argtypes[2] <- class(locmatrix[1,1])
+            }
+        }
+        argtypes
 }
 
+
 `adolc_dispatch` = function(s_arg1, f_name_passive, f_name) {
-    argtype <- class(s_arg1);
-    if(is.list(s_arg1)){
-        if(is.list(s_arg1[1])){
-            loclist<-s_arg1[1]
-            argtype <- class(s_arg1[[1]])
-        }
-    }
+    argtype <- get_argtype(s_arg1);
     if (!extends(argtype, '_p_badouble')) {
         ans <- f_name_passive(s_arg1)
     } else {
@@ -30,22 +56,9 @@
 }
 
 `adolc_operator_dispatch` = function(..., f) {
-    argtypes <- mapply(class, list(...));
+    argtypes <- get_argtype(...);
     argv <- list(...);
     argc <- length(argtypes);
-    if(is.list(argv[1])){
-        if(is.list(argv[[1]])){
-            loclist<-argv[[1]]
-            argtypes[1] <- class(loclist[[1]])
-        }
-    }
-    if(argc>1 && is.list(argv[2])){
-        loclist<-argv[[2]]
-        if(is.list(loclist)){
-            argtypes[2] <- class(loclist[[1]])
-        }
-    }
-    
     if (argc == 1) {
         if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
             return(f( (argv[[1]])[[1]]))
