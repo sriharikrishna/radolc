@@ -8730,21 +8730,9 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
 `oldplus` <- `+`
 
 `+` <- function(...) {
-  argtypes <- mapply(class, list(...));
+  argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
-  if(is.list(argv[1])){
-      loclist<-argv[[1]]
-      if(is.list(loclist)){
-          argtypes[1] <- class(loclist[[1]])
-      }
-  }
-  if(argc>1 && is.list(argv[2])){
-      loclist<-argv[[2]]
-      if(is.list(loclist)){
-          argtypes[2] <- class(loclist[[1]])
-      }
-  }
 # dispatch functions 8
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -8853,21 +8841,9 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
 `oldminus` <- `-`
 
 `-` <- function(...) {
-  argtypes <- mapply(class, list(...));
+  argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
-  if(is.list(argv[1])){
-      loclist<-argv[[1]]
-      if(is.list(loclist)){
-        argtypes[1] <- class(loclist[[1]])
-      }
-  }
-  if(argc>1 && is.list(argv[2])){
-      loclist<-argv[[2]]
-      if(is.list(loclist)){
-        argtypes[2] <- class(loclist[[1]])
-      }
-  }
 # dispatch functions 9
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -8979,21 +8955,9 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
 `oldmultiply` <- `*`
 
 `*` <- function(...) {
-  argtypes <- mapply(class, list(...));
+  argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
-  if(is.list(argv[1])){
-      if(is.list(argv[[1]])){
-        loclist<-argv[[1]]
-        argtypes[1] <- class(loclist[[1]])
-      }
-  }
-  if(argc>1 && is.list(argv[2])){
-      loclist<-argv[[2]]
-      if(is.list(loclist)){
-          argtypes[2] <- class(loclist[[1]])
-      }
-  }
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
@@ -9112,21 +9076,9 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
 `olddivide` <- `/`
 
 `/` <- function(...) {
-  argtypes <- mapply(class, list(...));
-  argv <- list(...);
-  argc <- length(argtypes);
-  if(is.list(argv[1])){
-      if(is.list(argv[[1]])){
-          loclist<-argv[[1]]
-          argtypes[1] <- class(loclist[[1]])
-      }
-  }
-  if(argc>1 && is.list(argv[2])){
-      loclist<-argv[[2]]
-      if(is.list(loclist)){
-          argtypes[2] <- class(loclist[[1]])
-      }
-  }
+    argtypes <- get_argtype(...);
+    argv <- list(...);
+    argc <- length(argtypes);
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
@@ -9361,21 +9313,9 @@ class(`pow__SWIG_4`) = c("SWIGFunction", class('pow__SWIG_4'))
 }
 
 `pow` <- function(...) {
-    argtypes <- mapply(class, list(...));
-    argv <- list(...);
-    argc <- length(argtypes);
-    if(is.list(argv[1])){
-        if(is.list(argv[[1]])){
-            loclist<-argv[[1]]
-            argtypes[1] <- class(loclist[[1]])
-        }
-    }
-    if(argc>1 && is.list(argv[2])){
-        loclist<-argv[[2]]
-        if(is.list(loclist)){
-            argtypes[2] <- class(loclist[[1]])
-        }
-    }
+  argtypes <- get_argtype(...);
+  argv <- list(...);
+  argc <- length(argtypes);
 # dispatch functions 5
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
