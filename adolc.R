@@ -581,6 +581,8 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
   if (argc == 1) {
       if(is.list(argv[[1]])){
           return(sapply(argv[[1]],badouble_declareDependent))
+      } else if(is.matrix(argv[[1]])){
+          return(mapply(argv[1],badouble_declareDependent))
       } else {
           if (extends(argtypes[1], '_p_badouble')) {
             f <- badouble_declareDependent__SWIG_1;
@@ -589,6 +591,8 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
   } else if (argc == 2) {
       if(is.list(argv[[1]])){
           return(sapply(argv[[1]],badouble_declareDependent, argv[[2]]))
+      } else if(is.matrix(argv[[1]])){
+          return(mapply(argv[1],badouble_declareDependent, argv[[2]]))
       } else {
         if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]]) && length(argv[[2]]) == 1) {
           f <- badouble_declareDependent__SWIG_0;
