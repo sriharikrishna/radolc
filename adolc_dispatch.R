@@ -30,14 +30,12 @@
 
 `adolc_dispatch` = function(s_arg1, f_name_passive, f_name) {
     argtype <- get_argtype(s_arg1);
-    if (!extends(argtype, '_p_badouble')) {
+    if (!extends(argtype, '_p_badouble') && !extends(argtype, '_p_pdouble')) {
         ans <- f_name_passive(s_arg1)
     } else if(is.matrix(s_arg1)) {
         ans <- adolc_mat_dispatch_unary(s_arg1, f_name)
     } else {
-        if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref")
-        ;ans = .Call(f_name, s_arg1, PACKAGE='adolc');
-        ans <- new("_p_adub", ref=ans) ;
+        ans <- f_name(s_arg1)
     }
     ans
 }
@@ -47,8 +45,11 @@
     argv <- list(...);
     argc <- length(argtypes);
     if (argc == 1) {
-        if(is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) {
+        if((is.list(argv[[1]]) && extends(argtypes[1], '_p_badouble')) ||
+           (is.list(argv[[1]]) && extends(argtypes[1], '_p_pdouble'))){
             return(f( (argv[[1]])[[1]]))
+        } else if (extends(argtypes[1], '_p_badouble')|| extends(argtypes[1], '_p_pdouble')){
+           return(f(argv[[1]]));
         } else {
             return(f(...));
         }
@@ -59,9 +60,9 @@
         if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
             stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
         }
-        if((is.list(argv[[1]]) || is.vector(argv[[1]])) && extends(argtypes[1], '_p_badouble') && (is.list(argv[[2]]) || is.vector(argv[[2]])) && extends(argtypes[2], '_p_badouble')) {
+        if((is.list(argv[[1]]) || is.vector(argv[[1]])) && (extends(argtypes[1], '_p_badouble')||extends(argtypes[1], '_p_pdouble')) && (is.list(argv[[2]]) || is.vector(argv[[2]])) && (extends(argtypes[2], '_p_badouble')||extends(argtypes[2], '_p_pdouble'))) {
             return(adolc_vec_dispatch(argv[[1]], argv[[2]], f))
-        } else if ((is.list(argv[[1]]) || is.vector(argv[[1]])) && extends(argtypes[1], '_p_badouble')) {
+        } else if ((is.list(argv[[1]]) || is.vector(argv[[1]])) && (extends(argtypes[1], '_p_badouble')||extends(argtypes[1], '_p_pdouble'))) {
             if(is.vector(argv[[2]])) {
                 if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
                     stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
@@ -76,7 +77,7 @@
                 }
                 return(ans)
             }
-        } else if ((is.list(argv[[2]]) || is.vector(argv[[2]])) && extends(argtypes[2], '_p_badouble')) {
+        } else if ((is.list(argv[[2]]) || is.vector(argv[[2]])) && (extends(argtypes[2], '_p_badouble')||extends(argtypes[2], '_p_pdouble'))) {
             if(is.vector(argv[[1]])){
                 if(length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])){
                     stop("adolc_operator_dispatch: Unhandled case: (length(argv[[1]])!=1 && length(argv[[2]])!=1 && length(argv[[1]])!=length(argv[[2]])) ")
@@ -95,7 +96,7 @@
             return(f(...));
         }
     }
-    stop("adolc_operator_dispatch: Unhandled case argc!=1 && argc!=2 ")
+    return(f(...));
 }
 
 `adolc_vec_dispatch` = function(s_arg1, s_arg2, f) {
@@ -107,11 +108,11 @@
     argtypes2 = get_argtype(s_arg2)
     if(length(s_arg1)!=1 && length(s_arg1)==length(s_arg2)){
         for(index in seq(1,length(s_arg1),1)){
-            if (extends(argtypes1, '_p_badouble'))
+            if (extends(argtypes1, '_p_badouble')|| extends(argtypes1, '_p_pdouble'))
                 l_sarg1 <- s_arg1[[index]]
             else
                 l_sarg1 <- s_arg1[index]
-            if (extends(argtypes2, '_p_badouble'))
+            if (extends(argtypes2, '_p_badouble') || extends(argtypes2, '_p_pdouble'))
                 l_sarg2 <- s_arg2[[index]]
             else
                 l_sarg2 <- s_arg2[index]
@@ -123,12 +124,12 @@
         }
         return(ans)
     } else if(length(s_arg1)!=1){
-        if (extends(argtypes2, '_p_badouble'))
+        if (extends(argtypes2, '_p_badouble') || extends(argtypes2, '_p_pdouble'))
           l_sarg2 <- s_arg2[[1]]
         else
           l_sarg2 <- s_arg2[1]
         for(index in seq(1,length(s_arg1),1)){
-            if (extends(argtypes1, '_p_badouble'))
+            if (extends(argtypes1, '_p_badouble') || extends(argtypes1, '_p_pdouble'))
               l_sarg1 <- s_arg1[[index]]
             else
               l_sarg1 <- s_arg1[index]
@@ -144,7 +145,7 @@
         else
           l_sarg1 <- s_arg1[1]
         for(index in seq(1,length(s_arg2),1)){
-            if (extends(argtypes2, '_p_badouble'))
+            if (extends(argtypes2, '_p_badouble')  || extends(argtypes2, '_p_pdouble'))
               l_sarg2 <- s_arg2[[index]]
             else
               l_sarg2 <- s_arg2[index]
@@ -155,11 +156,11 @@
         }
         return(ans)
     }
-    if (extends(argtypes1, '_p_badouble'))
+    if (extends(argtypes1, '_p_badouble') || extends(argtypes1, '_p_pdouble'))
       l_sarg1 <- s_arg1[[1]]
     else
       l_sarg1 <- s_arg1[1]
-    if (extends(argtypes2, '_p_badouble'))
+    if (extends(argtypes2, '_p_badouble') || extends(argtypes2, '_p_pdouble'))
       l_sarg2 <- s_arg2[[1]]
     else
       l_sarg2 <- s_arg2[1]
@@ -194,7 +195,7 @@
     dim_arg2_2 = ncol(s_arg2)
     argtypes1 = get_argtype(s_arg1)
     argtypes2 = get_argtype(s_arg2)
-    if(is.matrix(s_arg1) && extends(argtypes1, '_p_badouble') && is.matrix(s_arg2) && extends(argtypes2, '_p_badouble')) {
+    if(is.matrix(s_arg1) && (extends(argtypes1, '_p_badouble') || extends(argtypes1, '_p_pdouble')) && is.matrix(s_arg2) && (extends(argtypes2, '_p_badouble')|| extends(argtypes2, '_p_pdouble'))) {
         if((dim_arg1_1 != dim_arg2_1) || (dim_arg1_2 != dim_arg2_2)){
             stop("adolc_mat_dispatch: Unhandled case: (dim_arg1_1 != dim_arg2_1 || dim_arg1_2 != dim_arg2_2) ")
         }
@@ -222,7 +223,7 @@
         dim(ans) <- c(nrow(s_arg2),ncol(s_arg2))
         return(ans)
     }
-    if (is.matrix(s_arg1) && (extends(argtypes1, '_p_badouble') || extends(argtypes2, '_p_badouble'))) {
+    if (is.matrix(s_arg1) && (extends(argtypes1, '_p_badouble') || extends(argtypes1, '_p_pdouble') || extends(argtypes2, '_p_badouble') || extends(argtypes2, '_p_pdouble'))) {
         if(is.vector(s_arg2) || is.list(s_arg2)) {
             stop("adolc_mat_dispatch: Unhandled case: (is.matrix(s_arg1) && extends(argtypes1, '_p_badouble')) AND  (is.vector(s_arg2) || is.list(s_arg2))")
         } else {
@@ -235,7 +236,7 @@
         }
         return(ans)
     }
-    if (is.matrix(s_arg2) && (extends(argtypes1, '_p_badouble') || extends(argtypes2, '_p_badouble'))) {
+    if (is.matrix(s_arg2) && (extends(argtypes1, '_p_badouble') || extends(argtypes1, '_p_pdouble') || extends(argtypes2, '_p_badouble') || extends(argtypes2, '_p_pdouble'))) {
         if(is.vector(s_arg1) || is.list(s_arg1)) {
             if(length(s_arg1)==1){
                 myrow <- NULL
