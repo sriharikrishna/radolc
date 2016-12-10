@@ -8882,25 +8882,25 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
       f <- Plus__SWIG_0; 
     }
   } else if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_1; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Plus__SWIG_7; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && (is.numeric(argv[[2]]) )) {
       f <- Plus__SWIG_5; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && (is.numeric(argv[[2]]) )) {
       f <- Plus__SWIG_3; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if ((is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_pdouble')) {
       f <- Plus__SWIG_6; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if ((is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_badouble')) {
       f <- Plus__SWIG_2; 
     } else {
         f <- oldplus;
@@ -8996,25 +8996,25 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
         f <- oldminus;
     }
   } else if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Minus__SWIG_5; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Minus__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_8; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Minus__SWIG_6; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_pdouble')) {
       f <- Minus__SWIG_7; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- Minus__SWIG_4; 
     } else {
         f <- oldminus;
@@ -9102,25 +9102,25 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   argc <- length(argtypes);
 # dispatch functions 7
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Multiply__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- Multiply__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- Multiply__SWIG_5; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- Multiply__SWIG_1; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_pdouble')) {
       f <- Multiply__SWIG_6; 
     } else {
         f <- oldmultiply;
@@ -9224,25 +9224,25 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   argc <- length(argtypes);
 # dispatch functions 7
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_1; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- Divide__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && (is.numeric(argv[[2]]) )) {
       f <- Divide__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_6; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && (is.numeric(argv[[2]]) )) {
       f <- Divide__SWIG_5; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if ((is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_badouble')) {
       f <- Divide__SWIG_2; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if ((is.numeric(argv[[1]]) ) && extends(argtypes[2], '_p_pdouble')) {
       f <- Divide__SWIG_4; 
     } else {
         f <- olddivide;
