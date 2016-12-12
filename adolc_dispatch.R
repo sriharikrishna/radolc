@@ -119,8 +119,7 @@
             if(index == 1)
               ans =(f(l_sarg1,l_sarg2))
             else
-              ans = c(f(l_sarg1,l_sarg2), ans)
-            
+              ans = c(ans,f(l_sarg1,l_sarg2))
         }
         return(ans)
     } else if(length(s_arg1)!=1){
@@ -136,7 +135,7 @@
             if(index == 1)
               ans =(f(l_sarg1,l_sarg2))
             else
-              ans = c(f(l_sarg1,l_sarg2), ans)
+              ans = c(ans,f(l_sarg1,l_sarg2))
         }
         return(ans)
     } else if(length(s_arg2)!=1){
@@ -152,7 +151,7 @@
             if(index == 1)
               ans =(f(l_sarg1,l_sarg2))
             else
-              ans = c(f(l_sarg1,l_sarg2), ans)
+              ans = c(ans,f(l_sarg1,l_sarg2))
         }
         return(ans)
     }
