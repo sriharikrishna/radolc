@@ -10107,22 +10107,22 @@ class(`pow__SWIG_5`) = c("SWIGFunction", class('pow__SWIG_5'))
   argc <- length(argtypes);
 # dispatch functions 6
   if (argc == 2) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble') && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_2; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && extends(argtypes[2], '_p_pdouble') && length(argv[[2]]) == 1) {
+    else if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_pdouble')) {
       f <- pow__SWIG_4; 
     }
-    else if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_badouble') && is.numeric(argv[[2]])) {
       f <- pow__SWIG_3; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1 && ( is.numeric(argv[[2]]) && length(argv[[2]]) == 1 )) {
+    else if (extends(argtypes[1], '_p_pdouble') && is.numeric(argv[[2]])) {
       f <- pow__SWIG_5; 
     }
-    else if (( is.numeric(argv[[1]]) && length(argv[[1]]) == 1 ) && extends(argtypes[2], '_p_badouble') && length(argv[[2]]) == 1) {
+    else if (is.numeric(argv[[1]]) && extends(argtypes[2], '_p_badouble')) {
       f <- pow__SWIG_1; 
     } else {
       f <- oldcarat
