@@ -8987,10 +8987,10 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
   argc <- length(argtypes);
 # dispatch functions 9
   if (argc == 1) {
-    if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
+    if (extends(argtypes[1], '_p_badouble')) {
       f <- Minus__SWIG_0; 
     }
-    else if (extends(argtypes[1], '_p_pdouble') && length(argv[[1]]) == 1) {
+    else if (extends(argtypes[1], '_p_pdouble')) {
       f <- Minus__SWIG_1; 
     } else {
         f <- oldminus;
