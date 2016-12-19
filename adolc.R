@@ -8876,6 +8876,13 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 2) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')
+      && !extends(argtypes[2], '_p_badouble') && !extends(argtypes[2], '_p_pdouble')) {
+          ans <- oldplus(argv[[1]],argv[[2]]);
+          return(ans);
+      }
+  }
 # dispatch functions 8
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -8985,6 +8992,13 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 2) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')
+      && !extends(argtypes[2], '_p_badouble') && !extends(argtypes[2], '_p_pdouble')) {
+          ans <- oldminus(argv[[1]],argv[[2]]);
+          return(ans);
+      }
+  }
 # dispatch functions 9
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble')) {
@@ -9100,6 +9114,13 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 2) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')
+      && !extends(argtypes[2], '_p_badouble') && !extends(argtypes[2], '_p_pdouble')) {
+          ans <- oldmultiply(argv[[1]],argv[[2]]);
+          return(ans);
+      }
+  }
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
@@ -9222,6 +9243,13 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 2) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')
+      && !extends(argtypes[2], '_p_badouble') && !extends(argtypes[2], '_p_pdouble')) {
+          ans <- olddivide(argv[[1]],argv[[2]]);
+          return(ans);
+      }
+  }
 # dispatch functions 7
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
@@ -9756,6 +9784,13 @@ class(`exp__SWIG_1`) = c("SWIGFunction", class('exp__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if(!isGeneric("copyToC"))
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+        ans <- oldexp(argv[[1]]);
+        return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9796,6 +9831,12 @@ oldlog <- log
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldlog(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9834,6 +9875,12 @@ oldsqrt <- sqrt
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldsqrt(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9872,6 +9919,12 @@ oldsin <- sin
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldsin(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9910,6 +9963,12 @@ oldcos <- cos
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldcos(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9948,6 +10007,12 @@ oldtan <- tan
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldtan(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -9986,6 +10051,12 @@ oldasin <- asin
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldasin(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10024,6 +10095,12 @@ oldacos <- acos
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldacos(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10062,6 +10139,12 @@ oldatan <- atan
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldatan(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10105,6 +10188,13 @@ class(`pow__SWIG_5`) = c("SWIGFunction", class('pow__SWIG_5'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 2) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')
+          && !extends(argtypes[2], '_p_badouble') && !extends(argtypes[2], '_p_pdouble')) {
+          ans <- oldcarat(argv[[1]],argv[[2]]);
+          return(ans);
+      }
+  }
 # dispatch functions 6
   if (argc == 2) {
     if (extends(argtypes[1], '_p_badouble') && extends(argtypes[2], '_p_badouble')) {
@@ -10156,6 +10246,12 @@ class(`log10__SWIG_1`) = c("SWIGFunction", class('log10__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldlog10(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10194,6 +10290,12 @@ class(`sinh__SWIG_1`) = c("SWIGFunction", class('sinh__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldsinh(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10232,6 +10334,12 @@ class(`cosh__SWIG_1`) = c("SWIGFunction", class('cosh__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldcosh(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10270,6 +10378,12 @@ class(`tanh__SWIG_1`) = c("SWIGFunction", class('tanh__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldtanh(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10308,6 +10422,12 @@ class(`fabs__SWIG_1`) = c("SWIGFunction", class('fabs__SWIG_1'))
   argtypes <- get_argtype(...);
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldabs(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10346,6 +10466,12 @@ class(`ceil__SWIG_1`) = c("SWIGFunction", class('ceil__SWIG_1'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldceiling(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
@@ -10384,6 +10510,12 @@ class(`floor__SWIG_1`) = c("SWIGFunction", class('floor__SWIG_1'))
   argtypes <- mapply(class, list(...));
   argv <- list(...);
   argc <- length(argtypes);
+  if (argc == 1) {
+      if (!extends(argtypes[1], '_p_badouble') && !extends(argtypes[1], '_p_pdouble')) {
+          ans <- oldfloor(argv[[1]]);
+          return(ans);
+      }
+  }
 # dispatch functions 2
   if (argc == 1) {
     if (extends(argtypes[1], '_p_badouble') && length(argv[[1]]) == 1) {
