@@ -64,9 +64,12 @@ OR on OSX
 
 >export DYLD\_LIBRARY\_PATH=*ADOLC_INST_DIR*/lib64/:$DYLD\_LIBRARY\_PATH
 
-2. Go into radolc and run an example
+2. Go into radolc and edit *init_adolc.R*
 >cd radolc
 
+>Change the line dyn.load(paste("*ADOLC_SOURCE_FOLDER*/ADOL-C/swig/R/adolc", .Platform$dynlib.ext, sep=""))
+
+3. Run an example
 >R
 
 >> source("rosenbrock\_univariate\_optim.r")
