@@ -1,0 +1,11 @@
+*.o
+*.lo
+*.la
+*.a
+*.so
+*.spec
+*.orig
+.deps
+.libs
+*~
+*.bak
