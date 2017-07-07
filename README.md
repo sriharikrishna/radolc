@@ -4,10 +4,9 @@ This repository contains the supporting files to use the automatic differentiati
 ## Build Instructions
 **NOTE**: Any text in *italics* should be replaced by a directory location in your file system. 
 
-1. Obtain the code in this repository
-> mkdir RProject
-> cd RPRoject
- 
+1. Clone this repository
+> git clone https://github.com/sriharikrishna/radolc.git 
+
 2. Install ColPack
 >git clone https://github.com/CSCsw/ColPack.git
 
