@@ -1,0 +1,11 @@
+useDynLib(autodiffadolc, .registration=TRUE)
+
+exportPattern("^[[:alpha:]]+")
+
+export("trace_on",
+       "badouble_declareIndependent",
+       "badouble_declareDependent",
+       "trace_off", 
+       "gradient",
+       "*","+","-","/")
+

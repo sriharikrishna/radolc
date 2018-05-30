@@ -1,0 +1,42 @@
+ADOLCROOT=./ADOLC/adol-c-swig-inst/
+PKG_CPPFLAGS=@CPPFLAGS@ -std=c++11 -I. -Iinclude -I$(ADOLCROOT)/include/
+PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
+PKG_LIBS=@LDFLAGS@ @LIBS@ $(ADOLCROOT)/lib64/libadolc.a
+
+MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
+
+#include scripts/SOURCES_C.mkf
+SOURCES = adolc_r_wrap.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
+SUBDIRS = ADOLC
+SUBLIBS = $(SUBDIRS:=.a)
+
+all: $(SHLIB)
+## making src/*.o and in sublibs can be done simultaneously
+# for development:
+#$(SHLIB): $(OBJECTS) sublibraries
+# for real:
+$(SHLIB): sublibs $(OBJECTS)
+
+## We have to clean here, to clean up between architectures:
+## INSTALL only cleans src/*.o src/*$(SHLIB_EXT) for each arch
+sublibs: subclean sublibraries
+sublibraries: subclean
+	echo ${prefix}
+	@for d in $(SUBDIRS); do \
+	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)" -f Makefile library) || exit 1; \
+	done
+
+clean: subclean
+	@-rm -rf .libs _libs
+	@-rm -f *.o $(SHLIB)
+
+subclean:
+	@-rm -f *.a
+	@for d in $(SUBDIRS); do \
+	  (cd $${d} && MkInclude="$(MkInclude)" $(MAKE) clean) || exit 1; \
+	done
+
+adolc_r_wrap.o: sublibs
+
+#include scripts/DEPS.mkf
