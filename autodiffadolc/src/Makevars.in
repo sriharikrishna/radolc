@@ -1,13 +1,77 @@
 ADOLCROOT=./ADOLC/adol-c-swig-inst/
 PKG_CPPFLAGS=@CPPFLAGS@ -std=c++11 -I. -Iinclude -I$(ADOLCROOT)/include/
 PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
-PKG_LIBS=@LDFLAGS@ @LIBS@ $(ADOLCROOT)/lib64/libadolc.a
+PKG_LIBS=@LDFLAGS@ @LIBS@ 
 
 MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
 
 #include scripts/SOURCES_C.mkf
+
+LIBADOLCOBJDIR= ./ADOLC/adol-c-swig/ADOL-C/
+
+libadolcsrc_la_OBJ = $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/driversf.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/odedrivers.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/drivers.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/psdriversf.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/odedriversf.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/taylor.o\
+                     $(LIBADOLCOBJDIR)/src/tapedoc/.libs/tapedoc.o\
+                     $(LIBADOLCOBJDIR)/src/lie/.libs/adolc_lie_c.o\
+                     $(LIBADOLCOBJDIR)/src/lie/.libs/adolc_lie.o\
+                     $(LIBADOLCOBJDIR)/src/sparse/.libs/sparsedrivers.o\
+                     $(LIBADOLCOBJDIR)/src/sparse/.libs/sparse_fo_rev.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/taping.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/interfaces.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/adouble_tl.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/externfcts2.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/adalloc.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fov_offset_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/interfacesf.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/indopro_forward_t.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/checkpointing.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fixpoint.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hov_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/advector.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/adouble.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hos_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fov_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/externfcts.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/indopro_forward_s.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_pl_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_pl_sig_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/int_forward_s.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_pl_sig_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_pl_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/zos_pl_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/param.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fov_pl_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/rpl_malloc.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hos_ov_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/nonl_ind_forward_t.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/revolve.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hos_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hov_wk_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fov_reverse.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/forward_partx.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/int_reverse_s.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/nonl_ind_old_forward_t.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fos_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/hov_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fortutils.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/indopro_forward_pl.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/zos_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/nonl_ind_forward_s.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/int_forward_t.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/nonl_ind_old_forward_s.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/int_reverse_t.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/fov_pl_sig_forward.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/tape_handling.o\
+                     $(LIBADOLCOBJDIR)/src/.libs/convolut.o
+
 SOURCES = adolc_r_wrap.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
+OBJECTS = $(SOURCES:.cpp=.o) $(libadolcsrc_la_OBJ) 
 SUBDIRS = ADOLC
 SUBLIBS = $(SUBDIRS:=.a)
 
