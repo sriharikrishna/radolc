@@ -14,7 +14,7 @@ get:
 	mv adol-c-swig-* adol-c-swig
  
 all: get
-	( cd ${PWD}/adol-c-swig ; autoreconf -fi; ./configure CXXFLAGS=-std=c++11 --enable-sparse --enable-static --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	( cd ${PWD}/adol-c-swig ; autoreconf -fi; ./configure CXXFLAGS=-std=c++11 --enable-sparse --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 
 # Compile the C-callable libraries only.
 library: all
