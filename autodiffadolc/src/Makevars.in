@@ -103,4 +103,3 @@ subclean:
 
 adolc_r_wrap.o: sublibs
 
-#include scripts/DEPS.mkf
