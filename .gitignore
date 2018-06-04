@@ -9,3 +9,10 @@
 .libs
 *~
 *.bak
+*.Rcheck/
+autom4te.cache/
+*.tar.gz
+*.rds
+configure
+aclocal.m4
+.Rhistory
