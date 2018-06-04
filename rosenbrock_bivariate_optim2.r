@@ -1,9 +1,8 @@
 
 rm(list=ls())
 
-source('init_adolc.R')
 
-library('numDeriv')
+library('autodiffadolc')
 
 grr <- function(x) { ## Gradient of 'fr'
          x1 <- x[1]

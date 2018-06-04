@@ -1,10 +1,7 @@
 
 rm(list=ls())
 
-library('numDeriv')
-
-source('init_adolc.R')
-
+library('autodiffadolc')
 
 #--------------------------- function: bivariate function 
 #----------- function and its gradient
