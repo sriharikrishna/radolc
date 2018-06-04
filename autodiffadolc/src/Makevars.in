@@ -1,11 +1,11 @@
 ADOLCROOT=./ADOLC/adol-c-swig-inst/
-PKG_CPPFLAGS=@CPPFLAGS@ -std=c++11 -I. -Iinclude -I$(ADOLCROOT)/include/
+CXX_STD = CXX11
+#PKG_CPPFLAGS=@CPPFLAGS@ -std=c++11 -I. -Iinclude -I$(ADOLCROOT)/include/
+PKG_CPPFLAGS=@CPPFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
 PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
 PKG_LIBS=@LDFLAGS@ @LIBS@ 
 
 MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
-
-#include scripts/SOURCES_C.mkf
 
 LIBADOLCOBJDIR= ./ADOLC/adol-c-swig/ADOL-C/
 
