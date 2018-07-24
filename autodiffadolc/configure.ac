@@ -53,5 +53,8 @@ fi
 
 COLPACK_CONF
 
+AX_CXX_COMPILE_STDCXX_11(noext,mandatory)
 AC_CONFIG_FILES([src/Makevars])
+AC_SUBST(CXXFLAGS)
 AC_OUTPUT
+

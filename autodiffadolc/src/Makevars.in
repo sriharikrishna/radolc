@@ -1,7 +1,5 @@
 ADOLCROOT=./ADOLC/adol-c-swig-inst/
-CXX_STD = CXX11
-#PKG_CPPFLAGS=@CPPFLAGS@ -std=c++11 -I. -Iinclude -I$(ADOLCROOT)/include/
-PKG_CPPFLAGS=@CPPFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
+PKG_CPPFLAGS=@CXXFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
 PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
 PKG_LIBS=@LDFLAGS@ @LIBS@ 
 

@@ -9,7 +9,7 @@ default: all
 # Compile the C-callable libraries and the Demo programs.
 
 get:
-	curl https://gitlab.com/adol-c/adol-c/repository/swig/archive.tar.gz > archive.tar.gz
+	echo 'download.file(url="https://gitlab.com/adol-c/adol-c/repository/swig/archive.tar.gz", destfile="archive.tar.gz", method="curl", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|${R_HOME}/bin/R --vanilla --slave
 	tar zxvf archive.tar.gz
 	mv adol-c-swig-* adol-c-swig
  
