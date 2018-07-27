@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# CHOLMOD Makefile
+# ADOLC Makefile
 #-------------------------------------------------------------------------------
 
 .PHONY : default all get library purge clean distclean ccode

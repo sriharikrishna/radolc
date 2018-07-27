@@ -3,7 +3,6 @@ LIBADOLCOBJDIR= $(CURDIR)/ADOLC/adol-c-swig/ADOL-C
 CXX_STD = CXX11
 PKG_CPPFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
 PKG_CFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
-#PKG_LIBS= @LDFLAGS@ @LIBS@ #C:/Users/celsloaner/Desktop/boost_1_67_0/boost_1_67_0-inst/lib/libboost_system-mgw49-mt-d-x64-1_67.a
 
 MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
 
@@ -103,9 +102,6 @@ SUBDIRS = ADOLC
 SUBLIBS = $(SUBDIRS:=.a)
 
 all: $(SHLIB) 
-#$(SHLIB): $(OBJECTS)
-#	echo 'LIBADOLCOBJDIR' -I$(LIBADOLCOBJDIR)
-#SOURCES:	$(LIBADOLCOBJDIR)/include/adolc
 $(SHLIB): sublibs $(OBJECTS)
 
 sublibs: subclean sublibraries
