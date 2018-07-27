@@ -23,12 +23,8 @@ library: all
 purge:
 	( rm -Rf adol-c-swig* archive* *.tar.gz *.tar.bz2 )
 
-# Remove all files not in the original distribution, except keep the 
-# compiled libraries.
-clean:
-#	( cd ${PWD}/adol-c-swig ; $(MAKE) clean )
+# Remove all files not in the original distribution 
+clean: purge
 
 distclean: purge
-
-ccode: all
 
