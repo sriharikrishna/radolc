@@ -9,8 +9,8 @@ default: all
 # Compile the C-callable libraries and the Demo programs.
 
 get:
-	echo 'download.file(url="https://math.uni-paderborn.de/fileadmin/mathematik/AG-Mathematik-u-i-Anwendungen/Software/adolc-swig/adolc-swig-branch.tar.bz2", destfile="adolc-swig-branch.tar.bz2", method="curl", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|R --vanilla --slave
-	tar zxvf adolc-swig-branch.tar.bz2
+	echo 'download.file(url="https://math.uni-paderborn.de/fileadmin/mathematik/AG-Mathematik-u-i-Anwendungen/Software/adolc-swig/adolc-swig-branch.tar.gz", destfile="adolc-swig-branch.tar.gz", method="curl", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|R --vanilla --slave
+	tar zxvf adolc-swig-branch.tar.gz
 	mv adolc-swig-branch adol-c-swig
  
 all: get
