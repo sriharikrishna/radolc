@@ -9,12 +9,12 @@ default: all
 # Compile the C-callable libraries and the Demo programs.
 
 get:
-	echo 'download.file(url="https://gitlab.com/adol-c/adol-c/repository/swig/archive.tar.gz", destfile="archive.tar.gz", method="curl", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|R --vanilla --slave
-	tar zxvf archive.tar.gz
-	mv adol-c-swig* adol-c-swig
+	echo 'download.file(url="https://math.uni-paderborn.de/fileadmin/mathematik/AG-Mathematik-u-i-Anwendungen/Software/adolc-swig/adolc-swig-branch.tar.gz", destfile="adolc-swig-branch.tar.gz", method="curl", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|R --vanilla --slave
+	tar zxvf adolc-swig-branch.tar.gz
+	mv adolc-swig-branch adol-c-swig
  
 all: get
-	( cd ${PWD}/adol-c-swig ; autoreconf -fi ; ./configure --enable-sparse --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	( cd ${PWD}/adol-c-swig ; ./configure --enable-sparse --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 
 # Compile the C-callable libraries only.
 library: all
