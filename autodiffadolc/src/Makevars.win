@@ -1,0 +1,128 @@
+LIBADOLCOBJDIR= $(CURDIR)/ADOLC/adol-c-swig/ADOL-C
+#COLPACKDIR=$(CURDIR)/ColPack/ColPack-master
+CXX_STD = CXX11
+PKG_CPPFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
+PKG_CFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
+#PKG_LIBS= @LDFLAGS@ @LIBS@ #C:/Users/celsloaner/Desktop/boost_1_67_0/boost_1_67_0-inst/lib/libboost_system-mgw49-mt-d-x64-1_67.a
+
+MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
+
+libadolcsrc_la_OBJ = $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/driversf.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/odedrivers.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/drivers.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/psdriversf.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/odedriversf.o\
+					$(LIBADOLCOBJDIR)/src/drivers/.libs/taylor.o\
+					$(LIBADOLCOBJDIR)/src/lie/.libs/adolc_lie_c.o\
+					$(LIBADOLCOBJDIR)/src/lie/.libs/adolc_lie.o\
+					$(LIBADOLCOBJDIR)/src/sparse/.libs/sparsedrivers.o\
+					$(LIBADOLCOBJDIR)/src/sparse/.libs/sparse_fo_rev.o\
+					$(LIBADOLCOBJDIR)/src/tapedoc/.libs/tapedoc.o\
+					$(LIBADOLCOBJDIR)/src/.libs/taping.o\
+					$(LIBADOLCOBJDIR)/src/.libs/interfaces.o\
+					$(LIBADOLCOBJDIR)/src/.libs/adouble_tl.o\
+					$(LIBADOLCOBJDIR)/src/.libs/externfcts2.o\
+					$(LIBADOLCOBJDIR)/src/.libs/adalloc.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fov_offset_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/interfacesf.o\
+					$(LIBADOLCOBJDIR)/src/.libs/indopro_forward_t.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/checkpointing.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fixpoint.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hov_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/advector.o\
+					$(LIBADOLCOBJDIR)/src/.libs/adouble.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hos_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fov_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/externfcts.o\
+					$(LIBADOLCOBJDIR)/src/.libs/indopro_forward_s.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_pl_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_pl_sig_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/int_forward_s.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_pl_sig_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_pl_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/zos_pl_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/param.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fov_pl_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/rpl_malloc.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hos_ov_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/nonl_ind_forward_t.o\
+					$(LIBADOLCOBJDIR)/src/.libs/revolve.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hos_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hov_wk_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fov_reverse.o\
+					$(LIBADOLCOBJDIR)/src/.libs/forward_partx.o\
+					$(LIBADOLCOBJDIR)/src/.libs/int_reverse_s.o\
+					$(LIBADOLCOBJDIR)/src/.libs/nonl_ind_old_forward_t.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fos_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/hov_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fortutils.o\
+					$(LIBADOLCOBJDIR)/src/.libs/indopro_forward_pl.o\
+					$(LIBADOLCOBJDIR)/src/.libs/zos_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/nonl_ind_forward_s.o\
+					$(LIBADOLCOBJDIR)/src/.libs/int_forward_t.o\
+					$(LIBADOLCOBJDIR)/src/.libs/nonl_ind_old_forward_s.o\
+					$(LIBADOLCOBJDIR)/src/.libs/int_reverse_t.o\
+					$(LIBADOLCOBJDIR)/src/.libs/fov_pl_sig_forward.o\
+					$(LIBADOLCOBJDIR)/src/.libs/tape_handling.o\
+					$(LIBADOLCOBJDIR)/src/.libs/convolut.o
+#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloring.o\
+#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloringInterface.o\
+#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphCore.o\
+#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphInputOutput.o\
+#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphVertexCover.o\
+#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoring.o\
+#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoringInterface.o\
+#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialOrdering.o\
+#					$(COLPACKDIR)/GraphColoring/.libs/GraphColoring.o\
+#					$(COLPACKDIR)/GraphColoring/.libs/GraphColoringInterface.o\
+#					$(COLPACKDIR)/GraphColoring/.libs/GraphCore.o\
+#					$(COLPACKDIR)/GraphColoring/.libs/GraphInputOutput.o\
+#					$(COLPACKDIR)/GraphColoring/.libs/GraphOrdering.o\
+#					$(COLPACKDIR)/Main/Main.o\
+#					$(COLPACKDIR)/Recovery/.libs/HessianRecovery.o\
+#					$(COLPACKDIR)/Recovery/.libs/JacobianRecovery1D.o\
+#					$(COLPACKDIR)/Recovery/.libs/JacobianRecovery2D.o\
+#					$(COLPACKDIR)/Recovery/.libs/RecoveryCore.o\
+#					$(COLPACKDIR)/Utilities/.libs/command_line_parameter_processor.o\
+#					$(COLPACKDIR)/Utilities/.libs/CoutLock.o\
+#					$(COLPACKDIR)/Utilities/.libs/current_time.o\
+#					$(COLPACKDIR)/Utilities/.libs/extra.o\
+#					$(COLPACKDIR)/Utilities/.libs/File.o\
+#					$(COLPACKDIR)/Utilities/.libs/MatrixDeallocation.o\
+#					$(COLPACKDIR)/Utilities/.libs/mmio.o\
+#					$(COLPACKDIR)/Utilities/.libs/Pause.o\
+#					$(COLPACKDIR)/Utilities/.libs/stat.o\
+#					$(COLPACKDIR)/Utilities/.libs/StringTokenizer.o\
+#					$(COLPACKDIR)/Utilities/.libs/Timer.o
+
+SOURCES = adolc_r_wrap.cpp
+OBJECTS = $(SOURCES:.cpp=.o) $(libadolcsrc_la_OBJ)
+SUBDIRS = ADOLC
+SUBLIBS = $(SUBDIRS:=.a)
+
+all: $(SHLIB) 
+#$(SHLIB): $(OBJECTS)
+#	echo 'LIBADOLCOBJDIR' -I$(LIBADOLCOBJDIR)
+#SOURCES:	$(LIBADOLCOBJDIR)/include/adolc
+$(SHLIB): sublibs $(OBJECTS)
+
+sublibs: subclean sublibraries
+sublibraries: subclean
+	echo ${prefix}
+	for d in $(SUBDIRS); do \
+	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)" -f Makefile library) || exit 1; \
+	done
+
+clean: subclean
+	-rm -rf .libs _libs
+	-rm -f *.o $(SHLIB)
+
+subclean:
+	-rm -f *.a
+	for d in $(SUBDIRS); do \
+	  (cd $${d} && MkInclude="$(MkInclude)" $(MAKE) clean) || exit 1; \
+	done
+
+adolc_r_wrap.o: sublibs
