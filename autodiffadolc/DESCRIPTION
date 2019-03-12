@@ -1,12 +1,18 @@
 Package: autodiffadolc
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Provides automatic differentiation capability
+Version: 0.1.0
 Date: 2018-04-13
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Sri Hari Krishna Narayanan
+Maintainer: Sri Hari Krishna Narayanan
+Description: The package interfaces the automatic differentiation tool 
+  ADOL-C (written in C++) and provides methods to compute derivatives 
+  efficiently in using forward mode and reverse (adjoint) mode automatic
+  differentiation. The package can be used to compute the gradient, 
+  the Jacobian as well the Hessian. Derivatives are useful in the context
+  of optimizaton, parameter estimation, sensitivity analysis, uncertainty
+  quantification, etc. 
+License: EPL-1.0 OR GPL-2.0+
 NeedsCompilation: yes
 SystemRequirements: C++11
 Packaged: 2018-04-18 12:36:28 UTC; snarayan
