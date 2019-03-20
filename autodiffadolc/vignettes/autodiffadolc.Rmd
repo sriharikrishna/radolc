@@ -1,0 +1,193 @@
+---
+title: "Getting started with autodiffadolc"
+output: html_document
+bibliography: ad.bib
+vignette: >
+  bibliography: ad.bib
+  %\VignetteIndexEntry{Introduction to autodiffadolc}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+# Introduction to autodiffadolc
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+library(autodiffadolc)
+set.seed(1014)
+```
+
+Derivatives are required in many contexts:
+
+* Optimization,
+
+* Sensitivity analysis,
+
+* Uncertainty quantification, and 
+
+* Parameter Estimation.
+
+The autodiffadolc package is an interface to ADOL-C -- a C++ library that facilitates the evaluation of first and higher derivatives of vector functions that are defined by computer programs. ADOL-C supports the simultaneous evaluation of arbitrarily high directional derivatives and the gradients of these Taylor coefficients with respect to all independent variables.
+
+* It computes gradients, Jacobians, Hessians, Jacobian × vector products, Hessian × vector products.
+
+This document serves as a brief introduction to autodiffadolc's interface calls to ADOL-C and how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
+
+## Preparing a Code Segment for Differentiation
+
+The modifications required for the algorithmic differentiation with autodiffadolc
+form a five step procedure:
+
+1. Use the library `autodiffadolc`
+
+```{r eval=FALSE, include=TRUE}
+library(autodiffadolc)
+```
+
+2. Define the region that has to be differentiated. That is, mark the active section with the two function calls:
+
+```{r eval=FALSE, include=TRUE}
+library(autodiffadolc)
+trace_on(1)   #Start of active section
+#....            
+trace_off(1)  #and its end
+                
+```
+
+3. Identify all independent variables and dependent variables and mark them in the active section:
+
+```{r eval=FALSE, include=TRUE}
+library(autodiffadolc)
+trace_on(1)
+x <- c(adouble(1.0),adouble(2.0))
+badouble_declareIndependent(x)
+#... calculations.
+badouble_declareDependent(y)
+trace_off(1);
+```
+
+4. Place all calculation or a call to the calculation between the declarations
+
+```{r eval=FALSE, include=TRUE}
+library(autodiffadolc)
+
+fr <- function(x) {   ## Rosenbrock Banana function
+    x1 <- x[[1]]
+    x2 <- x[[2]]
+    y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+    y }
+
+trace_on(1)
+x <- c(adouble(1.0),adouble(2.0))
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off(1)
+```
+
+## Computing the derivaives
+
+Calculate derivative objects after `trace_off(tag)` using drivers
+
+For the calculation of whole derivative vectors and matrices up to order 2
+there are the following procedures:
+
+### Gradient
+```{r eval=FALSE, include=TRUE}
+library(autodiffadolc)
+
+fr <- function(x) {   ## Rosenbrock Banana function
+    x1 <- x[[1]]
+    x2 <- x[[2]]
+    y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+    y }
+
+tag <- 1
+trace_on(tag)
+x <- c(adouble(1.0),adouble(2.0))
+badouble_declareIndependent(x)
+y <- fr(x)
+
+badouble_declareDependent(y)
+trace_off()
+#gradient(tag,n,x,g)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# g[n] :resulting gradient \gradF(x)
+
+x=c(1,2)
+g <- c(0.0,0.0)
+gradient(1,2,x,g)
+```
+
+### Jacobian
+```{r eval=FALSE, include=TRUE}
+jacobian(tag,m,n,x,J)
+# tag: integer, tape identification
+# m  : integer, number of dependent variables
+# n  : integer, number of independent variables n
+# x[n]: independent vector x
+#J[m][n]; // resulting Jacobian F(x)
+```
+
+### Hessian
+```{r eval=FALSE, include=TRUE}
+hessian(tag,n,x,H)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# double H[n][n]: resulting Hessian matrix \nabla^2F(x)
+```
+
+### Jacobian Vector Product
+```{r eval=FALSE, include=TRUE}
+jac_vec(tag,m,n,x,v,z) #result z = F′(x)v
+```
+
+### Vector Tanspose Jacobian Product
+```{r eval=FALSE, include=TRUE}
+vec_jac(tag,m,n,repeat,x,u,z) #result z = u^TF′(x)
+```
+
+### Hessian Vector Product
+```{r eval=FALSE, include=TRUE}
+hess_vec(tag,n,x,v,z) # result z = \nambla^2F(x)v
+```
+
+
+## Comparisons to alternatives
+
+Compared to finite differences:
+
+* autodiffadolc requires tracing.
+
+* autodiffadolc does not suffer from rounding and truncation errors. 
+
+* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+
+* autodiffadolc can exploit sparsity in the Jacobian and Hessain. 
+
+Compared to `NumDeriv`:
+* autodiffadolc requires tracing.
+
+* autodiffadolc does not suffer from rounding and truncation errors. 
+
+* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+
+* autodiffadolc can exploit sparsity in the Jacobian and Hessain.
+
+Compared to `madness`:
+* autodiffadolc requires tracing.
+
+* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+
+* `madness` does not allow operations between variables of differing dimensions, i.e. scalar-vector multiplication, which is critical in a lot of modelling situations.
+
+# References
+1. [A. Griewank and A. Walther, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation, 2nd ed., Society for Industrial and Applied Mathematics, Philadelphia, PA, USA, 2008.][https://doi.org/10.1137/1.9780898717761]
+
+2. [K. Kulshreshtha, S. Narayanan, J. Bessac, and K. MacIntyre, Efficient computation of derivatives for solving optimization problems in R and Python using SWIG-generated interfaces to ADOL-C, Optimization Methods and Software 33 (2018), pp. 1173--1191.][https://doi.org/10.1080/10556788.2018.1425861]
+
+3. [U. Naumann, The Art of Differentiating Computer Programs: An Introduction to Algorithmic Differentiation, Society for Industrial and Applied Mathematics, Philadelphia, PA, USA, 2012.][https://doi.org/10.1137/1.9781611972078]
+
+4. [A. Walther and A. Griewank, Getting started with ADOL-C, in Combinatorial Scientific Computing, U. Naumann and O. Schenk, eds., chap.~7, Chapman-Hall CRC Computational Science,  2012, pp. 181--202.][https://pdfs.semanticscholar.org/9953/5b1991470c0e0e3f7f1c1733689cf5fb055c.pdf]
