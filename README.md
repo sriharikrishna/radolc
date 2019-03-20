@@ -3,14 +3,10 @@ This repository contains the R package autodiffadolc which is an interface to th
 
 ## Usage
 ~~~~
+#Load the library
 library('autodiffadolc')
 
-grr <- function(x) { ## Gradient of 'fr'
-         x1 <- x[1]
-         x2 <- x[2]
-         c(-400 * x1 * (x2 - x1 * x1) - 2 * (1 - x1), 200 * (x2 - x1 * x1))     }
-
-#------------------------------------------------------------- testing ADOLC in the bi-variate case
+#Define the Rosenbrock Banana function
 
 fr <- function(x) {   ## Rosenbrock Banana function
     x1 <- x[[1]]
@@ -18,23 +14,28 @@ fr <- function(x) {   ## Rosenbrock Banana function
     y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
     y }
 
-#---- Problems start here ....
 
+#Start the trace of the computation
 trace_on(1)
 x <- c(adouble(1.0),adouble(2.0))
+#Declare the independent (input) variable
 badouble_declareIndependent(x)
+#Perform the computation
 y <- fr(x)
+#Declare the dependent (input) variable
 badouble_declareDependent(y)
+#Stop the trace of the computation
 trace_off()
 
-grrADOLC <- function(x) { ## Gradient of 'fr'
-         xx <- x
+#Define a function to compute the Gradient of 'fr'
+grrADOLC <- function(x) {
+   xx <- x
 	 yy <- c(0.0,0.0)
+#This is the call to the ADOL-C driver to compute the derivatives
 	 gradient(1,2,xx,yy);
-   	 yy     }
+   yy }
 
-grrADOLC(x=c(1,2))
-
+#Call the optimization routine. It will use grrADOLC to get the derivatives from ADOL-C's gradient()
 res6 <- optim(c(1.2,1), fr, grrADOLC, method = "L-BFGS-B", control = list(type = 3, trace = 2))
 ~~~~
 
