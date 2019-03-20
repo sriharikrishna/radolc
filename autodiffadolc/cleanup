@@ -11,6 +11,10 @@ cd src/ADOLC
 make purge
 cd ../../
 
+cd src/Colpack
+make purge
+cd ../../
+
 for f in config.log config.status config.cache ; do
   if test -w $f ; then
     rm -f $f
