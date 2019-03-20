@@ -15,6 +15,9 @@ Description: The package interfaces the automatic differentiation tool
   of optimizaton, parameter estimation, sensitivity analysis, uncertainty
   quantification, etc. 
 License: EPL-1.0 OR GPL-2.0+
+VignetteBuilder: knitr
 NeedsCompilation: yes
 SystemRequirements: C++11
+Imports: knitr, rmarkdown
+Suggests: knitr, rmarkdown
 Packaged: 2018-04-18 12:36:28 UTC; snarayan
