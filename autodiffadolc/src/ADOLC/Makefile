@@ -14,7 +14,7 @@ get:
 	mv adol-c-swig* adol-c-swig
  
 all: get
-	( cd ${PWD}/adol-c-swig ; autoreconf -fi ; ./configure --enable-sparse --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	( cd ${PWD}/adol-c-swig ; autoreconf -fi ; ./configure --enable-sparse --with-colpack=${PWD}/../Colpack/Colpack-master-inst/ --prefix=${PWD}/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 
 # Compile the C-callable libraries only.
 library: all

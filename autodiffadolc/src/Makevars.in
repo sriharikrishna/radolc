@@ -1,13 +1,46 @@
 ADOLCROOT=./ADOLC/adol-c-swig-inst/
+COLPACKDIR=./ColPack/ColPack-master/src/
+COLPACKINSTDIR=./ColPack/ColPack-master-inst/
 PKG_CPPFLAGS=@CXXFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
-PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/
+PKG_CFLAGS=@CFLAGS@ -I. -Iinclude -I$(ADOLCROOT)/include/ -I$(COLPACKINSTDIR)/include
 PKG_LIBS=@LDFLAGS@ @LIBS@ 
 
 MkInclude = $(R_HOME)/etc${R_ARCH}/Makeconf
 
 LIBADOLCOBJDIR= ./ADOLC/adol-c-swig/ADOL-C/
 
-libadolcsrc_la_OBJ = $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
+libadolcsrc_la_OBJ = \
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloring.o\
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloringInterface.o\
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphCore.o\
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphInputOutput.o\
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphVertexCover.o\
+                     $(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphOrdering.o\
+                     $(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoring.o\
+                     $(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoringInterface.o\
+                     $(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialOrdering.o\
+                     $(COLPACKDIR)/GeneralGraphColoring/.libs/GraphColoring.o\
+                     $(COLPACKDIR)/GeneralGraphColoring/.libs/GraphColoringInterface.o\
+                     $(COLPACKDIR)/GeneralGraphColoring/.libs/GraphCore.o\
+                     $(COLPACKDIR)/GeneralGraphColoring/.libs/GraphInputOutput.o\
+                     $(COLPACKDIR)/GeneralGraphColoring/.libs/GraphOrdering.o\
+                     $(COLPACKDIR)/Recovery/.libs/HessianRecovery.o\
+                     $(COLPACKDIR)/Recovery/.libs/JacobianRecovery1D.o\
+                     $(COLPACKDIR)/Recovery/.libs/JacobianRecovery2D.o\
+                     $(COLPACKDIR)/Recovery/.libs/RecoveryCore.o\
+                     $(COLPACKDIR)/Utilities/.libs/command_line_parameter_processor.o\
+                     $(COLPACKDIR)/Utilities/.libs/CoutLock.o\
+                     $(COLPACKDIR)/Utilities/.libs/current_time.o\
+                     $(COLPACKDIR)/Utilities/.libs/extra.o\
+                     $(COLPACKDIR)/Utilities/.libs/File.o\
+                     $(COLPACKDIR)/Utilities/.libs/MatrixDeallocation.o\
+                     $(COLPACKDIR)/Utilities/.libs/mmio.o\
+                     $(COLPACKDIR)/Utilities/.libs/Pause.o\
+                     $(COLPACKDIR)/Utilities/.libs/stat.o\
+                     $(COLPACKDIR)/Utilities/.libs/StringTokenizer.o\
+                     $(COLPACKDIR)/Utilities/.libs/Timer.o\
+                     $(COLPACKDIR)/Utilities/.libs/DisjointSets.o\
+                     $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
                      $(LIBADOLCOBJDIR)/src/drivers/.libs/driversf.o\
                      $(LIBADOLCOBJDIR)/src/drivers/.libs/odedrivers.o\
                      $(LIBADOLCOBJDIR)/src/drivers/.libs/drivers.o\
@@ -70,11 +103,12 @@ libadolcsrc_la_OBJ = $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
 
 SOURCES = adolc_r_wrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o) $(libadolcsrc_la_OBJ) 
-SUBDIRS = ADOLC
+SUBDIRS = ColPack ADOLC
 SUBLIBS = $(SUBDIRS:=.a)
 
 all: $(SHLIB)
 $(SHLIB): sublibs $(OBJECTS)
+$(OBJECTS) :sublibs
 
 sublibs: subclean sublibraries
 sublibraries: subclean
