@@ -1,22 +1,22 @@
 
 rm(list=ls())
 
-source('init_adolc.R')
+library('autodiffadolc')
 
 library('numDeriv')
 
 
 fr <- function(x) {   ## Rosenbrock Banana function
-    y <- 100 * (1 - x * x)* (1 - x * x) + (1 - x)*(1 - x)
-    y }
+  y <- 100 * (1 - x * x)* (1 - x * x) + (1 - x)*(1 - x)
+  y }
 
 grr <- function(x) { ## Gradient of 'fr'
-    g <-  0-400 * x * (1 - x * x) - 2 * (1 - x)
-    g }
+  g <-  0-400 * x * (1 - x * x) - 2 * (1 - x)
+  g }
 
 grrNumDeriv <- function(x) { ## Gradient of 'fr'
-    g = grad(func=fr,x=x)
-    g     }
+  g = grad(func=fr,x=x)
+  g     }
 
 #---- testing gradient
 grr(3)
@@ -31,9 +31,9 @@ badouble_declareDependent(y)
 trace_off()
 
 grrADOLC <- function(x) { ## Gradient of 'fr'
-    y <- c(0.0)
-    gradient(1,1,x,y);
-    y    }
+  y <- c(0.0)
+  gradient(1,1,x,y);
+  y    }
 
 #---- ADOLC gradient
 grrADOLC(3)
