@@ -1,83 +1,45 @@
 # Interface between R and ADOL-C 
-This repository contains the supporting files to use the automatic differentiation tool ADOL-C from R. 
+This repository contains the R package autodiffadolc which is an interface to the automatic differentiation tool ADOL-C from R.
 
-## Build Instructions
-**NOTE**: Any text in *italics* should be replaced by a directory location in your file system. 
+## Usage
+~~~~
+library('autodiffadolc')
 
-1. Clone this repository
-> git clone https://github.com/sriharikrishna/radolc.git 
+grr <- function(x) { ## Gradient of 'fr'
+         x1 <- x[1]
+         x2 <- x[2]
+         c(-400 * x1 * (x2 - x1 * x1) - 2 * (1 - x1), 200 * (x2 - x1 * x1))     }
 
-2. Install ColPack
->git clone https://github.com/CSCsw/ColPack.git
+#------------------------------------------------------------- testing ADOLC in the bi-variate case
 
->cd ColPack
+fr <- function(x) {   ## Rosenbrock Banana function
+    x1 <- x[[1]]
+    x2 <- x[[2]]
+    y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+    y }
 
->autoreconf -fi
+#---- Problems start here ....
 
->./configure --prefix=*COLPACK_INST_DIR* --exec-prefix=*COLPACK_INST_DIR* CC=/usr/bin/clang CXX=/usr/bin/clang++ --enable-examples
+trace_on(1)
+x <- c(adouble(1.0),adouble(2.0))
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
 
->make
+grrADOLC <- function(x) { ## Gradient of 'fr'
+         xx <- x
+	 yy <- c(0.0,0.0)
+	 gradient(1,2,xx,yy);
+   	 yy     }
 
->make install
+grrADOLC(x=c(1,2))
 
-3. Install ADOL-C
->git clone https://gitlab.com/adol-c/adol-c.git 
-
-> cd adol-c/
-
->git checkout swig
-
->autoreconf -fi
-
->./configure CC=/usr/bin/clang CXX=/usr/bin/clang++ --prefix=*ADOLC_INST_DIR* --with-colpack=*COLPACK_INST_DIR*
-
->make
-
->make install
-
-4. Install SWIG from the specific repository
->git clone git@gitlab.com:sriharikrishna/swig.git
-
-> cd swig
-
->./autogen.sh
-
->./configure --prefix=*SWIG_INST_DIR*
-
->make
-
->make install
-
->export PATH=*SWIG_INST_DIR*/bin/:$PATH
-
-5. Use Swig to create the interface
->cd adol-c/ADOL-C/swig
-
->python swigprocess.py --r
-
-## Usage 
-1. Ensure that ADOL-C libraries are available (on linux)
-
->export LD\_LIBRARY\_PATH=*ADOLC_INST_DIR*/lib64/:$LD\_LIBRARY\_PATH
-
-OR on OSX
-
->export DYLD\_LIBRARY\_PATH=*ADOLC_INST_DIR*/lib64/:$DYLD\_LIBRARY\_PATH
-
-2. Go into radolc and edit *init_adolc.R*
->cd radolc
-
->Change the line dyn.load(paste("*ADOLC_SOURCE_FOLDER*/ADOL-C/swig/R/adolc", .Platform$dynlib.ext, sep=""))
-
-3. Run an example
->R
-
->> source("rosenbrock\_univariate\_optim.r")
+res6 <- optim(c(1.2,1), fr, grrADOLC, method = "L-BFGS-B", control = list(type = 3, trace = 2))
+~~~~
 
 ## Known shortcomings
-1. Matrices are not handled. 
-
-2. External functions such as *solve* are not handled
+1. External functions such as *solve* are not handled
 
 ## How to cite
-K. Kulshreshtha, S.H.K. Narayanan, J. Bessac, and K. MacIntyre, Efficient computation of derivatives for solving optimization problems in R and Python using SWIG-generated interfaces to ADOL-C, *in submission Optimization Methods and Software*, [available as preprint](http://www.mcs.anl.gov/papers/P6096-0117.pdf).
+[K. Kulshreshtha, S. Narayanan, J. Bessac, and K. MacIntyre, Efficient computation of derivatives for solving optimization problems in R and Python using SWIG-generated interfaces to ADOL-C, Optimization Methods and Software 33 (2018), pp. 1173--1191.][https://doi.org/10.1080/10556788.2018.1425861]
