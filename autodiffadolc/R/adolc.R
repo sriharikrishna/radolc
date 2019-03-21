@@ -345,6 +345,29 @@ attr(`badouble_declareIndependent__SWIG_1`, 'returnType') = 'void'
 attr(`badouble_declareIndependent__SWIG_1`, "inputTypes") = c('_p_badouble')
 class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble_declareIndependent__SWIG_1'))
 
+#' Identify independent variables
+#'
+#' \code{badouble_declareIndependent} identifies the independent variables in the computation. 
+#' \code{badouble_declareIndependent} can take a single or multiple arguments. 
+#' It is used to identify those input variables that are independents in computation 
+#' being differentiated. Derivatives will be computed for identified output 
+#' variables (using \code{badouble_declareDependent}) with respect to the 
+#' identified input variables.
+#'
+#' @param variable(s)
+#'
+#' @return None
+#'
+#' @examples
+#' badouble_declareIndependent(x,z)
+#'
+#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'\keyword{autodiffadolc}
+#'
+#' @export
+
 `badouble_declareIndependent` <- function(...) {
     argtypes <- mapply(class, list(...));
     argv <- list(...);
@@ -388,6 +411,29 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
 attr(`badouble_declareDependent__SWIG_1`, 'returnType') = 'void'
 attr(`badouble_declareDependent__SWIG_1`, "inputTypes") = c('_p_badouble')
 class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_declareDependent__SWIG_1'))
+
+#' Identify dependent variables
+#'
+#' \code{badouble_declareDependent} identifies the dependent variables in the computation. 
+#' \code{badouble_declareDependent} can take a single or multiple arguments. 
+#' It is used to identify those output variables that are dependents in computation 
+#' being differentiated. Derivatives will be computed for identified output 
+#' variables with respect to the identified input variables 
+#' (using \code{badouble_declareIndependent}).
+#'
+#' @param variable(s)
+#'
+#' @return None
+#'
+#' @examples
+#' badouble_declareDependent(x,z)
+#'
+#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}}}
+#'         
+#'\keyword{autodiffadolc}
+#'
+#' @export
 
 `badouble_declareDependent` <- function(...) {
     argtypes <- mapply(class, list(...));
@@ -6222,6 +6268,32 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
 
 # Start of gradient
 
+#' Compute the gradient of the dependent with respect to the independent variable(s)
+#' 
+#'
+#' \code{gradient} computes the derivaties for dependent varible with respect to
+#' n independents for the computation that has been traced.
+#'
+#' @param tag integer for tape identification (used in trace_on())
+#' @param n  integer number of independents n and m = 1
+#' @param x  independent vector of length n
+#' @param  g  resulting gradient (\gradF(x)) of length n 
+#' 
+#' @return None. the output is the the parameter g
+#'
+#' @examples
+#' x=c(1,2)
+#' g <- c(0.0,0.0)
+#' gradient(1,2,x,g)
+#'
+#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'\keyword{autodiffadolc}
+#'
+#' @export
+
 `gradient` = function(s_arg1, s_arg2, s_arg3, s_arg4, .copy = FALSE)
 {
   s_arg1 = as.integer(s_arg1);
@@ -6247,6 +6319,33 @@ attr(`gradient`, "inputTypes") = c('integer', 'integer', 'numeric', 'numeric')
 class(`gradient`) = c("SWIGFunction", class('gradient'))
 
 # Start of jacobian
+
+#' Compute the derivatives of the dependent variables with respect to the independent variables
+#' 
+#'
+#' \code{jacobian} computes the Jacobian matrix values for m dependents with respect to
+#' n independents for the computation that has been traced. If m>n then the forward mode of automatic differentiation is used. 
+#' Otherwise, the reverse emode of automatic differentiation is used. 
+#'
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param m  integer, number of dependent variables
+#' @param n  integer number of independents
+#' @param x  independent vector of length n
+#' @param J[m][n] resulting Jacobian (m*n) F(x) 
+#
+#' 
+#' @return None. the output is the the parameter J
+#'
+#' @examples
+#' jacobian(tag,m,n,x,J)
+#'
+#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'\keyword{autodiffadolc}
+#'
+#' @export
 
 `jacobian` = function(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, .copy = FALSE)
 {
@@ -7957,6 +8056,28 @@ attr(`trace_on__SWIG_3`, 'returnType') = 'integer'
 attr(`trace_on__SWIG_3`, "inputTypes") = c('integer', 'integer', 'integer', 'integer', 'integer', 'integer')
 class(`trace_on__SWIG_3`) = c("SWIGFunction", class('trace_on__SWIG_3'))
 
+#' Start of the ADOL-C taping process
+#'
+#' \code{trace_on} starts the \code{autodiffadolc} tracing process. Using 
+#' \code{autodiffadolc} consists of two phases (1) Tracing (also called taping), 
+#' generally performed once and (2) Computation of derivatives, which can be performed. 
+#' \code{trace_on} is the initialization for the taping process. Creates buffers 
+#' for this tape, sets files names, and calls appropriate setup routines.
+#'
+#' @param tag integer to identify the trace that is created
+#'
+#' @return None
+#'
+#' @examples
+#' trace_on(1)
+#'
+#'\seealso{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'\keyword{autodiffadolc}
+#'
+#' @export
+
 `trace_on` <- function(...) {
   argtypes <- mapply(class, list(...));
   argv <- list(...);
@@ -8013,6 +8134,26 @@ class(`trace_off__SWIG_0`) = c("SWIGFunction", class('trace_off__SWIG_0'))
 
 attr(`trace_off__SWIG_1`, 'returnType') = 'void'
 class(`trace_off__SWIG_1`) = c("SWIGFunction", class('trace_off__SWIG_1'))
+
+#' Stop Tracing
+#'
+#' \code{trace_off} ends the \code{autodiffadolc} tracing process. Using 
+#' Using \code{autodiffadolc} consists of two phases (1) Tracing 
+#' (also called taping), generally performed once and (2) Computation of 
+#' derivatives, which can be performed. \code{trace_off} marks where 
+#' the taping ends.  Cleans up, and turns off trace_flag.
+#'
+#' @return None
+#'
+#' @examples
+#' trace_off()
+#'
+#'\seealso{\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
+#'         \code{\link{badouble_declareDependent}}}
+#'
+#'\keyword{autodiffadolc}
+#'
+#'  @export
 
 `trace_off` <- function(...) {
   argtypes <- mapply(class, list(...));
