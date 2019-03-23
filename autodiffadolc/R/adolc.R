@@ -361,10 +361,10 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
 #' @examples
 #' badouble_declareIndependent(x,z)
 #'
-#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'@seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #' @export
 
@@ -428,10 +428,10 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
 #' @examples
 #' badouble_declareDependent(x,z)
 #'
-#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'@seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareIndependent}}}
 #'         
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #' @export
 
@@ -6286,11 +6286,11 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
 #' g <- c(0.0,0.0)
 #' gradient(1,2,x,g)
 #'
-#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'@seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #' @export
 
@@ -6339,11 +6339,11 @@ class(`gradient`) = c("SWIGFunction", class('gradient'))
 #' @examples
 #' jacobian(tag,m,n,x,J)
 #'
-#'\seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #' @export
 
@@ -6356,13 +6356,13 @@ class(`gradient`) = c("SWIGFunction", class('gradient'))
   };
   
   s_arg2 = as.integer(s_arg2);
-  
+
   if(length(s_arg2) > 1) {
     warning("using only the first element of s_arg2");
   };
   
   s_arg3 = as.integer(s_arg3);
-  
+
   if(length(s_arg3) > 1) {
     warning("using only the first element of s_arg3");
   };
@@ -8071,10 +8071,10 @@ class(`trace_on__SWIG_3`) = c("SWIGFunction", class('trace_on__SWIG_3'))
 #' @examples
 #' trace_on(1)
 #'
-#'\seealso{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
+#'@seealso{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #' @export
 
@@ -8148,10 +8148,10 @@ class(`trace_off__SWIG_1`) = c("SWIGFunction", class('trace_off__SWIG_1'))
 #' @examples
 #' trace_off()
 #'
-#'\seealso{\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
+#'@seealso{\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'
-#'\keyword{autodiffadolc}
+#'@keywords{autodiffadolc}
 #'
 #'  @export
 
