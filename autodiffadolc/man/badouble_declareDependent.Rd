@@ -23,9 +23,9 @@ variables with respect to the identified input variables
 \examples{
 badouble_declareDependent(x,z)
 
-\\seealso{\\code{\\link{trace_on}}, \\code{\\link{trace_off}}, 
-        \\code{\\link{badouble_declareIndependent}}}
-        
-\\keyword{autodiffadolc}
-
 }
+\seealso{
+{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+        \code{\link{badouble_declareIndependent}}}
+}
+\keyword{{autodiffadolc}}
