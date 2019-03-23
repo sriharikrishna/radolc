@@ -41,28 +41,38 @@ form a five step procedure:
 
 ```{r eval=FALSE, include=TRUE}
 library(autodiffadolc)
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE)
 ```
 
 2. Define the region that has to be differentiated. That is, mark the active section with the two function calls:
 
 ```{r eval=FALSE, include=TRUE}
 library(autodiffadolc)
+
 trace_on(1)   #Start of active section
 #....            
 trace_off(1)  #and its end
-                
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE)               
 ```
 
 3. Identify all independent variables and dependent variables and mark them in the active section:
 
 ```{r eval=FALSE, include=TRUE}
 library(autodiffadolc)
+
 trace_on(1)
 x <- c(adouble(1.0),adouble(2.0))
 badouble_declareIndependent(x)
 #... calculations.
 badouble_declareDependent(y)
 trace_off(1);
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
 4. Place all calculation or a call to the calculation between the declarations
@@ -82,6 +92,9 @@ badouble_declareIndependent(x)
 y <- fr(x)
 badouble_declareDependent(y)
 trace_off(1)
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
 ## Computing the derivaives
@@ -118,6 +131,9 @@ trace_off()
 x=c(1,2)
 g <- c(0.0,0.0)
 gradient(1,2,x,g)
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
 ### Jacobian
