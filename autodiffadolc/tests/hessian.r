@@ -1,0 +1,26 @@
+
+rm(list=ls())
+
+library('autodiffadolc')
+
+#--- testing ADOLC's hessian
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+yy <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
+hessian(1,2,xx,yy);
+print(yy)     
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
