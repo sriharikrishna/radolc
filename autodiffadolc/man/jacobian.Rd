@@ -18,7 +18,7 @@ jacobian(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, .copy = FALSE)
 \item{J[m][n]}{resulting Jacobian (m*n) F(x)}
 }
 \value{
-None. the output is the the parameter g
+None. the output is the the parameter J
 }
 \description{
 \code{jacobian} computes the Jacobian matrix values for m dependents with respect to
