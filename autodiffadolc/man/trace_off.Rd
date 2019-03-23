@@ -19,10 +19,10 @@ the taping ends.  Cleans up, and turns off trace_flag.
 \examples{
 trace_off()
 
-\\seealso{\\code{\\link{trace_on}}, \\code{\\link{badouble_declareIndependent}}, 
-        \\code{\\link{badouble_declareDependent}}}
-
-\\keyword{autodiffadolc}
-
- @export
 }
+\seealso{
+{\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
+        \code{\link{badouble_declareDependent}}}
+}
+\keyword{@export}
+\keyword{{autodiffadolc}}

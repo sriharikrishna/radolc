@@ -27,10 +27,10 @@ x=c(1,2)
 g <- c(0.0,0.0)
 gradient(1,2,x,g)
 
-\\seealso{\\code{\\link{trace_on}}, \\code{\\link{trace_off}}, 
-        \\code{\\link{badouble_declareIndependent}},
-        \\code{\\link{badouble_declareDependent}}}
-        
-\\keyword{autodiffadolc}
-
 }
+\seealso{
+{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+        \code{\link{badouble_declareIndependent}},
+        \code{\link{badouble_declareDependent}}}
+}
+\keyword{{autodiffadolc}}

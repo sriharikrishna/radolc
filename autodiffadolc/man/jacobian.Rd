@@ -28,10 +28,10 @@ Otherwise, the reverse emode of automatic differentiation is used.
 \examples{
 jacobian(tag,m,n,x,J)
 
-\\seealso{\\code{\\link{trace_on}}, \\code{\\link{trace_off}}, 
-        \\code{\\link{badouble_declareIndependent}},
-        \\code{\\link{badouble_declareDependent}}}
-        
-\\keyword{autodiffadolc}
-
 }
+\seealso{
+{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+        \code{\link{badouble_declareIndependent}},
+        \code{\link{badouble_declareDependent}}}
+}
+\keyword{{autodiffadolc}}

@@ -22,9 +22,9 @@ for this tape, sets files names, and calls appropriate setup routines.
 \examples{
 trace_on(1)
 
-\\seealso{\\code{\\link{trace_off}}, \\code{\\link{badouble_declareIndependent}}, 
-        \\code{\\link{badouble_declareDependent}}}
-        
-\\keyword{autodiffadolc}
-
 }
+\seealso{
+{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
+        \code{\link{badouble_declareDependent}}}
+}
+\keyword{{autodiffadolc}}
