@@ -1,8 +1,22 @@
-# Name: adolc_createList creates a list of adoubles of
-# length count. Each element is initialized to a provided value
-# Arguments:
-#    count : positive numeric value
-#    val   : value to be initialize elements of the list
+#' Constructor to create a list of adoubles
+#'
+#' \code{adolc_createList} creates a list of adoubles of
+#' length count. Each element is initialized to a provided value.
+#'
+#' @param count number of elements of the list
+#' @param val   value to be initialize elements of the list
+#'
+#' @return None
+#'
+#' @examples
+#' x <- adolc_createList(2,0.0)
+#'
+#'@seealso{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
 adolc_createList <- function(count, val){
     if(!is.numeric(count)){
         stop("adolc_createList(): count must be numeric.")
