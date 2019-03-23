@@ -50,3 +50,6 @@ print(res0)
 print(res1)
 
 print(res2)
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
