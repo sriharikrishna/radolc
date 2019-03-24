@@ -215,17 +215,166 @@ detach(package:autodiffadolc, unload=TRUE)
 
 ### Jacobian Vector Product
 ```{r eval=FALSE, include=TRUE}
-jac_vec(tag,m,n,x,v,z) #result z = F′(x)v
+rm(list=ls())
+
+library('autodiffadolc')
+
+#--- testing ADOLC's Jacobian vector product
+
+fr <- function(x) {
+  x1 <- x[[1]]
+  x2 <- x[[2]]
+  #Use create list to create adouble objects
+  y<-adolc_createList(2,2.0)
+  #y <- c(0.0,0.0)
+  y[[1]] <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y[[2]] <- 100 * (x2 - x1 * x1)+ (x2 - x1 * x1) * (1 - x1)*(1 - x1)
+  y[[3]] <- 100 * (x2 + x1 * x1)+ (x2 + x1 * x1) * (1 + x1)*(1 - x1)
+  y}
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+vv <- c(3.0,5.5)
+yy <- c(0.0,0.0,0)
+jac_vec(1,3,2,xx,vv,yy);
+# jac_vec(tag,m,n,x,v,z) #result z = F′(x)v
+# tag: integer, tape identification
+# m  : integer, number of dependents m
+# n  : integer, number of independents n
+# x[n]: independent vector x
+# v[n]: vector
+# z[m]: resulting Jacobian vector product
+
+print(yy)     
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
-### Vector Tanspose Jacobian Product
+### Vector Transpose Jacobian Product
 ```{r eval=FALSE, include=TRUE}
-vec_jac(tag,m,n,repeat,x,u,z) #result z = u^TF′(x)
+rm(list=ls())
+
+library('autodiffadolc')
+
+#--- testing ADOLC's jacobian
+
+fr <- function(x) {
+  x1 <- x[[1]]
+  x2 <- x[[2]]
+  #Use create list to create adouble objects
+  y<-adolc_createList(2,2.0)
+  #y <- c(0.0,0.0)
+  y[[1]] <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y[[2]] <- 100 * (x2 - x1 * x1)+ (x2 - x1 * x1) * (1 - x1)*(1 - x1)
+  y[[3]] <- 100 * (x2 + x1 * x1)+ (x2 + x1 * x1) * (1 + x1)*(1 - x1)
+  y}
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+vv <- c(3.0,5.5,1,1)
+yy <- c(0.0,0.0)
+vec_jac(1,3,2,0,xx,vv,yy);
+# vec_jac(tag,m,n,repeat,x,u,z) #result z = u^TF′(x)
+# tag: integer, tape identification
+# m  : integer, number of dependents m
+# n  : integer, number of independents n
+#repeat: ID of tape to reuse. Leave at 0 for no repetition
+# x[n]: independent vector x
+# u[m]: vector
+# z[n]: resulting Jacobian vector product
+
+print(yy)     
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
 ### Hessian Vector Product
 ```{r eval=FALSE, include=TRUE}
-hess_vec(tag,n,x,v,z) # result z = \nambla^2F(x)v
+rm(list=ls())
+
+library('autodiffadolc')
+
+#--- testing ADOLC's hessian vector product
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+vv <- c(3.0,5.5)
+yy <- c(0.0,0.0)
+hess_vec(1,2,xx,vv,yy) # result z = \nambla^2F(x)v
+#hess_vec(tag,n,x,v,z)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# v[n]: vector
+# z[n]: resulting Hessian vector product
+
+print(yy)     
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
+```
+
+### Hessian Matrix Product
+```{r eval=FALSE, include=TRUE}
+rm(list=ls())
+
+library('autodiffadolc')
+
+#--- testing ADOLC's Hessian matrix product
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+V <- matrix(c(2.2, 1.4, 3.4, 7.4), nrow = 2, ncol = 2)
+W <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
+hess_mat(1,2,2,xx,V,W) 
+# hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nambla^2F(x)v
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# q  : dimension of matrix (n*q)
+# x[n]: independent vector x
+# V[n][q]: matrix
+# W[n][q]: resulting Hessian matrix product
+
+print(W)     
+
+#Always detach the package
+detach(package:autodiffadolc, unload=TRUE) 
 ```
 
 
