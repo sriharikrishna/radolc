@@ -6418,6 +6418,31 @@ class(`large_jacobian`) = c("SWIGFunction", class('large_jacobian'))
 
 # Start of vec_jac
 
+#' Compute the vector transpose Jacobian vector product
+#' 
+#' \code{vec_jac} computes the product of a transposed vector of suitable size and the Jacobian matrix
+#' 
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param m integer, number of dependents m
+#' @param n integer, number of independents n
+#' @param x independent vector x of length n
+#' @param v vector of length m
+#' @param z resulting Jacobian vector product of length n
+#' 
+#' @return None. the output is the the parameter z
+#'
+#' @examples
+#' vec_jac(tag,m,n,repeat,x,u,z)
+#'
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
+#'
+
 `vec_jac` = function(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, .copy = FALSE)
 {
   s_arg1 = as.integer(s_arg1);
@@ -6457,6 +6482,31 @@ class(`vec_jac`) = c("SWIGFunction", class('vec_jac'))
 
 # Start of jac_vec
 
+#' Compute the Jacobian vector product
+#' 
+#' \code{jac_vec} computes the product of Jacobian matrix with a vector of suitable size
+#' 
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param m integer, number of dependents m
+#' @param n integer, number of independents n
+#' @param x independent vector x of length n
+#' @param v vector of length n
+#' @param z resulting Jacobian vector product of length n
+#' 
+#' @return None. the output is the the parameter z
+#'
+#' @examples
+#' jac_vec(tag,m,n,x,v,z)
+#'
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
+#'
+
 `jac_vec` = function(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, .copy = FALSE)
 {
   s_arg1 = as.integer(s_arg1);
@@ -6489,6 +6539,31 @@ attr(`jac_vec`, "inputTypes") = c('integer', 'integer', 'integer', 'numeric', 'n
 class(`jac_vec`) = c("SWIGFunction", class('jac_vec'))
 
 # Start of hessian
+
+#' Compute the second derivatives of the dependent variables with respect to the independent variable
+#' 
+#'
+#' \code{hessian} computes the Hessain matrix values for m dependents with respect to
+#' n independents for the computation that has been traced. 
+#'
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param n  integer number of independents and m = 1
+#' @param x  independent vector of length n
+#' @param H resulting Hessian matrix (n*n) \nabla^2F(x)
+#' 
+#' @return None. the output is the the parameter H
+#'
+#' @examples
+#' hessian(tag,n,x,H)
+#'
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
+#' 
 
 `hessian` = function(s_arg1, s_arg2, s_arg3, s_arg4, .copy = FALSE)
 {
@@ -6542,6 +6617,30 @@ class(`hessian2`) = c("SWIGFunction", class('hessian2'))
 
 # Start of hess_vec
 
+#' Compute the Hessian vector product
+#' 
+#' \code{hess_vec} computes the product of Hessain matrix with a vector of suitable size
+#' 
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param n  integer number of independents and m = 1
+#' @param x  independent vector of length n
+#' @param v  vector of length n
+#' @param z resulting vector of lenth n \nabla^2F(x)
+#' 
+#' @return None. the output is the the parameter z
+#'
+#' @examples
+#' hess_vec(tag,n,x,v,z)
+#'
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
+#'
+
 `hess_vec` = function(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, .copy = FALSE)
 {
   s_arg1 = as.integer(s_arg1);
@@ -6569,6 +6668,37 @@ class(`hess_vec`) = c("SWIGFunction", class('hess_vec'))
 
 # Start of hess_mat
 
+#' Compute the Hessian matrix product
+#' 
+#' \code{hess_vec} computes the product of Hessain matrix with a matrix of suitable dimension
+#' 
+#' @param tag integer for tape identification (used in \link{trace_on})
+#' @param n  integer number of independents and m = 1
+#' @param x  independent vector of length n
+#' @param v  vector of length n
+#' @param z resulting vector of lenth n \nabla^2F(x)
+#' 
+#' # hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nambla^2F(x)v
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# q  : dimension of matrix (n*q)
+# x[n]: independent vector x
+# V[n][q]: matrix
+# W[n][q]: resulting Hessian matrix product
+
+#' @return None. the output is the the parameter z
+#'
+#' @examples
+#' hess_mat(tag, n, q, x, V, W)
+#'
+#' @seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
+#'         \code{\link{badouble_declareIndependent}},
+#'         \code{\link{badouble_declareDependent}}}
+#'         
+#'@keywords{autodiffadolc}
+#'
+#' @export
+#'
 `hess_mat` = function(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, .copy = FALSE)
 {
   s_arg1 = as.integer(s_arg1);
