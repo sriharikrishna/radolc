@@ -9,6 +9,10 @@ export("trace_on",
        "gradient",
        "jacobian",
        "hessian",
+       "jac_vec",
+       "vec_jac",
+       "hess_vec",
+       "hess_mat",
        "adolc_createList",
        "*","+","-","/","^")
 
