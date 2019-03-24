@@ -20,6 +20,11 @@ trace_off()
 xx <- c(1.0,2.0)
 yy <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
 hessian(1,2,xx,yy);
+#hessian(tag,n,x,H)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# double H[n][n]: resulting Hessian matrix \nabla^2F(x)
 print(yy)     
 
 #Always detach the package

@@ -25,6 +25,12 @@ trace_off()
 xx <- c(1.0,2.0)
 yy <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
 jacobian(1,2,2,xx,yy);
+#jacobian(tag,m,n,x,J)
+# tag: integer, tape identification
+# m  : integer, number of dependent variables
+# n  : integer, number of independent variables n
+# x[n]: independent vector x
+#J[m][n]; // resulting Jacobian F(x)
 print(yy)     
 
 #Always detach the package
