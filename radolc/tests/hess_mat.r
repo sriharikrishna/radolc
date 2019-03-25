@@ -1,6 +1,6 @@
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's Hessian matrix product
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -31,4 +31,4 @@ hess_mat(1,2,2,xx,V,W)
 print(W)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

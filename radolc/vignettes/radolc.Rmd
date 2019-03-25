@@ -1,68 +1,64 @@
 ---
-title: "Getting started with autodiffadolc"
+title: "Getting started with radolc"
 output: html_document
 bibliography: ad.bib
 vignette: >
   bibliography: ad.bib
-  %\VignetteIndexEntry{Introduction to autodiffadolc}
+  %\VignetteIndexEntry{Introduction to radolc}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
-# Introduction to autodiffadolc
+# Introduction
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 options(tibble.print_min = 4L, tibble.print_max = 4L)
-library(autodiffadolc)
+library(radolc)
 set.seed(1014)
 ```
 
 Derivatives are required in many contexts:
-
 * Optimization,
-
 * Sensitivity analysis,
-
 * Uncertainty quantification, and 
-
 * Parameter Estimation.
 
-The autodiffadolc package is an interface to ADOL-C -- a C++ library that facilitates the evaluation of first and higher derivatives of vector functions that are defined by computer programs. ADOL-C supports the simultaneous evaluation of arbitrarily high directional derivatives and the gradients of these Taylor coefficients with respect to all independent variables.
+The radolc package is an interface to ADOL-C -- a C++ library that facilitates the evaluation of 
+first and higher derivatives of vector functions that are defined by computer programs. ADOL-C can computes
+gradient, the Jacobian matrix, the Hessian matrix, Jacobian × vector products, and Hessian × vector
+products.
 
-* It computes gradients, Jacobians, Hessians, Jacobian × vector products, Hessian × vector products.
+This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demostrates how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
 
-This document serves as a brief introduction to autodiffadolc's interface calls to ADOL-C and how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
+# Preparing a Code Segment for Differentiation
 
-## Preparing a Code Segment for Differentiation
+One must follow a four step process to prepare the code for differentiation with radolc. The steps are outlined below. 
 
-The modifications required for the algorithmic differentiation with autodiffadolc
-form a five step procedure:
-
-1. Use the library `autodiffadolc`
+1. Use the library `radolc`.
 
 ```{r eval=FALSE, include=TRUE}
-library(autodiffadolc)
+library(radolc)
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE)
+detach(package:radolc, unload=TRUE)
 ```
 
-2. Define the region that has to be differentiated. That is, mark the active section with the two function calls:
+2. Define the region that has to be differentiated. That is, mark the active section with the two function calls `trace_on` and `trace_off`.
 
 ```{r eval=FALSE, include=TRUE}
-library(autodiffadolc)
+library(radolc)
 
 trace_on(1)   #Start of active section
 #....            
 trace_off(1)  #and its end
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE)               
+detach(package:radolc, unload=TRUE)               
 ```
 
-3. Identify all independent variables and dependent variables and mark them in the active section:
+3. Identify all the independent variables and the dependent variables and mark them in the active section.
 
 ```{r eval=FALSE, include=TRUE}
-library(autodiffadolc)
+library(radolc)
 
 trace_on(1)
 x <- c(adouble(1.0),adouble(2.0))
@@ -72,13 +68,13 @@ badouble_declareDependent(y)
 trace_off(1);
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
-4. Place all calculation or a call to the calculation between the declarations
+4. Place all calculation or a call to the calculation between the declarations.
 
 ```{r eval=FALSE, include=TRUE}
-library(autodiffadolc)
+library(radolc)
 
 fr <- function(x) {   ## Rosenbrock Banana function
     x1 <- x[[1]]
@@ -94,19 +90,22 @@ badouble_declareDependent(y)
 trace_off(1)
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
-## Computing the derivaives
+# Computing the derivatives
 
-Calculate derivative objects after `trace_off(tag)` using drivers
+Derivatives can be computed using 
+The driver routine that should be used depends on the computation andthat can be calculated depend on the 
+The derivatives that can be computed depend on the function
+Calculate derivative objects after `trace_off(tag)` using
 
 For the calculation of whole derivative vectors and matrices up to order 2
 there are the following procedures:
 
-### Gradient
+## Gradient
 ```{r eval=FALSE, include=TRUE}
-library(autodiffadolc)
+library(radolc)
 
 fr <- function(x) {   ## Rosenbrock Banana function
     x1 <- x[[1]]
@@ -133,7 +132,7 @@ g <- c(0.0,0.0)
 gradient(1,2,x,g)
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 ### Jacobian
@@ -141,7 +140,7 @@ detach(package:autodiffadolc, unload=TRUE)
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's jacobian
 
@@ -174,7 +173,7 @@ jacobian(1,2,2,xx,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 ### Hessian
@@ -182,7 +181,7 @@ detach(package:autodiffadolc, unload=TRUE)
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's hessian
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -209,7 +208,7 @@ hessian(1,2,xx,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 
 ```
 
@@ -217,7 +216,7 @@ detach(package:autodiffadolc, unload=TRUE)
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's Jacobian vector product
 
@@ -254,14 +253,14 @@ jac_vec(1,3,2,xx,vv,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 ### Vector Transpose Jacobian Product
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's jacobian
 
@@ -299,14 +298,14 @@ vec_jac(1,3,2,0,xx,vv,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 ### Hessian Vector Product
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's hessian vector product
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -336,14 +335,14 @@ hess_vec(1,2,xx,vv,yy) # result z = \nambla^2F(x)v
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 ### Hessian Matrix Product
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's Hessian matrix product
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -374,37 +373,39 @@ hess_mat(1,2,2,xx,V,W)
 print(W)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 ```
 
 
-## Comparisons to alternatives
+# Comparisons to alternatives
 
 Compared to finite differences:
 
-* autodiffadolc requires tracing.
+* radolc requires tracing.
 
-* autodiffadolc does not suffer from rounding and truncation errors. 
+* radolc does not suffer from rounding and truncation errors. 
 
-* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+* radolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
 
-* autodiffadolc can exploit sparsity in the Jacobian and Hessain. 
+* radolc can exploit sparsity in the Jacobian and Hessain. 
 
 Compared to `NumDeriv`:
-* autodiffadolc requires tracing.
+* radolc requires tracing.
 
-* autodiffadolc does not suffer from rounding and truncation errors. 
+* radolc does not suffer from rounding and truncation errors. 
 
-* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+* radolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
 
-* autodiffadolc can exploit sparsity in the Jacobian and Hessain.
+* radolc can exploit sparsity in the Jacobian and Hessain.
 
 Compared to `madness`:
-* autodiffadolc requires tracing.
+* radolc requires tracing.
 
-* autodiffadolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
+* radolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
 
 * `madness` does not allow operations between variables of differing dimensions, i.e. scalar-vector multiplication, which is critical in a lot of modelling situations.
+
+# Acknowlegement
 
 # References
 1. [A. Griewank and A. Walther, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation, 2nd ed., Society for Industrial and Applied Mathematics, Philadelphia, PA, USA, 2008.][https://doi.org/10.1137/1.9780898717761]

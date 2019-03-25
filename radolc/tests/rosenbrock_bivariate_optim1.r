@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC in the bi-variate case
 
@@ -52,4 +52,4 @@ print(res1)
 print(res2)
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

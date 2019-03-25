@@ -1,6 +1,6 @@
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's hessian vector product
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -30,4 +30,4 @@ hess_vec(1,2,xx,vv,yy) # result z = \nambla^2F(x)v
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

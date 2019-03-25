@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's jacobian
 
@@ -39,4 +39,4 @@ vec_jac(1,3,2,0,xx,vv,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

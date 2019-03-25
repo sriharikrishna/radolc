@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 fr <- function(x) {   ## Rosenbrock Banana function
   y <- 100 * (1 - x * x)* (1 - x * x) + (1 - x)*(1 - x)
@@ -36,7 +36,7 @@ res1 <- optim(c(-1), fr, grr, method = "L-BFGS-B", control = list(type = 3, trac
 res2 <- optim(c(-1), fr, grrADOLC, method = "L-BFGS-B", control = list(type = 3, trace = 2))
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 
 
 
 library('numDeriv')

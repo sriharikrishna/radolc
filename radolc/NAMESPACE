@@ -1,4 +1,4 @@
-useDynLib(autodiffadolc, .registration=TRUE)
+useDynLib(radolc, .registration=TRUE)
 
 exportPattern("^[[:alpha:]]+")
 
