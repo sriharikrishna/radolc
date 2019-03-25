@@ -16,3 +16,7 @@ autom4te.cache/
 aclocal.m4
 .Rhistory
 .Rproj.user
+*.tap
+.RData
+.DS_Store
+radolc/.Rbuildignore
