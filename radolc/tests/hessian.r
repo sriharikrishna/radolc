@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC's hessian
 fr <- function(x) {   ## Rosenbrock Banana function
@@ -28,4 +28,4 @@ hessian(1,2,xx,yy);
 print(yy)     
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

@@ -238,7 +238,7 @@ function(x) {print(as(x, "character"))}))
 
 `condassign__SWIG_0` = function(res, cond, s_arg1, s_arg2)
 {
-  ;.Call('R_swig_condassign__SWIG_0', res, cond, s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_0', res, cond, s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -250,7 +250,7 @@ class(`condassign__SWIG_0`) = c("SWIGFunction", class('condassign__SWIG_0'))
 
 `condassign__SWIG_1` = function(res, cond, s_arg)
 {
-  ;.Call('R_swig_condassign__SWIG_1', res, cond, s_arg, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_1', res, cond, s_arg, PACKAGE='radolc');
   
 }
 
@@ -262,7 +262,7 @@ class(`condassign__SWIG_1`) = c("SWIGFunction", class('condassign__SWIG_1'))
 
 `condeqassign__SWIG_0` = function(res, cond, s_arg1, s_arg2)
 {
-  ;.Call('R_swig_condeqassign__SWIG_0', res, cond, s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_0', res, cond, s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -274,7 +274,7 @@ class(`condeqassign__SWIG_0`) = c("SWIGFunction", class('condeqassign__SWIG_0'))
 
 `condeqassign__SWIG_1` = function(res, cond, s_arg)
 {
-  ;.Call('R_swig_condeqassign__SWIG_1', res, cond, s_arg, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_1', res, cond, s_arg, PACKAGE='radolc');
   
 }
 
@@ -287,7 +287,7 @@ class(`condeqassign__SWIG_1`) = c("SWIGFunction", class('condeqassign__SWIG_1'))
 `badouble_loc` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_badouble_loc', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_loc', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_uint32_t", ref=ans);
   
   ans
@@ -304,7 +304,7 @@ class(`badouble_loc`) = c("SWIGFunction", class('badouble_loc'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_declareDependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_declareDependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -321,7 +321,7 @@ class(`badouble_declareDependent__SWIG_0`) = c("SWIGFunction", class('badouble_d
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_declareIndependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_declareIndependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -337,7 +337,7 @@ class(`badouble_declareIndependent__SWIG_0`) = c("SWIGFunction", class('badouble
 `badouble_declareIndependent__SWIG_1` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_badouble_declareIndependent__SWIG_1', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_badouble_declareIndependent__SWIG_1', self, PACKAGE='radolc');
   
 }
 
@@ -364,7 +364,7 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
 #'@seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 
@@ -404,7 +404,7 @@ class(`badouble_declareIndependent__SWIG_1`) = c("SWIGFunction", class('badouble
 `badouble_declareDependent__SWIG_1` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_badouble_declareDependent__SWIG_1', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_badouble_declareDependent__SWIG_1', self, PACKAGE='radolc');
   
 }
 
@@ -431,7 +431,7 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
 #'@seealso{\code{\link{trace_on}}, \code{\link{trace_off}}, 
 #'         \code{\link{badouble_declareIndependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 
@@ -473,7 +473,7 @@ class(`badouble_declareDependent__SWIG_1`) = c("SWIGFunction", class('badouble_d
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -490,7 +490,7 @@ class(`badouble___seteq____SWIG_0`) = c("SWIGFunction", class('badouble___seteq_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -507,7 +507,7 @@ class(`badouble___seteq____SWIG_1`) = c("SWIGFunction", class('badouble___seteq_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -523,7 +523,7 @@ class(`badouble___seteq____SWIG_2`) = c("SWIGFunction", class('badouble___seteq_
 `badouble_getValue` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_badouble_getValue', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_badouble_getValue', self, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -536,7 +536,7 @@ class(`badouble_getValue`) = c("SWIGFunction", class('badouble_getValue'))
 `badouble_value` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_badouble_value', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_badouble_value', self, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -550,7 +550,7 @@ class(`badouble_value`) = c("SWIGFunction", class('badouble_value'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;.Call('R_swig_badouble_setValue', self, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_badouble_setValue', self, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -564,7 +564,7 @@ class(`badouble_setValue`) = c("SWIGFunction", class('badouble_setValue'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -581,7 +581,7 @@ class(`badouble_PlusEqual__SWIG_0`) = c("SWIGFunction", class('badouble_PlusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -598,7 +598,7 @@ class(`badouble_PlusEqual__SWIG_1`) = c("SWIGFunction", class('badouble_PlusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_0', self, y, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_0', self, y, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -615,7 +615,7 @@ class(`badouble_MinusEqual__SWIG_0`) = c("SWIGFunction", class('badouble_MinusEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -632,7 +632,7 @@ class(`badouble_MinusEqual__SWIG_1`) = c("SWIGFunction", class('badouble_MinusEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -649,7 +649,7 @@ class(`badouble_MultiplyEqual__SWIG_0`) = c("SWIGFunction", class('badouble_Mult
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -666,7 +666,7 @@ class(`badouble_MultiplyEqual__SWIG_1`) = c("SWIGFunction", class('badouble_Mult
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -683,7 +683,7 @@ class(`badouble_DivideEqual__SWIG_0`) = c("SWIGFunction", class('badouble_Divide
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -700,7 +700,7 @@ class(`badouble_DivideEqual__SWIG_1`) = c("SWIGFunction", class('badouble_Divide
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -717,7 +717,7 @@ class(`badouble_PlusEqual__SWIG_2`) = c("SWIGFunction", class('badouble_PlusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -734,7 +734,7 @@ class(`badouble_MinusEqual__SWIG_2`) = c("SWIGFunction", class('badouble_MinusEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -776,7 +776,7 @@ class(`badouble___seteq____SWIG_3`) = c("SWIGFunction", class('badouble___seteq_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_PlusEqual__SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -818,7 +818,7 @@ class(`badouble_PlusEqual__SWIG_3`) = c("SWIGFunction", class('badouble_PlusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MinusEqual__SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -860,7 +860,7 @@ class(`badouble_MinusEqual__SWIG_3`) = c("SWIGFunction", class('badouble_MinusEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_MultiplyEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -899,7 +899,7 @@ class(`badouble_MultiplyEqual__SWIG_2`) = c("SWIGFunction", class('badouble_Mult
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_badouble_DivideEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -938,7 +938,7 @@ class(`badouble_DivideEqual__SWIG_2`) = c("SWIGFunction", class('badouble_Divide
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_NotEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_NotEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -952,7 +952,7 @@ class(`NotEqual__SWIG_0`) = c("SWIGFunction", class('NotEqual__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_EqualEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_EqualEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -966,7 +966,7 @@ class(`EqualEqual__SWIG_0`) = c("SWIGFunction", class('EqualEqual__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThanEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThanEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -980,7 +980,7 @@ class(`LessThanEqual__SWIG_0`) = c("SWIGFunction", class('LessThanEqual__SWIG_0'
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThanEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThanEqual__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -994,7 +994,7 @@ class(`GreaterThanEqual__SWIG_0`) = c("SWIGFunction", class('GreaterThanEqual__S
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThan__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThan__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1008,7 +1008,7 @@ class(`GreaterThan__SWIG_0`) = c("SWIGFunction", class('GreaterThan__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThan__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThan__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1021,7 +1021,7 @@ class(`LessThan__SWIG_0`) = c("SWIGFunction", class('LessThan__SWIG_0'))
 `NotEqual__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_NotEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_NotEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1035,7 +1035,7 @@ class(`NotEqual__SWIG_1`) = c("SWIGFunction", class('NotEqual__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_NotEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_NotEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1048,7 +1048,7 @@ class(`NotEqual__SWIG_2`) = c("SWIGFunction", class('NotEqual__SWIG_2'))
 `EqualEqual__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_EqualEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_EqualEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1062,7 +1062,7 @@ class(`EqualEqual__SWIG_1`) = c("SWIGFunction", class('EqualEqual__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_EqualEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_EqualEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1075,7 +1075,7 @@ class(`EqualEqual__SWIG_2`) = c("SWIGFunction", class('EqualEqual__SWIG_2'))
 `LessThanEqual__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThanEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThanEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1089,7 +1089,7 @@ class(`LessThanEqual__SWIG_1`) = c("SWIGFunction", class('LessThanEqual__SWIG_1'
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_LessThanEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThanEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1102,7 +1102,7 @@ class(`LessThanEqual__SWIG_2`) = c("SWIGFunction", class('LessThanEqual__SWIG_2'
 `GreaterThanEqual__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThanEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThanEqual__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1116,7 +1116,7 @@ class(`GreaterThanEqual__SWIG_1`) = c("SWIGFunction", class('GreaterThanEqual__S
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_GreaterThanEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThanEqual__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1129,7 +1129,7 @@ class(`GreaterThanEqual__SWIG_2`) = c("SWIGFunction", class('GreaterThanEqual__S
 `GreaterThan__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThan__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThan__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1143,7 +1143,7 @@ class(`GreaterThan__SWIG_1`) = c("SWIGFunction", class('GreaterThan__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_GreaterThan__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThan__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1156,7 +1156,7 @@ class(`GreaterThan__SWIG_2`) = c("SWIGFunction", class('GreaterThan__SWIG_2'))
 `LessThan__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThan__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThan__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1170,7 +1170,7 @@ class(`LessThan__SWIG_1`) = c("SWIGFunction", class('LessThan__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;.Call('R_swig_LessThan__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThan__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1184,7 +1184,7 @@ class(`LessThan__SWIG_2`) = c("SWIGFunction", class('LessThan__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_atan2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_atan2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -1201,7 +1201,7 @@ class(`atan2`) = c("SWIGFunction", class('atan2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_pow__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_0', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -1217,7 +1217,7 @@ class(`pow__SWIG_0`) = c("SWIGFunction", class('pow__SWIG_0'))
 `pow__SWIG_1` = function(s_arg1, s_arg2, .copy = FALSE)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_pow__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_1', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -1233,7 +1233,7 @@ class(`pow__SWIG_1`) = c("SWIGFunction", class('pow__SWIG_1'))
 `myquad` = function(s_arg1, .copy = FALSE)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_myquad', s_arg1, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myquad', s_arg1, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -1252,7 +1252,7 @@ class(`myquad`) = c("SWIGFunction", class('myquad'))
   if (inherits(cond, "ExternalReference")) cond = slot(cond,"ref") 
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_condassign__SWIG_2', res, cond, s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_2', res, cond, s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -1267,7 +1267,7 @@ class(`condassign__SWIG_2`) = c("SWIGFunction", class('condassign__SWIG_2'))
   if (inherits(res, "ExternalReference")) res = slot(res,"ref") 
   if (inherits(cond, "ExternalReference")) cond = slot(cond,"ref") 
   if (inherits(s_arg, "ExternalReference")) s_arg = slot(s_arg,"ref") 
-  ;.Call('R_swig_condassign__SWIG_3', res, cond, s_arg, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_3', res, cond, s_arg, PACKAGE='radolc');
   
 }
 
@@ -1283,7 +1283,7 @@ class(`condassign__SWIG_3`) = c("SWIGFunction", class('condassign__SWIG_3'))
   if (inherits(cond, "ExternalReference")) cond = slot(cond,"ref") 
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_condeqassign__SWIG_2', res, cond, s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_2', res, cond, s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -1298,7 +1298,7 @@ class(`condeqassign__SWIG_2`) = c("SWIGFunction", class('condeqassign__SWIG_2'))
   if (inherits(res, "ExternalReference")) res = slot(res,"ref") 
   if (inherits(cond, "ExternalReference")) cond = slot(cond,"ref") 
   if (inherits(s_arg, "ExternalReference")) s_arg = slot(s_arg,"ref") 
-  ;.Call('R_swig_condeqassign__SWIG_3', res, cond, s_arg, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_3', res, cond, s_arg, PACKAGE='radolc');
   
 }
 
@@ -1312,7 +1312,7 @@ class(`condeqassign__SWIG_3`) = c("SWIGFunction", class('condeqassign__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_NotEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_NotEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1326,7 +1326,7 @@ class(`NotEqual__SWIG_3`) = c("SWIGFunction", class('NotEqual__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_NotEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_NotEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1368,7 +1368,7 @@ class(`NotEqual__SWIG_4`) = c("SWIGFunction", class('NotEqual__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_EqualEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_EqualEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1382,7 +1382,7 @@ class(`EqualEqual__SWIG_3`) = c("SWIGFunction", class('EqualEqual__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_EqualEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_EqualEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1424,7 +1424,7 @@ class(`EqualEqual__SWIG_4`) = c("SWIGFunction", class('EqualEqual__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThanEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThanEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1438,7 +1438,7 @@ class(`LessThanEqual__SWIG_3`) = c("SWIGFunction", class('LessThanEqual__SWIG_3'
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThanEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThanEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1480,7 +1480,7 @@ class(`LessThanEqual__SWIG_4`) = c("SWIGFunction", class('LessThanEqual__SWIG_4'
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThanEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThanEqual__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1494,7 +1494,7 @@ class(`GreaterThanEqual__SWIG_3`) = c("SWIGFunction", class('GreaterThanEqual__S
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThanEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThanEqual__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1536,7 +1536,7 @@ class(`GreaterThanEqual__SWIG_4`) = c("SWIGFunction", class('GreaterThanEqual__S
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThan__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThan__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1550,7 +1550,7 @@ class(`GreaterThan__SWIG_3`) = c("SWIGFunction", class('GreaterThan__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_GreaterThan__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_GreaterThan__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1592,7 +1592,7 @@ class(`GreaterThan__SWIG_4`) = c("SWIGFunction", class('GreaterThan__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThan__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThan__SWIG_3', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1606,7 +1606,7 @@ class(`LessThan__SWIG_3`) = c("SWIGFunction", class('LessThan__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;.Call('R_swig_LessThan__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_LessThan__SWIG_4', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -1648,7 +1648,7 @@ class(`LessThan__SWIG_4`) = c("SWIGFunction", class('LessThan__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_pow__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_2', s_arg1, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -1664,7 +1664,7 @@ class(`pow__SWIG_2`) = c("SWIGFunction", class('pow__SWIG_2'))
 `delete_badouble` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_badouble', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_badouble', self, PACKAGE='radolc');
   
 }
 
@@ -1695,7 +1695,7 @@ setMethod('delete', '_p_badouble', function(obj) {delete_badouble(obj)})
 `delete_adub` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_adub', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_adub', self, PACKAGE='radolc');
   
 }
 
@@ -1714,7 +1714,7 @@ setMethod('delete', '_p_adub', function(obj) {delete_adub(obj)})
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_ensureContiguousLocations', n, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_ensureContiguousLocations', n, PACKAGE='radolc');
   
 }
 
@@ -1727,7 +1727,7 @@ class(`ensureContiguousLocations`) = c("SWIGFunction", class('ensureContiguousLo
 `adouble__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_new_adouble__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_adouble__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_adouble)
@@ -1744,7 +1744,7 @@ class(`adouble__SWIG_0`) = c("SWIGFunction", class('adouble__SWIG_0'))
 `adouble__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_new_adouble__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_adouble__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_adouble)
@@ -1760,7 +1760,7 @@ class(`adouble__SWIG_1`) = c("SWIGFunction", class('adouble__SWIG_1'))
 
 `adouble__SWIG_2` = function()
 {
-  ;ans = .Call('R_swig_new_adouble__SWIG_2', PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_adouble__SWIG_2', PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_adouble)
@@ -1775,7 +1775,7 @@ class(`adouble__SWIG_2`) = c("SWIGFunction", class('adouble__SWIG_2'))
 
 `adouble__SWIG_3` = function(s_arg1)
 {
-  ;ans = .Call('R_swig_new_adouble__SWIG_3', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_adouble__SWIG_3', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_adouble)
@@ -1822,7 +1822,7 @@ class(`adouble__SWIG_3`) = c("SWIGFunction", class('adouble__SWIG_3'))
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_adouble___plusplus____SWIG_0', self, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___plusplus____SWIG_0', self, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -1844,7 +1844,7 @@ class(`adouble___plusplus____SWIG_0`) = c("SWIGFunction", class('adouble___plusp
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_adouble___minusminus____SWIG_0', self, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___minusminus____SWIG_0', self, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -1860,7 +1860,7 @@ class(`adouble___minusminus____SWIG_0`) = c("SWIGFunction", class('adouble___min
 `adouble___plusplus____SWIG_1` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_adouble___plusplus____SWIG_1', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___plusplus____SWIG_1', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -1896,7 +1896,7 @@ class(`adouble___plusplus____SWIG_1`) = c("SWIGFunction", class('adouble___plusp
 `adouble___minusminus____SWIG_1` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_adouble___minusminus____SWIG_1', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___minusminus____SWIG_1', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_badouble", ref=ans) ;
   
   ans
@@ -1932,7 +1932,7 @@ class(`adouble___minusminus____SWIG_1`) = c("SWIGFunction", class('adouble___min
 `delete_adouble` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_adouble', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_adouble', self, PACKAGE='radolc');
   
 }
 
@@ -1946,7 +1946,7 @@ class(`delete_adouble`) = c("SWIGFunction", class('delete_adouble'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adouble___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -1963,7 +1963,7 @@ class(`adouble___seteq____SWIG_0`) = c("SWIGFunction", class('adouble___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adouble___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -1980,7 +1980,7 @@ class(`adouble___seteq____SWIG_1`) = c("SWIGFunction", class('adouble___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adouble___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -1997,7 +1997,7 @@ class(`adouble___seteq____SWIG_2`) = c("SWIGFunction", class('adouble___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adouble___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -2014,7 +2014,7 @@ class(`adouble___seteq____SWIG_3`) = c("SWIGFunction", class('adouble___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adouble___seteq____SWIG_4', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble___seteq____SWIG_4', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -2058,7 +2058,7 @@ class(`adouble___seteq____SWIG_4`) = c("SWIGFunction", class('adouble___seteq___
 `adouble_loc` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_adouble_loc', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adouble_loc', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_uint32_t", ref=ans);
   
   ans
@@ -2091,7 +2091,7 @@ setMethod('delete', '_p_adouble', function(obj) {delete_adouble(obj)})
 
 `mkparam_idx` = function(pval, .copy = FALSE)
 {
-  ;ans = .Call('R_swig_mkparam_idx', pval, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_mkparam_idx', pval, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_uint32_t", ref=ans);
   
   ans
@@ -2107,7 +2107,7 @@ class(`mkparam_idx`) = c("SWIGFunction", class('mkparam_idx'))
 `delete_pdouble` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_pdouble', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_pdouble', self, PACKAGE='radolc');
   
 }
 
@@ -2126,7 +2126,7 @@ setMethod('delete', '_p_pdouble', function(obj) {delete_pdouble(obj)})
     warning("using only the first element of tag");
   };
   
-  ;.Call('R_swig_get_num_param', tag, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_get_num_param', tag, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -2151,7 +2151,7 @@ class(`get_num_param`) = c("SWIGFunction", class('get_num_param'))
   };
   
   
-  ;.Call('R_swig_set_param_vec', tag, numparam, paramvec, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_set_param_vec', tag, numparam, paramvec, PACKAGE='radolc');
   
 }
 
@@ -2170,7 +2170,7 @@ class(`set_param_vec`) = c("SWIGFunction", class('set_param_vec'))
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_adubref___plusplus____SWIG_0', self, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___plusplus____SWIG_0', self, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -2192,7 +2192,7 @@ class(`adubref___plusplus____SWIG_0`) = c("SWIGFunction", class('adubref___plusp
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_adubref___minusminus____SWIG_0', self, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___minusminus____SWIG_0', self, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -2208,7 +2208,7 @@ class(`adubref___minusminus____SWIG_0`) = c("SWIGFunction", class('adubref___min
 `adubref___plusplus____SWIG_1` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_adubref___plusplus____SWIG_1', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___plusplus____SWIG_1', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2244,7 +2244,7 @@ class(`adubref___plusplus____SWIG_1`) = c("SWIGFunction", class('adubref___plusp
 `adubref___minusminus____SWIG_1` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;ans = .Call('R_swig_adubref___minusminus____SWIG_1', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___minusminus____SWIG_1', self, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2281,7 +2281,7 @@ class(`adubref___minusminus____SWIG_1`) = c("SWIGFunction", class('adubref___min
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___seteq____SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2298,7 +2298,7 @@ class(`adubref___seteq____SWIG_0`) = c("SWIGFunction", class('adubref___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___seteq____SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2315,7 +2315,7 @@ class(`adubref___seteq____SWIG_1`) = c("SWIGFunction", class('adubref___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___seteq____SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2332,7 +2332,7 @@ class(`adubref___seteq____SWIG_2`) = c("SWIGFunction", class('adubref___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref___seteq____SWIG_3', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2374,7 +2374,7 @@ class(`adubref___seteq____SWIG_3`) = c("SWIGFunction", class('adubref___seteq___
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2391,7 +2391,7 @@ class(`adubref_PlusEqual__SWIG_0`) = c("SWIGFunction", class('adubref_PlusEqual_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2408,7 +2408,7 @@ class(`adubref_PlusEqual__SWIG_1`) = c("SWIGFunction", class('adubref_PlusEqual_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_PlusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2447,7 +2447,7 @@ class(`adubref_PlusEqual__SWIG_2`) = c("SWIGFunction", class('adubref_PlusEqual_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2464,7 +2464,7 @@ class(`adubref_MinusEqual__SWIG_0`) = c("SWIGFunction", class('adubref_MinusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2481,7 +2481,7 @@ class(`adubref_MinusEqual__SWIG_1`) = c("SWIGFunction", class('adubref_MinusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MinusEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2520,7 +2520,7 @@ class(`adubref_MinusEqual__SWIG_2`) = c("SWIGFunction", class('adubref_MinusEqua
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2537,7 +2537,7 @@ class(`adubref_MultiplyEqual__SWIG_0`) = c("SWIGFunction", class('adubref_Multip
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2554,7 +2554,7 @@ class(`adubref_MultiplyEqual__SWIG_1`) = c("SWIGFunction", class('adubref_Multip
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_MultiplyEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2593,7 +2593,7 @@ class(`adubref_MultiplyEqual__SWIG_2`) = c("SWIGFunction", class('adubref_Multip
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_0', self, x, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2610,7 +2610,7 @@ class(`adubref_DivideEqual__SWIG_0`) = c("SWIGFunction", class('adubref_DivideEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_1', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2627,7 +2627,7 @@ class(`adubref_DivideEqual__SWIG_1`) = c("SWIGFunction", class('adubref_DivideEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_DivideEqual__SWIG_2', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2666,7 +2666,7 @@ class(`adubref_DivideEqual__SWIG_2`) = c("SWIGFunction", class('adubref_DivideEq
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_declareIndependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_declareIndependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2682,7 +2682,7 @@ class(`adubref_declareIndependent__SWIG_0`) = c("SWIGFunction", class('adubref_d
 `adubref_declareIndependent__SWIG_1` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_adubref_declareIndependent__SWIG_1', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_adubref_declareIndependent__SWIG_1', self, PACKAGE='radolc');
   
 }
 
@@ -2716,7 +2716,7 @@ class(`adubref_declareIndependent__SWIG_1`) = c("SWIGFunction", class('adubref_d
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   
-  ;ans = .Call('R_swig_adubref_declareDependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adubref_declareDependent__SWIG_0', self, s_arg2, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -2732,7 +2732,7 @@ class(`adubref_declareDependent__SWIG_0`) = c("SWIGFunction", class('adubref_dec
 `adubref_declareDependent__SWIG_1` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_adubref_declareDependent__SWIG_1', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_adubref_declareDependent__SWIG_1', self, PACKAGE='radolc');
   
 }
 
@@ -2768,7 +2768,7 @@ class(`adubref_declareDependent__SWIG_1`) = c("SWIGFunction", class('adubref_dec
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
   if (inherits(s_arg4, "ExternalReference")) s_arg4 = slot(s_arg4,"ref") 
-  ;.Call('R_swig_condassign__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, PACKAGE='radolc');
   
 }
 
@@ -2783,7 +2783,7 @@ class(`condassign__SWIG_4`) = c("SWIGFunction", class('condassign__SWIG_4'))
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
-  ;.Call('R_swig_condassign__SWIG_5', s_arg1, s_arg2, s_arg3, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condassign__SWIG_5', s_arg1, s_arg2, s_arg3, PACKAGE='radolc');
   
 }
 
@@ -2831,7 +2831,7 @@ class(`condassign__SWIG_5`) = c("SWIGFunction", class('condassign__SWIG_5'))
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
   if (inherits(s_arg4, "ExternalReference")) s_arg4 = slot(s_arg4,"ref") 
-  ;.Call('R_swig_condeqassign__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, PACKAGE='radolc');
   
 }
 
@@ -2846,7 +2846,7 @@ class(`condeqassign__SWIG_4`) = c("SWIGFunction", class('condeqassign__SWIG_4'))
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
-  ;.Call('R_swig_condeqassign__SWIG_5', s_arg1, s_arg2, s_arg3, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_condeqassign__SWIG_5', s_arg1, s_arg2, s_arg3, PACKAGE='radolc');
   
 }
 
@@ -2891,7 +2891,7 @@ class(`condeqassign__SWIG_5`) = c("SWIGFunction", class('condeqassign__SWIG_5'))
 `delete_adubref` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_adubref', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_adubref', self, PACKAGE='radolc');
   
 }
 
@@ -2924,7 +2924,7 @@ setMethod('delete', '_p_adubref', function(obj) {delete_adubref(obj)})
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
-  ;.Call('R_swig_adolc_vec_copy', s_arg1, s_arg2, s_arg3, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_adolc_vec_copy', s_arg1, s_arg2, s_arg3, PACKAGE='radolc');
   
 }
 
@@ -2941,7 +2941,7 @@ class(`adolc_vec_copy`) = c("SWIGFunction", class('adolc_vec_copy'))
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
   if (inherits(s_arg4, "ExternalReference")) s_arg4 = slot(s_arg4,"ref") 
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_adolc_vec_axpy', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_adolc_vec_axpy', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='radolc');
   
 }
 
@@ -2953,7 +2953,7 @@ class(`adolc_vec_axpy`) = c("SWIGFunction", class('adolc_vec_axpy'))
 
 `advector__SWIG_0` = function()
 {
-  ;ans = .Call('R_swig_new_advector__SWIG_0', PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_advector__SWIG_0', PACKAGE='radolc');
   ans <- new("_p_advector", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_advector)
@@ -2974,7 +2974,7 @@ class(`advector__SWIG_0`) = c("SWIGFunction", class('advector__SWIG_0'))
     warning("using only the first element of n");
   };
   
-  ;ans = .Call('R_swig_new_advector__SWIG_1', n, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_advector__SWIG_1', n, PACKAGE='radolc');
   ans <- new("_p_advector", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_advector)
@@ -2991,7 +2991,7 @@ class(`advector__SWIG_1`) = c("SWIGFunction", class('advector__SWIG_1'))
 `delete_advector` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_advector', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_advector', self, PACKAGE='radolc');
   
 }
 
@@ -3004,7 +3004,7 @@ class(`delete_advector`) = c("SWIGFunction", class('delete_advector'))
 `advector__SWIG_2` = function(x)
 {
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
-  ;ans = .Call('R_swig_new_advector__SWIG_2', x, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_advector__SWIG_2', x, PACKAGE='radolc');
   ans <- new("_p_advector", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_advector)
@@ -3021,7 +3021,7 @@ class(`advector__SWIG_2`) = c("SWIGFunction", class('advector__SWIG_2'))
 `advector__SWIG_3` = function(v)
 {
   if (inherits(v, "ExternalReference")) v = slot(v,"ref") 
-  ;ans = .Call('R_swig_new_advector__SWIG_3', v, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_advector__SWIG_3', v, PACKAGE='radolc');
   ans <- new("_p_advector", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_advector)
@@ -3062,7 +3062,7 @@ class(`advector__SWIG_3`) = c("SWIGFunction", class('advector__SWIG_3'))
 `advector_size` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_advector_size', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_advector_size', self, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3076,7 +3076,7 @@ class(`advector_size`) = c("SWIGFunction", class('advector_size'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(index, "ExternalReference")) index = slot(index,"ref") 
-  ;ans = .Call('R_swig_advector___index____SWIG_0', self, index, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_advector___index____SWIG_0', self, index, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -3093,7 +3093,7 @@ class(`advector___index____SWIG_0`) = c("SWIGFunction", class('advector___index_
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(index, "ExternalReference")) index = slot(index,"ref") 
-  ;ans = .Call('R_swig_advector___index____SWIG_1', self, index, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_advector___index____SWIG_1', self, index, PACKAGE='radolc');
   ans <- new("_p_adubref", ref=ans) ;
   
   ans
@@ -3115,7 +3115,7 @@ class(`advector___index____SWIG_1`) = c("SWIGFunction", class('advector___index_
     warning("using only the first element of i");
   };
   
-  ;ans = .Call('R_swig_advector___index____SWIG_2', self, i, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_advector___index____SWIG_2', self, i, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -3137,7 +3137,7 @@ class(`advector___index____SWIG_2`) = c("SWIGFunction", class('advector___index_
     warning("using only the first element of i");
   };
   
-  ;ans = .Call('R_swig_advector___index____SWIG_3', self, i, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_advector___index____SWIG_3', self, i, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans) ;
   
   ans
@@ -3180,7 +3180,7 @@ class(`advector___index____SWIG_3`) = c("SWIGFunction", class('advector___index_
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
   if (inherits(y, "ExternalReference")) y = slot(y,"ref") 
-  ;ans = .Call('R_swig_advector_lookupindex', self, x, y, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_advector_lookupindex', self, x, y, as.logical(.copy), PACKAGE='radolc');
   ans <- new("_p_adouble", ref=ans);
   
   ans
@@ -3214,7 +3214,7 @@ setMethod('delete', '_p_advector', function(obj) {delete_advector(obj)})
 `reg_ext_fct__SWIG_0` = function(ext_fct)
 {
   if (inherits(ext_fct, "ExternalReference")) ext_fct = slot(ext_fct,"ref") 
-  ;ans = .Call('R_swig_reg_ext_fct__SWIG_0', ext_fct, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_reg_ext_fct__SWIG_0', ext_fct, PACKAGE='radolc');
   ans <- new("_p_ext_diff_fct", ref=ans) ;
   
   ans
@@ -3230,7 +3230,7 @@ class(`reg_ext_fct__SWIG_0`) = c("SWIGFunction", class('reg_ext_fct__SWIG_0'))
 `reg_ext_fct__SWIG_1` = function(ext_fct)
 {
   if (inherits(ext_fct, "ExternalReference")) ext_fct = slot(ext_fct,"ref") 
-  ;ans = .Call('R_swig_reg_ext_fct__SWIG_1', ext_fct, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_reg_ext_fct__SWIG_1', ext_fct, PACKAGE='radolc');
   ans <- new("_p_ext_diff_fct", ref=ans) ;
   
   ans
@@ -3260,7 +3260,7 @@ class(`reg_ext_fct__SWIG_1`) = c("SWIGFunction", class('reg_ext_fct__SWIG_1'))
   };
   
   if (inherits(ya, "ExternalReference")) ya = slot(ya,"ref") 
-  ;.Call('R_swig_call_ext_fct__SWIG_0', edfct, n, xa, m, ya, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_call_ext_fct__SWIG_0', edfct, n, xa, m, ya, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3294,7 +3294,7 @@ class(`call_ext_fct__SWIG_0`) = c("SWIGFunction", class('call_ext_fct__SWIG_0'))
   };
   
   if (inherits(ya, "ExternalReference")) ya = slot(ya,"ref") 
-  ;.Call('R_swig_call_ext_fct__SWIG_1', edfct, iArrLength, iArr, n, xa, m, ya, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_call_ext_fct__SWIG_1', edfct, iArrLength, iArr, n, xa, m, ya, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3307,7 +3307,7 @@ class(`call_ext_fct__SWIG_1`) = c("SWIGFunction", class('call_ext_fct__SWIG_1'))
 `edf_zero__SWIG_0` = function(edfct)
 {
   if (inherits(edfct, "ExternalReference")) edfct = slot(edfct,"ref") 
-  ;.Call('R_swig_edf_zero__SWIG_0', edfct, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_edf_zero__SWIG_0', edfct, PACKAGE='radolc');
   
 }
 
@@ -3320,7 +3320,7 @@ class(`edf_zero__SWIG_0`) = c("SWIGFunction", class('edf_zero__SWIG_0'))
 `reg_ext_fct__SWIG_2` = function(ext_fct)
 {
   if (inherits(ext_fct, "ExternalReference")) ext_fct = slot(ext_fct,"ref") 
-  ;ans = .Call('R_swig_reg_ext_fct__SWIG_2', ext_fct, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_reg_ext_fct__SWIG_2', ext_fct, PACKAGE='radolc');
   ans <- new("_p_ext_diff_fct_v2", ref=ans) ;
   
   ans
@@ -3381,7 +3381,7 @@ class(`reg_ext_fct__SWIG_2`) = c("SWIGFunction", class('reg_ext_fct__SWIG_2'))
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
   outsz = as.integer(outsz);
   if (inherits(y, "ExternalReference")) y = slot(y,"ref") 
-  ;.Call('R_swig_call_ext_fct__SWIG_2', edfct, iArrLen, iArr, nin, nout, insz, x, outsz, y, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_call_ext_fct__SWIG_2', edfct, iArrLen, iArr, nin, nout, insz, x, outsz, y, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3418,7 +3418,7 @@ class(`call_ext_fct__SWIG_2`) = c("SWIGFunction", class('call_ext_fct__SWIG_2'))
 `edf_zero__SWIG_1` = function(edfct)
 {
   if (inherits(edfct, "ExternalReference")) edfct = slot(edfct,"ref") 
-  ;.Call('R_swig_edf_zero__SWIG_1', edfct, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_edf_zero__SWIG_1', edfct, PACKAGE='radolc');
   
 }
 
@@ -3451,7 +3451,7 @@ class(`edf_zero__SWIG_1`) = c("SWIGFunction", class('edf_zero__SWIG_1'))
 {
   if (inherits(edfct, "ExternalReference")) edfct = slot(edfct,"ref") 
   if (inherits(ctx, "ExternalReference")) ctx = slot(ctx,"ref") 
-  ;.Call('R_swig_edf_set_opaque_context', edfct, ctx, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_edf_set_opaque_context', edfct, ctx, PACKAGE='radolc');
   
 }
 
@@ -3464,7 +3464,7 @@ class(`edf_set_opaque_context`) = c("SWIGFunction", class('edf_set_opaque_contex
 `reg_timestep_fct` = function(timeStepFunction)
 {
   if (inherits(timeStepFunction, "ExternalReference")) timeStepFunction = slot(timeStepFunction,"ref") 
-  ;ans = .Call('R_swig_reg_timestep_fct', timeStepFunction, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_reg_timestep_fct', timeStepFunction, PACKAGE='radolc');
   ans <- new("_p_CpInfos", ref=ans) ;
   
   ans
@@ -3480,7 +3480,7 @@ class(`reg_timestep_fct`) = c("SWIGFunction", class('reg_timestep_fct'))
 `checkpointing` = function(cpInfos, .copy = FALSE)
 {
   if (inherits(cpInfos, "ExternalReference")) cpInfos = slot(cpInfos,"ref") 
-  ;.Call('R_swig_checkpointing', cpInfos, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_checkpointing', cpInfos, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3492,7 +3492,7 @@ class(`checkpointing`) = c("SWIGFunction", class('checkpointing'))
 
 `reinit_checkpointing` = function()
 {
-  ;.Call('R_swig_reinit_checkpointing', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reinit_checkpointing', PACKAGE='radolc');
   
 }
 
@@ -3504,7 +3504,7 @@ class(`reinit_checkpointing`) = c("SWIGFunction", class('reinit_checkpointing'))
 `CP_Context` = function(tsf)
 {
   if (inherits(tsf, "ExternalReference")) tsf = slot(tsf,"ref") 
-  ;ans = .Call('R_swig_new_CP_Context', tsf, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_new_CP_Context', tsf, PACKAGE='radolc');
   ans <- new("_p_CP_Context", ref=ans) ;
   
   reg.finalizer(ans@ref, delete_CP_Context)
@@ -3521,7 +3521,7 @@ class(`CP_Context`) = c("SWIGFunction", class('CP_Context'))
 `delete_CP_Context` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_delete_CP_Context', self, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_delete_CP_Context', self, PACKAGE='radolc');
   
 }
 
@@ -3535,7 +3535,7 @@ class(`delete_CP_Context`) = c("SWIGFunction", class('delete_CP_Context'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(tsf, "ExternalReference")) tsf = slot(tsf,"ref") 
-  ;.Call('R_swig_CP_Context_setDoubleFct', self, tsf, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setDoubleFct', self, tsf, PACKAGE='radolc');
   
 }
 
@@ -3549,7 +3549,7 @@ class(`CP_Context_setDoubleFct`) = c("SWIGFunction", class('CP_Context_setDouble
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(sf, "ExternalReference")) sf = slot(sf,"ref") 
-  ;.Call('R_swig_CP_Context_setSaveFct', self, sf, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setSaveFct', self, sf, PACKAGE='radolc');
   
 }
 
@@ -3563,7 +3563,7 @@ class(`CP_Context_setSaveFct`) = c("SWIGFunction", class('CP_Context_setSaveFct'
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(rf, "ExternalReference")) rf = slot(rf,"ref") 
-  ;.Call('R_swig_CP_Context_setRestoreFct', self, rf, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setRestoreFct', self, rf, PACKAGE='radolc');
   
 }
 
@@ -3582,7 +3582,7 @@ class(`CP_Context_setRestoreFct`) = c("SWIGFunction", class('CP_Context_setResto
     warning("using only the first element of number");
   };
   
-  ;.Call('R_swig_CP_Context_setNumberOfSteps', self, number, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setNumberOfSteps', self, number, PACKAGE='radolc');
   
 }
 
@@ -3601,7 +3601,7 @@ class(`CP_Context_setNumberOfSteps`) = c("SWIGFunction", class('CP_Context_setNu
     warning("using only the first element of number");
   };
   
-  ;.Call('R_swig_CP_Context_setNumberOfCheckpoints', self, number, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setNumberOfCheckpoints', self, number, PACKAGE='radolc');
   
 }
 
@@ -3620,7 +3620,7 @@ class(`CP_Context_setNumberOfCheckpoints`) = c("SWIGFunction", class('CP_Context
     warning("using only the first element of tapeNumber");
   };
   
-  ;.Call('R_swig_CP_Context_setTapeNumber', self, tapeNumber, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setTapeNumber', self, tapeNumber, PACKAGE='radolc');
   
 }
 
@@ -3639,7 +3639,7 @@ class(`CP_Context_setTapeNumber`) = c("SWIGFunction", class('CP_Context_setTapeN
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_CP_Context_setDimensionXY', self, n, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setDimensionXY', self, n, PACKAGE='radolc');
   
 }
 
@@ -3653,7 +3653,7 @@ class(`CP_Context_setDimensionXY`) = c("SWIGFunction", class('CP_Context_setDime
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
-  ;.Call('R_swig_CP_Context_setInput', self, x, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setInput', self, x, PACKAGE='radolc');
   
 }
 
@@ -3667,7 +3667,7 @@ class(`CP_Context_setInput`) = c("SWIGFunction", class('CP_Context_setInput'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   if (inherits(y, "ExternalReference")) y = slot(y,"ref") 
-  ;.Call('R_swig_CP_Context_setOutput', self, y, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setOutput', self, y, PACKAGE='radolc');
   
 }
 
@@ -3681,7 +3681,7 @@ class(`CP_Context_setOutput`) = c("SWIGFunction", class('CP_Context_setOutput'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
   state = as.logical(state);
-  ;.Call('R_swig_CP_Context_setAlwaysRetaping', self, state, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_setAlwaysRetaping', self, state, PACKAGE='radolc');
   
 }
 
@@ -3694,7 +3694,7 @@ class(`CP_Context_setAlwaysRetaping`) = c("SWIGFunction", class('CP_Context_setA
 `CP_Context_checkpointing` = function(self, .copy = FALSE)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref") 
-  ;.Call('R_swig_CP_Context_checkpointing', self, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_CP_Context_checkpointing', self, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3811,7 +3811,7 @@ setMethod('delete', '_p_CP_Context', function(obj) {delete_CP_Context(obj)})
     warning("using only the first element of dim_u");
   };
   
-  ;.Call('R_swig_fp_iteration', sub_tape_num, double_F, adouble_F, norm, norm_deriv, epsilon, epsilon_deriv, N_max, N_max_deriv, x_0, u, x_fix, dim_x, dim_u, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fp_iteration', sub_tape_num, double_F, adouble_F, norm, norm_deriv, epsilon, epsilon_deriv, N_max, N_max_deriv, x_0, u, x_fix, dim_x, dim_u, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3855,7 +3855,7 @@ class(`fp_iteration`) = c("SWIGFunction", class('fp_iteration'))
   
   
   
-  ;.Call('R_swig_forward__SWIG_0', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_0', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3899,7 +3899,7 @@ class(`forward__SWIG_0`) = c("SWIGFunction", class('forward__SWIG_0'))
   
   
   
-  ;.Call('R_swig_forward__SWIG_1', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_1', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3943,7 +3943,7 @@ class(`forward__SWIG_1`) = c("SWIGFunction", class('forward__SWIG_1'))
   
   
   
-  ;.Call('R_swig_forward__SWIG_2', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_2', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -3981,7 +3981,7 @@ class(`forward__SWIG_2`) = c("SWIGFunction", class('forward__SWIG_2'))
   
   
   
-  ;.Call('R_swig_forward__SWIG_3', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_3', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4027,7 +4027,7 @@ class(`forward__SWIG_3`) = c("SWIGFunction", class('forward__SWIG_3'))
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   
   if (inherits(s_arg9, "ExternalReference")) s_arg9 = slot(s_arg9,"ref") 
-  ;.Call('R_swig_forward__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4067,7 +4067,7 @@ class(`forward__SWIG_4`) = c("SWIGFunction", class('forward__SWIG_4'))
   
   
   
-  ;.Call('R_swig_forward__SWIG_5', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forward__SWIG_5', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4139,7 +4139,7 @@ class(`forward__SWIG_5`) = c("SWIGFunction", class('forward__SWIG_5'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_0', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_0', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4177,7 +4177,7 @@ class(`reverse__SWIG_0`) = c("SWIGFunction", class('reverse__SWIG_0'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_1', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_1', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4215,7 +4215,7 @@ class(`reverse__SWIG_1`) = c("SWIGFunction", class('reverse__SWIG_1'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_2', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_2', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4253,7 +4253,7 @@ class(`reverse__SWIG_2`) = c("SWIGFunction", class('reverse__SWIG_2'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_3', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_3', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4298,7 +4298,7 @@ class(`reverse__SWIG_3`) = c("SWIGFunction", class('reverse__SWIG_3'))
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
-  ;.Call('R_swig_reverse__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_4', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4342,7 +4342,7 @@ class(`reverse__SWIG_4`) = c("SWIGFunction", class('reverse__SWIG_4'))
   
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
-  ;.Call('R_swig_reverse__SWIG_5', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_5', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4387,7 +4387,7 @@ class(`reverse__SWIG_5`) = c("SWIGFunction", class('reverse__SWIG_5'))
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
-  ;.Call('R_swig_reverse__SWIG_6', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_6', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4431,7 +4431,7 @@ class(`reverse__SWIG_6`) = c("SWIGFunction", class('reverse__SWIG_6'))
   
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
-  ;.Call('R_swig_reverse__SWIG_7', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_7', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4475,7 +4475,7 @@ class(`reverse__SWIG_7`) = c("SWIGFunction", class('reverse__SWIG_7'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_8', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_8', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4513,7 +4513,7 @@ class(`reverse__SWIG_8`) = c("SWIGFunction", class('reverse__SWIG_8'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_9', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_9', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4557,7 +4557,7 @@ class(`reverse__SWIG_9`) = c("SWIGFunction", class('reverse__SWIG_9'))
   
   
   
-  ;.Call('R_swig_reverse__SWIG_10', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_10', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4595,7 +4595,7 @@ class(`reverse__SWIG_10`) = c("SWIGFunction", class('reverse__SWIG_10'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_reverse__SWIG_11', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_11', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4632,7 +4632,7 @@ class(`reverse__SWIG_11`) = c("SWIGFunction", class('reverse__SWIG_11'))
   };
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_reverse__SWIG_12', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_reverse__SWIG_12', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4725,7 +4725,7 @@ class(`reverse__SWIG_12`) = c("SWIGFunction", class('reverse__SWIG_12'))
   
   
   
-  ;.Call('R_swig_zos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_zos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4758,7 +4758,7 @@ class(`zos_forward`) = c("SWIGFunction", class('zos_forward'))
   s_arg4 = as.integer(s_arg4);
   
   
-  ;.Call('R_swig_zos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_zos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4798,7 +4798,7 @@ class(`zos_forward_partx`) = c("SWIGFunction", class('zos_forward_partx'))
   
   
   
-  ;.Call('R_swig_fos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4831,7 +4831,7 @@ class(`fos_forward`) = c("SWIGFunction", class('fos_forward'))
   s_arg4 = as.integer(s_arg4);
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   
-  ;.Call('R_swig_fos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4877,7 +4877,7 @@ class(`fos_forward_partx`) = c("SWIGFunction", class('fos_forward_partx'))
   
   
   
-  ;.Call('R_swig_hos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hos_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4916,7 +4916,7 @@ class(`hos_forward`) = c("SWIGFunction", class('hos_forward'))
   
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
   
-  ;.Call('R_swig_hos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hos_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -4956,7 +4956,7 @@ class(`hos_forward_partx`) = c("SWIGFunction", class('hos_forward_partx'))
   
   
   
-  ;.Call('R_swig_fov_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5002,7 +5002,7 @@ class(`fov_forward`) = c("SWIGFunction", class('fov_forward'))
   
   
   
-  ;.Call('R_swig_fov_offset_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_offset_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5043,7 +5043,7 @@ class(`fov_offset_forward`) = c("SWIGFunction", class('fov_offset_forward'))
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   
   
-  ;.Call('R_swig_fov_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5089,7 +5089,7 @@ class(`fov_forward_partx`) = c("SWIGFunction", class('fov_forward_partx'))
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   
   if (inherits(s_arg9, "ExternalReference")) s_arg9 = slot(s_arg9,"ref") 
-  ;.Call('R_swig_hov_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hov_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5136,7 +5136,7 @@ class(`hov_forward`) = c("SWIGFunction", class('hov_forward'))
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
   
   if (inherits(s_arg10, "ExternalReference")) s_arg10 = slot(s_arg10,"ref") 
-  ;.Call('R_swig_hov_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hov_forward_partx', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5188,7 +5188,7 @@ class(`hov_forward_partx`) = c("SWIGFunction", class('hov_forward_partx'))
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
   
   if (inherits(s_arg10, "ExternalReference")) s_arg10 = slot(s_arg10,"ref") 
-  ;.Call('R_swig_hov_wk_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hov_wk_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5226,7 +5226,7 @@ class(`hov_wk_forward`) = c("SWIGFunction", class('hov_wk_forward'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_int_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_int_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5266,7 +5266,7 @@ class(`int_forward_safe`) = c("SWIGFunction", class('int_forward_safe'))
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
   
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
-  ;.Call('R_swig_int_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_int_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5298,7 +5298,7 @@ class(`int_forward_tight`) = c("SWIGFunction", class('int_forward_tight'))
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_indopro_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_indopro_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5330,7 +5330,7 @@ class(`indopro_forward_safe`) = c("SWIGFunction", class('indopro_forward_safe'))
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_indopro_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_indopro_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5362,7 +5362,7 @@ class(`indopro_forward_tight`) = c("SWIGFunction", class('indopro_forward_tight'
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_nonl_ind_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_nonl_ind_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5394,7 +5394,7 @@ class(`nonl_ind_forward_safe`) = c("SWIGFunction", class('nonl_ind_forward_safe'
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_nonl_ind_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_nonl_ind_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5426,7 +5426,7 @@ class(`nonl_ind_forward_tight`) = c("SWIGFunction", class('nonl_ind_forward_tigh
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_nonl_ind_old_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_nonl_ind_old_forward_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5458,7 +5458,7 @@ class(`nonl_ind_old_forward_safe`) = c("SWIGFunction", class('nonl_ind_old_forwa
   
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
-  ;.Call('R_swig_nonl_ind_old_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_nonl_ind_old_forward_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5490,7 +5490,7 @@ class(`nonl_ind_old_forward_tight`) = c("SWIGFunction", class('nonl_ind_old_forw
   
   
   
-  ;.Call('R_swig_fos_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5528,7 +5528,7 @@ class(`fos_reverse`) = c("SWIGFunction", class('fos_reverse'))
   
   
   
-  ;.Call('R_swig_hos_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hos_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5566,7 +5566,7 @@ class(`hos_reverse`) = c("SWIGFunction", class('hos_reverse'))
   
   
   
-  ;.Call('R_swig_hos_ti_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hos_ti_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5610,7 +5610,7 @@ class(`hos_ti_reverse`) = c("SWIGFunction", class('hos_ti_reverse'))
   
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
-  ;.Call('R_swig_hos_ov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hos_ov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5648,7 +5648,7 @@ class(`hos_ov_reverse`) = c("SWIGFunction", class('hos_ov_reverse'))
   
   
   
-  ;.Call('R_swig_fov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5693,7 +5693,7 @@ class(`fov_reverse`) = c("SWIGFunction", class('fov_reverse'))
   
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
-  ;.Call('R_swig_hov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hov_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5738,7 +5738,7 @@ class(`hov_reverse`) = c("SWIGFunction", class('hov_reverse'))
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
-  ;.Call('R_swig_hov_ti_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hov_ti_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5776,7 +5776,7 @@ class(`hov_ti_reverse`) = c("SWIGFunction", class('hov_ti_reverse'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_int_reverse_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_int_reverse_tight', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5814,7 +5814,7 @@ class(`int_reverse_tight`) = c("SWIGFunction", class('int_reverse_tight'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_int_reverse_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_int_reverse_safe', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5832,7 +5832,7 @@ class(`int_reverse_safe`) = c("SWIGFunction", class('int_reverse_safe'))
     warning("using only the first element of s_arg1");
   };
   
-  ;.Call('R_swig_get_num_switches', s_arg1, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_get_num_switches', s_arg1, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5871,7 +5871,7 @@ class(`get_num_switches`) = c("SWIGFunction", class('get_num_switches'))
   
   
   
-  ;.Call('R_swig_zos_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_zos_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5891,7 +5891,7 @@ class(`zos_pl_forward`) = c("SWIGFunction", class('zos_pl_forward'))
   
   
   
-  ;.Call('R_swig_firstsign', s_arg1, s_arg2, s_arg3, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_firstsign', s_arg1, s_arg2, s_arg3, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5911,7 +5911,7 @@ class(`firstsign`) = c("SWIGFunction", class('firstsign'))
   
   
   
-  ;.Call('R_swig_ext_firstsign', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_ext_firstsign', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5931,7 +5931,7 @@ class(`ext_firstsign`) = c("SWIGFunction", class('ext_firstsign'))
   
   
   
-  ;.Call('R_swig_ext_firstsign2', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_ext_firstsign2', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -5967,7 +5967,7 @@ class(`ext_firstsign2`) = c("SWIGFunction", class('ext_firstsign2'))
   
   
   
-  ;.Call('R_swig_fos_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6010,7 +6010,7 @@ class(`fos_pl_forward`) = c("SWIGFunction", class('fos_pl_forward'))
   
   
   s_arg11 = as.integer(s_arg11);
-  ;.Call('R_swig_fov_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_pl_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6055,7 +6055,7 @@ class(`fov_pl_forward`) = c("SWIGFunction", class('fov_pl_forward'))
   
   
   s_arg13 = as.integer(s_arg13);
-  ;.Call('R_swig_fos_pl_sig_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, s_arg12, s_arg13, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_pl_sig_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, s_arg12, s_arg13, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6106,7 +6106,7 @@ class(`fos_pl_sig_forward`) = c("SWIGFunction", class('fos_pl_sig_forward'))
   
   
   s_arg14 = as.integer(s_arg14);
-  ;.Call('R_swig_fov_pl_sig_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, s_arg12, s_arg13, s_arg14, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fov_pl_sig_forward', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, s_arg11, s_arg12, s_arg13, s_arg14, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6144,7 +6144,7 @@ class(`fov_pl_sig_forward`) = c("SWIGFunction", class('fov_pl_sig_forward'))
   
   
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_indopro_forward_absnormal', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_indopro_forward_absnormal', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6187,7 +6187,7 @@ class(`indopro_forward_absnormal`) = c("SWIGFunction", class('indopro_forward_ab
   };
   
   
-  ;.Call('R_swig_fos_pl_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_pl_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6226,7 +6226,7 @@ class(`fos_pl_reverse`) = c("SWIGFunction", class('fos_pl_reverse'))
   s_arg5 = as.integer(s_arg5);
   
   
-  ;.Call('R_swig_fos_pl_sig_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_fos_pl_sig_reverse', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6258,7 +6258,7 @@ class(`fos_pl_sig_reverse`) = c("SWIGFunction", class('fos_pl_sig_reverse'))
   
   
   
-  ;.Call('R_swig_eval_func', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_eval_func', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6290,7 +6290,7 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 
@@ -6310,7 +6310,7 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
   
   
   
-  ;.Call('R_swig_gradient', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_gradient', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6343,7 +6343,7 @@ class(`gradient`) = c("SWIGFunction", class('gradient'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 
@@ -6369,7 +6369,7 @@ class(`gradient`) = c("SWIGFunction", class('gradient'))
   
   
   
-  ;.Call('R_swig_jacobian', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_jacobian', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6408,7 +6408,7 @@ class(`jacobian`) = c("SWIGFunction", class('jacobian'))
   
   
   
-  ;.Call('R_swig_large_jacobian', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_large_jacobian', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6438,7 +6438,7 @@ class(`large_jacobian`) = c("SWIGFunction", class('large_jacobian'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 #'
@@ -6472,7 +6472,7 @@ class(`large_jacobian`) = c("SWIGFunction", class('large_jacobian'))
   
   
   
-  ;.Call('R_swig_vec_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_vec_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6502,7 +6502,7 @@ class(`vec_jac`) = c("SWIGFunction", class('vec_jac'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 #'
@@ -6530,7 +6530,7 @@ class(`vec_jac`) = c("SWIGFunction", class('vec_jac'))
   
   
   
-  ;.Call('R_swig_jac_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_jac_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6560,7 +6560,7 @@ class(`jac_vec`) = c("SWIGFunction", class('jac_vec'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 #' 
@@ -6581,7 +6581,7 @@ class(`jac_vec`) = c("SWIGFunction", class('jac_vec'))
   
   
   
-  ;.Call('R_swig_hessian', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hessian', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6607,7 +6607,7 @@ class(`hessian`) = c("SWIGFunction", class('hessian'))
   
   
   
-  ;.Call('R_swig_hessian2', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hessian2', s_arg1, s_arg2, s_arg3, s_arg4, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6636,7 +6636,7 @@ class(`hessian2`) = c("SWIGFunction", class('hessian2'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 #'
@@ -6658,7 +6658,7 @@ class(`hessian2`) = c("SWIGFunction", class('hessian2'))
   
   
   
-  ;.Call('R_swig_hess_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hess_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6695,7 +6695,7 @@ class(`hess_vec`) = c("SWIGFunction", class('hess_vec'))
 #'         \code{\link{badouble_declareIndependent}},
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 #'
@@ -6722,7 +6722,7 @@ class(`hess_vec`) = c("SWIGFunction", class('hess_vec'))
   
   
   
-  ;.Call('R_swig_hess_mat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hess_mat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6756,7 +6756,7 @@ class(`hess_mat`) = c("SWIGFunction", class('hess_mat'))
   
   
   
-  ;.Call('R_swig_lagra_hess_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_lagra_hess_vec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6801,7 +6801,7 @@ class(`lagra_hess_vec`) = c("SWIGFunction", class('lagra_hess_vec'))
   
   
   
-  ;.Call('R_swig_tensor_eval', tag, m, n, d, p, x, tensor, S, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_tensor_eval', tag, m, n, d, p, x, tensor, S, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6840,7 +6840,7 @@ class(`tensor_eval`) = c("SWIGFunction", class('tensor_eval'))
   
   
   
-  ;.Call('R_swig_inverse_tensor_eval', tag, n, d, p, x, tensor, S, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_inverse_tensor_eval', tag, n, d, p, x, tensor, S, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6872,7 +6872,7 @@ class(`inverse_tensor_eval`) = c("SWIGFunction", class('inverse_tensor_eval'))
   
   
   
-  ;.Call('R_swig_inverse_Taylor_prop', tag, n, d, Y, X, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_inverse_Taylor_prop', tag, n, d, Y, X, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -6899,7 +6899,7 @@ class(`inverse_Taylor_prop`) = c("SWIGFunction", class('inverse_Taylor_prop'))
   
   
   multi = as.integer(multi);
-  ;.Call('R_swig_tensor_value', d, m, y, tensor, multi, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_tensor_value', d, m, y, tensor, multi, PACKAGE='radolc');
   
 }
 
@@ -6930,7 +6930,7 @@ class(`tensor_value`) = c("SWIGFunction", class('tensor_value'))
   };
   
   
-  ;ans = .Call('R_swig_tensorsetup', m, p, d, tensorig, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_tensorsetup', m, p, d, tensorig, PACKAGE='radolc');
   ans <- new("_p_p_void", ref=ans) ;
   
   ans
@@ -6964,7 +6964,7 @@ class(`tensorsetup`) = c("SWIGFunction", class('tensorsetup'))
   };
   
   
-  ;.Call('R_swig_freetensor', m, p, d, tensor, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_freetensor', m, p, d, tensor, PACKAGE='radolc');
   
 }
 
@@ -6983,7 +6983,7 @@ class(`freetensor`) = c("SWIGFunction", class('freetensor'))
   };
   
   im = as.integer(im);
-  ;.Call('R_swig_tensor_address', d, im, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_tensor_address', d, im, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7007,7 +7007,7 @@ class(`tensor_address`) = c("SWIGFunction", class('tensor_address'))
     warning("using only the first element of b");
   };
   
-  ;.Call('R_swig_binomi', a, b, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_binomi', a, b, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7039,7 +7039,7 @@ class(`binomi`) = c("SWIGFunction", class('binomi'))
     warning("using only the first element of mode");
   };
   
-  ;.Call('R_swig_jac_solv', tag, n, x, b, mode, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_jac_solv', tag, n, x, b, mode, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7077,7 +7077,7 @@ class(`jac_solv`) = c("SWIGFunction", class('jac_solv'))
   };
   
   
-  ;.Call('R_swig_forodec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forodec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7105,7 +7105,7 @@ class(`forodec`) = c("SWIGFunction", class('forodec'))
   if (inherits(s_arg4, "ExternalReference")) s_arg4 = slot(s_arg4,"ref") 
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_accodec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_accodec', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, PACKAGE='radolc');
   
 }
 
@@ -7143,7 +7143,7 @@ class(`accodec`) = c("SWIGFunction", class('accodec'))
   };
   
   
-  ;.Call('R_swig_forode__SWIG_0', tag, n, tau, dold, dnew, X, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forode__SWIG_0', tag, n, tau, dold, dnew, X, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7180,7 +7180,7 @@ class(`forode__SWIG_0`) = c("SWIGFunction", class('forode__SWIG_0'))
   };
   
   
-  ;.Call('R_swig_forode__SWIG_1', tag, n, dold, dnew, X, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forode__SWIG_1', tag, n, dold, dnew, X, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7212,7 +7212,7 @@ class(`forode__SWIG_1`) = c("SWIGFunction", class('forode__SWIG_1'))
   };
   
   
-  ;.Call('R_swig_forode__SWIG_2', tag, n, tau, deg, X, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forode__SWIG_2', tag, n, tau, deg, X, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7243,7 +7243,7 @@ class(`forode__SWIG_2`) = c("SWIGFunction", class('forode__SWIG_2'))
   };
   
   
-  ;.Call('R_swig_forode__SWIG_3', tag, n, deg, X, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_forode__SWIG_3', tag, n, deg, X, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7298,7 +7298,7 @@ class(`forode__SWIG_3`) = c("SWIGFunction", class('forode__SWIG_3'))
   if (inherits(A, "ExternalReference")) A = slot(A,"ref") 
   if (inherits(B, "ExternalReference")) B = slot(B,"ref") 
   if (inherits(nonzero, "ExternalReference")) nonzero = slot(nonzero,"ref") 
-  ;.Call('R_swig_accode__SWIG_0', n, tau, deg, A, B, nonzero, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_accode__SWIG_0', n, tau, deg, A, B, nonzero, PACKAGE='radolc');
   
 }
 
@@ -7325,7 +7325,7 @@ class(`accode__SWIG_0`) = c("SWIGFunction", class('accode__SWIG_0'))
   
   if (inherits(A, "ExternalReference")) A = slot(A,"ref") 
   if (inherits(B, "ExternalReference")) B = slot(B,"ref") 
-  ;.Call('R_swig_accode__SWIG_1', n, tau, deg, A, B, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_accode__SWIG_1', n, tau, deg, A, B, PACKAGE='radolc');
   
 }
 
@@ -7352,7 +7352,7 @@ class(`accode__SWIG_1`) = c("SWIGFunction", class('accode__SWIG_1'))
   if (inherits(A, "ExternalReference")) A = slot(A,"ref") 
   if (inherits(B, "ExternalReference")) B = slot(B,"ref") 
   if (inherits(nonzero, "ExternalReference")) nonzero = slot(nonzero,"ref") 
-  ;.Call('R_swig_accode__SWIG_2', n, deg, A, B, nonzero, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_accode__SWIG_2', n, deg, A, B, nonzero, PACKAGE='radolc');
   
 }
 
@@ -7378,7 +7378,7 @@ class(`accode__SWIG_2`) = c("SWIGFunction", class('accode__SWIG_2'))
   
   if (inherits(A, "ExternalReference")) A = slot(A,"ref") 
   if (inherits(B, "ExternalReference")) B = slot(B,"ref") 
-  ;.Call('R_swig_accode__SWIG_3', n, deg, A, B, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_accode__SWIG_3', n, deg, A, B, PACKAGE='radolc');
   
 }
 
@@ -7433,7 +7433,7 @@ class(`accode__SWIG_3`) = c("SWIGFunction", class('accode__SWIG_3'))
   
   
   sigma_g = as.integer(sigma_g);
-  ;.Call('R_swig_directional_active_gradient', tag, n, x, d, g, sigma_g, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_directional_active_gradient', tag, n, x, d, g, sigma_g, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7479,7 +7479,7 @@ class(`directional_active_gradient`) = c("SWIGFunction", class('directional_acti
   
   
   
-  ;.Call('R_swig_abs_normal', tag, m, n, swchk, x, sigma, y, z, cz, cy, J, Y, Z, L, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_abs_normal', tag, m, n, swchk, x, sigma, y, z, cz, cy, J, Y, Z, L, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7511,7 +7511,7 @@ class(`abs_normal`) = c("SWIGFunction", class('abs_normal'))
   
   
   
-  ;.Call('R_swig_tape_doc', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_tape_doc', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='radolc');
   
 }
 
@@ -7544,7 +7544,7 @@ class(`tape_doc`) = c("SWIGFunction", class('tape_doc'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   s_arg6 = as.integer(s_arg6);
-  ;.Call('R_swig_jac_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_jac_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7582,7 +7582,7 @@ class(`jac_pat`) = c("SWIGFunction", class('jac_pat'))
   
   
   if (inherits(s_arg6, "ExternalReference")) s_arg6 = slot(s_arg6,"ref") 
-  ;.Call('R_swig_absnormal_jac_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_absnormal_jac_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7615,7 +7615,7 @@ class(`absnormal_jac_pat`) = c("SWIGFunction", class('absnormal_jac_pat'))
     warning("using only the first element of s_arg6");
   };
   
-  ;.Call('R_swig_generate_seed_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_generate_seed_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, PACKAGE='radolc');
   
 }
 
@@ -7657,7 +7657,7 @@ class(`generate_seed_jac`) = c("SWIGFunction", class('generate_seed_jac'))
   if (inherits(s_arg8, "ExternalReference")) s_arg8 = slot(s_arg8,"ref") 
   
   s_arg10 = as.integer(s_arg10);
-  ;.Call('R_swig_sparse_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_sparse_jac', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, s_arg10, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7689,7 +7689,7 @@ class(`sparse_jac`) = c("SWIGFunction", class('sparse_jac'))
     warning("using only the first element of s_arg5");
   };
   
-  ;.Call('R_swig_hess_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_hess_pat', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7716,7 +7716,7 @@ class(`hess_pat`) = c("SWIGFunction", class('hess_pat'))
     warning("using only the first element of s_arg5");
   };
   
-  ;.Call('R_swig_generate_seed_hess', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_generate_seed_hess', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, PACKAGE='radolc');
   
 }
 
@@ -7752,7 +7752,7 @@ class(`generate_seed_hess`) = c("SWIGFunction", class('generate_seed_hess'))
   if (inherits(s_arg7, "ExternalReference")) s_arg7 = slot(s_arg7,"ref") 
   
   s_arg9 = as.integer(s_arg9);
-  ;.Call('R_swig_sparse_hess', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_sparse_hess', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, s_arg7, s_arg8, s_arg9, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7777,7 +7777,7 @@ class(`sparse_hess`) = c("SWIGFunction", class('sparse_hess'))
   };
   
   if (inherits(HP, "ExternalReference")) HP = slot(HP,"ref") 
-  ;.Call('R_swig_set_HP', tag, indep, HP, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_set_HP', tag, indep, HP, PACKAGE='radolc');
   
 }
 
@@ -7802,7 +7802,7 @@ class(`set_HP`) = c("SWIGFunction", class('set_HP'))
   };
   
   if (inherits(HP, "ExternalReference")) HP = slot(HP,"ref") 
-  ;.Call('R_swig_get_HP', tag, indep, HP, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_get_HP', tag, indep, HP, PACKAGE='radolc');
   
 }
 
@@ -7835,7 +7835,7 @@ class(`get_HP`) = c("SWIGFunction", class('get_HP'))
   
   if (inherits(s_arg5, "ExternalReference")) s_arg5 = slot(s_arg5,"ref") 
   s_arg6 = as.integer(s_arg6);
-  ;.Call('R_swig_bit_vector_propagation', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_bit_vector_propagation', s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7880,7 +7880,7 @@ defineEnumeration('_TapeRemovalType',
     warning("using only the first element of tnum");
   };
   
-  ;.Call('R_swig_skip_tracefile_cleanup', tnum, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_skip_tracefile_cleanup', tnum, PACKAGE='radolc');
   
 }
 
@@ -7899,7 +7899,7 @@ class(`skip_tracefile_cleanup`) = c("SWIGFunction", class('skip_tracefile_cleanu
   };
   
   tape_stats = as.integer(tape_stats);
-  ;.Call('R_swig_tapestats', tag, tape_stats, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_tapestats', tag, tape_stats, PACKAGE='radolc');
   
 }
 
@@ -7918,7 +7918,7 @@ class(`tapestats`) = c("SWIGFunction", class('tapestats'))
   };
   
   nested = as(nested, "character");     
-  ;.Call('R_swig_set_nested_ctx', tag, nested, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_set_nested_ctx', tag, nested, PACKAGE='radolc');
   
 }
 
@@ -7937,7 +7937,7 @@ class(`set_nested_ctx`) = c("SWIGFunction", class('set_nested_ctx'))
     warning("using only the first element of tag");
   };
   
-  ;.Call('R_swig_printTapeStats', stream, tag, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_printTapeStats', stream, tag, PACKAGE='radolc');
   
 }
 
@@ -7961,7 +7961,7 @@ class(`printTapeStats`) = c("SWIGFunction", class('printTapeStats'))
     warning("using only the first element of type");
   };
   
-  ;.Call('R_swig_removeTape', tapeID, type, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_removeTape', tapeID, type, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -7973,7 +7973,7 @@ class(`removeTape`) = c("SWIGFunction", class('removeTape'))
 
 `enableBranchSwitchWarnings` = function()
 {
-  ;.Call('R_swig_enableBranchSwitchWarnings', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_enableBranchSwitchWarnings', PACKAGE='radolc');
   
 }
 
@@ -7984,7 +7984,7 @@ class(`enableBranchSwitchWarnings`) = c("SWIGFunction", class('enableBranchSwitc
 
 `disableBranchSwitchWarnings` = function()
 {
-  ;.Call('R_swig_disableBranchSwitchWarnings', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_disableBranchSwitchWarnings', PACKAGE='radolc');
   
 }
 
@@ -7995,7 +7995,7 @@ class(`disableBranchSwitchWarnings`) = c("SWIGFunction", class('disableBranchSwi
 
 `enableMinMaxUsingAbs` = function()
 {
-  ;.Call('R_swig_enableMinMaxUsingAbs', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_enableMinMaxUsingAbs', PACKAGE='radolc');
   
 }
 
@@ -8006,7 +8006,7 @@ class(`enableMinMaxUsingAbs`) = c("SWIGFunction", class('enableMinMaxUsingAbs'))
 
 `disableMinMaxUsingAbs` = function()
 {
-  ;.Call('R_swig_disableMinMaxUsingAbs', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_disableMinMaxUsingAbs', PACKAGE='radolc');
   
 }
 
@@ -8023,7 +8023,7 @@ class(`disableMinMaxUsingAbs`) = c("SWIGFunction", class('disableMinMaxUsingAbs'
     warning("using only the first element of gcTriggerMaxSize");
   };
   
-  ;.Call('R_swig_setStoreManagerControl', gcTriggerRatio, gcTriggerMaxSize, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_setStoreManagerControl', gcTriggerRatio, gcTriggerMaxSize, PACKAGE='radolc');
   
 }
 
@@ -8035,7 +8035,7 @@ class(`setStoreManagerControl`) = c("SWIGFunction", class('setStoreManagerContro
 
 `initADOLC` = function()
 {
-  ;.Call('R_swig_initADOLC', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_initADOLC', PACKAGE='radolc');
   
 }
 
@@ -8058,7 +8058,7 @@ class(`initADOLC`) = c("SWIGFunction", class('initADOLC'))
     warning("using only the first element of keepTaylors");
   };
   
-  ;.Call('R_swig_trace_on__SWIG_0', tnum, keepTaylors, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_on__SWIG_0', tnum, keepTaylors, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -8076,7 +8076,7 @@ class(`trace_on__SWIG_0`) = c("SWIGFunction", class('trace_on__SWIG_0'))
     warning("using only the first element of tnum");
   };
   
-  ;.Call('R_swig_trace_on__SWIG_1', tnum, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_on__SWIG_1', tnum, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -8130,7 +8130,7 @@ class(`trace_on__SWIG_1`) = c("SWIGFunction", class('trace_on__SWIG_1'))
     warning("using only the first element of skipFileCleanup");
   };
   
-  ;.Call('R_swig_trace_on__SWIG_2', tnum, keepTaylors, obs, lbs, vbs, tbs, skipFileCleanup, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_on__SWIG_2', tnum, keepTaylors, obs, lbs, vbs, tbs, skipFileCleanup, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -8178,7 +8178,7 @@ class(`trace_on__SWIG_2`) = c("SWIGFunction", class('trace_on__SWIG_2'))
     warning("using only the first element of tbs");
   };
   
-  ;.Call('R_swig_trace_on__SWIG_3', tnum, keepTaylors, obs, lbs, vbs, tbs, as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_on__SWIG_3', tnum, keepTaylors, obs, lbs, vbs, tbs, as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -8188,8 +8188,8 @@ class(`trace_on__SWIG_3`) = c("SWIGFunction", class('trace_on__SWIG_3'))
 
 #' Start of the ADOL-C taping process
 #'
-#' \code{trace_on} starts the \code{autodiffadolc} tracing process. Using 
-#' \code{autodiffadolc} consists of two phases (1) Tracing (also called taping), 
+#' \code{trace_on} starts the \code{radolc} tracing process. Using 
+#' \code{radolc} consists of two phases (1) Tracing (also called taping), 
 #' generally performed once and (2) Computation of derivatives, which can be performed. 
 #' \code{trace_on} is the initialization for the taping process. Creates buffers 
 #' for this tape, sets files names, and calls appropriate setup routines.
@@ -8204,7 +8204,7 @@ class(`trace_on__SWIG_3`) = c("SWIGFunction", class('trace_on__SWIG_3'))
 #'@seealso{\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'         
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #' @export
 
@@ -8246,7 +8246,7 @@ class(`trace_on__SWIG_3`) = c("SWIGFunction", class('trace_on__SWIG_3'))
     warning("using only the first element of flag");
   };
   
-  ;.Call('R_swig_trace_off__SWIG_0', flag, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_off__SWIG_0', flag, PACKAGE='radolc');
   
 }
 
@@ -8258,7 +8258,7 @@ class(`trace_off__SWIG_0`) = c("SWIGFunction", class('trace_off__SWIG_0'))
 
 `trace_off__SWIG_1` = function()
 {
-  ;.Call('R_swig_trace_off__SWIG_1', PACKAGE='autodiffadolc');
+  ;.Call('R_swig_trace_off__SWIG_1', PACKAGE='radolc');
   
 }
 
@@ -8267,8 +8267,8 @@ class(`trace_off__SWIG_1`) = c("SWIGFunction", class('trace_off__SWIG_1'))
 
 #' Stop Tracing
 #'
-#' \code{trace_off} ends the \code{autodiffadolc} tracing process. Using 
-#' Using \code{autodiffadolc} consists of two phases (1) Tracing 
+#' \code{trace_off} ends the \code{radolc} tracing process. Using 
+#' Using \code{radolc} consists of two phases (1) Tracing 
 #' (also called taping), generally performed once and (2) Computation of 
 #' derivatives, which can be performed. \code{trace_off} marks where 
 #' the taping ends.  Cleans up, and turns off trace_flag.
@@ -8281,7 +8281,7 @@ class(`trace_off__SWIG_1`) = c("SWIGFunction", class('trace_off__SWIG_1'))
 #'@seealso{\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
 #'         \code{\link{badouble_declareDependent}}}
 #'
-#'@keywords{autodiffadolc}
+#'@keywords{radolc}
 #'
 #'  @export
 
@@ -8307,7 +8307,7 @@ class(`trace_off__SWIG_1`) = c("SWIGFunction", class('trace_off__SWIG_1'))
 
 `isTaping` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_isTaping', as.logical(.copy), PACKAGE='autodiffadolc');
+  ;.Call('R_swig_isTaping', as.logical(.copy), PACKAGE='radolc');
   
 }
 
@@ -8319,7 +8319,7 @@ class(`isTaping`) = c("SWIGFunction", class('isTaping'))
 `cachedTraceTags` = function(result)
 {
   if (inherits(result, "ExternalReference")) result = slot(result,"ref") 
-  ;.Call('R_swig_cachedTraceTags', result, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_cachedTraceTags', result, PACKAGE='radolc');
   
 }
 
@@ -8345,7 +8345,7 @@ class(`cachedTraceTags`) = c("SWIGFunction", class('cachedTraceTags'))
     warning("using only the first element of m");
   };
   
-  ;.Call('R_swig_populate_dpp', pointer, memory, n, m, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_populate_dpp', pointer, memory, n, m, PACKAGE='radolc');
   
 }
 
@@ -8377,7 +8377,7 @@ class(`populate_dpp`) = c("SWIGFunction", class('populate_dpp'))
     warning("using only the first element of p");
   };
   
-  ;.Call('R_swig_populate_dppp', pointer, memory, n, m, p, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_populate_dppp', pointer, memory, n, m, p, PACKAGE='radolc');
   
 }
 
@@ -8403,7 +8403,7 @@ class(`populate_dppp`) = c("SWIGFunction", class('populate_dppp'))
     warning("using only the first element of m");
   };
   
-  ;.Call('R_swig_populate_dppp_nodata', pointer, memory, n, m, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_populate_dppp_nodata', pointer, memory, n, m, PACKAGE='radolc');
   
 }
 
@@ -8421,7 +8421,7 @@ class(`populate_dppp_nodata`) = c("SWIGFunction", class('populate_dppp_nodata'))
     warning("using only the first element of s_arg1");
   };
   
-  ;.Call('R_swig_myalloc1', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myalloc1', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8445,7 +8445,7 @@ class(`myalloc1`) = c("SWIGFunction", class('myalloc1'))
     warning("using only the first element of s_arg2");
   };
   
-  ;.Call('R_swig_myalloc2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myalloc2', s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -8475,7 +8475,7 @@ class(`myalloc2`) = c("SWIGFunction", class('myalloc2'))
     warning("using only the first element of s_arg3");
   };
   
-  ;ans = .Call('R_swig_myalloc3', s_arg1, s_arg2, s_arg3, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myalloc3', s_arg1, s_arg2, s_arg3, PACKAGE='radolc');
   ans <- new("_p_p_p_double", ref=ans) ;
   
   ans
@@ -8490,7 +8490,7 @@ class(`myalloc3`) = c("SWIGFunction", class('myalloc3'))
 
 `myfree1` = function(s_arg1)
 {
-  ;.Call('R_swig_myfree1', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree1', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8502,7 +8502,7 @@ class(`myfree1`) = c("SWIGFunction", class('myfree1'))
 
 `myfree2` = function(s_arg1)
 {
-  ;.Call('R_swig_myfree2', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree2', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8515,7 +8515,7 @@ class(`myfree2`) = c("SWIGFunction", class('myfree2'))
 `myfree3` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;.Call('R_swig_myfree3', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree3', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8533,7 +8533,7 @@ class(`myfree3`) = c("SWIGFunction", class('myfree3'))
     warning("using only the first element of s_arg1");
   };
   
-  ;.Call('R_swig_myallocI2', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myallocI2', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8552,7 +8552,7 @@ class(`myallocI2`) = c("SWIGFunction", class('myallocI2'))
   };
   
   
-  ;.Call('R_swig_myfreeI2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfreeI2', s_arg1, s_arg2, PACKAGE='radolc');
   
 }
 
@@ -8570,7 +8570,7 @@ class(`myfreeI2`) = c("SWIGFunction", class('myfreeI2'))
     warning("using only the first element of s_arg1");
   };
   
-  ;ans = .Call('R_swig_myalloc1_uint', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myalloc1_uint', s_arg1, PACKAGE='radolc');
   ans <- new("_p_unsigned_int", ref=ans) ;
   
   ans
@@ -8591,7 +8591,7 @@ class(`myalloc1_uint`) = c("SWIGFunction", class('myalloc1_uint'))
     warning("using only the first element of s_arg1");
   };
   
-  ;ans = .Call('R_swig_myalloc1_ulong', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myalloc1_ulong', s_arg1, PACKAGE='radolc');
   ans <- new("_p_unsigned_long", ref=ans) ;
   
   ans
@@ -8618,7 +8618,7 @@ class(`myalloc1_ulong`) = c("SWIGFunction", class('myalloc1_ulong'))
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_myalloc2_ulong', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myalloc2_ulong', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_p_unsigned_long", ref=ans) ;
   
   ans
@@ -8634,7 +8634,7 @@ class(`myalloc2_ulong`) = c("SWIGFunction", class('myalloc2_ulong'))
 `myfree1_uint` = function(s_arg1)
 {
   s_arg1 = as.integer(s_arg1);
-  ;.Call('R_swig_myfree1_uint', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree1_uint', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8647,7 +8647,7 @@ class(`myfree1_uint`) = c("SWIGFunction", class('myfree1_uint'))
 `myfree1_ulong` = function(s_arg1)
 {
   s_arg1 = as.integer(s_arg1);
-  ;.Call('R_swig_myfree1_ulong', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree1_ulong', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8660,7 +8660,7 @@ class(`myfree1_ulong`) = c("SWIGFunction", class('myfree1_ulong'))
 `myfree2_ulong` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;.Call('R_swig_myfree2_ulong', s_arg1, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree2_ulong', s_arg1, PACKAGE='radolc');
   
 }
 
@@ -8678,7 +8678,7 @@ class(`myfree2_ulong`) = c("SWIGFunction", class('myfree2_ulong'))
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_myalloc__SWIG_0', n, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myalloc__SWIG_0', n, PACKAGE='radolc');
   
 }
 
@@ -8702,7 +8702,7 @@ class(`myalloc__SWIG_0`) = c("SWIGFunction", class('myalloc__SWIG_0'))
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_myalloc__SWIG_1', m, n, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myalloc__SWIG_1', m, n, PACKAGE='radolc');
   
 }
 
@@ -8732,7 +8732,7 @@ class(`myalloc__SWIG_1`) = c("SWIGFunction", class('myalloc__SWIG_1'))
     warning("using only the first element of p");
   };
   
-  ;ans = .Call('R_swig_myalloc__SWIG_2', m, n, p, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_myalloc__SWIG_2', m, n, p, PACKAGE='radolc');
   ans <- new("_p_p_p_double", ref=ans) ;
   
   ans
@@ -8771,7 +8771,7 @@ class(`myalloc__SWIG_2`) = c("SWIGFunction", class('myalloc__SWIG_2'))
 
 `myfree__SWIG_0` = function(A)
 {
-  ;.Call('R_swig_myfree__SWIG_0', A, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree__SWIG_0', A, PACKAGE='radolc');
   
 }
 
@@ -8783,7 +8783,7 @@ class(`myfree__SWIG_0`) = c("SWIGFunction", class('myfree__SWIG_0'))
 
 `myfree__SWIG_1` = function(A)
 {
-  ;.Call('R_swig_myfree__SWIG_1', A, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree__SWIG_1', A, PACKAGE='radolc');
   
 }
 
@@ -8796,7 +8796,7 @@ class(`myfree__SWIG_1`) = c("SWIGFunction", class('myfree__SWIG_1'))
 `myfree__SWIG_2` = function(A)
 {
   if (inherits(A, "ExternalReference")) A = slot(A,"ref") 
-  ;.Call('R_swig_myfree__SWIG_2', A, PACKAGE='autodiffadolc');
+  ;.Call('R_swig_myfree__SWIG_2', A, PACKAGE='radolc');
   
 }
 
@@ -8831,7 +8831,7 @@ class(`myfree__SWIG_2`) = c("SWIGFunction", class('myfree__SWIG_2'))
 `Plus__SWIG_0` = function(x)
 {
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_0', x, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_0', x, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8847,7 +8847,7 @@ class(`Plus__SWIG_0`) = c("SWIGFunction", class('Plus__SWIG_0'))
 `Minus__SWIG_0` = function(x)
 {
   if (inherits(x, "ExternalReference")) x = slot(x,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_0', x, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_0', x, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8863,7 +8863,7 @@ class(`Minus__SWIG_0`) = c("SWIGFunction", class('Minus__SWIG_0'))
 `Minus__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8880,7 +8880,7 @@ class(`Minus__SWIG_1`) = c("SWIGFunction", class('Minus__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8896,7 +8896,7 @@ class(`Plus__SWIG_1`) = c("SWIGFunction", class('Plus__SWIG_1'))
 `Plus__SWIG_2` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8913,7 +8913,7 @@ class(`Plus__SWIG_2`) = c("SWIGFunction", class('Plus__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Plus__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8930,7 +8930,7 @@ class(`Plus__SWIG_3`) = c("SWIGFunction", class('Plus__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8947,7 +8947,7 @@ class(`Minus__SWIG_2`) = c("SWIGFunction", class('Minus__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Minus__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8963,7 +8963,7 @@ class(`Minus__SWIG_3`) = c("SWIGFunction", class('Minus__SWIG_3'))
 `Minus__SWIG_4` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8980,7 +8980,7 @@ class(`Minus__SWIG_4`) = c("SWIGFunction", class('Minus__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Multiply__SWIG_0', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_0', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -8996,7 +8996,7 @@ class(`Multiply__SWIG_0`) = c("SWIGFunction", class('Multiply__SWIG_0'))
 `Multiply__SWIG_1` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Multiply__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9013,7 +9013,7 @@ class(`Multiply__SWIG_1`) = c("SWIGFunction", class('Multiply__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Multiply__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9030,7 +9030,7 @@ class(`Multiply__SWIG_2`) = c("SWIGFunction", class('Multiply__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Divide__SWIG_0', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_0', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9047,7 +9047,7 @@ class(`Divide__SWIG_0`) = c("SWIGFunction", class('Divide__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Divide__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9063,7 +9063,7 @@ class(`Divide__SWIG_1`) = c("SWIGFunction", class('Divide__SWIG_1'))
 `Divide__SWIG_2` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Divide__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9080,7 +9080,7 @@ class(`Divide__SWIG_2`) = c("SWIGFunction", class('Divide__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9097,7 +9097,7 @@ class(`Plus__SWIG_4`) = c("SWIGFunction", class('Plus__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Plus__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9113,7 +9113,7 @@ class(`Plus__SWIG_5`) = c("SWIGFunction", class('Plus__SWIG_5'))
 `Plus__SWIG_6` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9130,7 +9130,7 @@ class(`Plus__SWIG_6`) = c("SWIGFunction", class('Plus__SWIG_6'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Plus__SWIG_7', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Plus__SWIG_7', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9196,7 +9196,7 @@ class(`Plus__SWIG_7`) = c("SWIGFunction", class('Plus__SWIG_7'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9213,7 +9213,7 @@ class(`Minus__SWIG_5`) = c("SWIGFunction", class('Minus__SWIG_5'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Minus__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9229,7 +9229,7 @@ class(`Minus__SWIG_6`) = c("SWIGFunction", class('Minus__SWIG_6'))
 `Minus__SWIG_7` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_7', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_7', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9246,7 +9246,7 @@ class(`Minus__SWIG_7`) = c("SWIGFunction", class('Minus__SWIG_7'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Minus__SWIG_8', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Minus__SWIG_8', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9318,7 +9318,7 @@ class(`Minus__SWIG_8`) = c("SWIGFunction", class('Minus__SWIG_8'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Multiply__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9335,7 +9335,7 @@ class(`Multiply__SWIG_3`) = c("SWIGFunction", class('Multiply__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Multiply__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9352,7 +9352,7 @@ class(`Multiply__SWIG_4`) = c("SWIGFunction", class('Multiply__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Multiply__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9368,7 +9368,7 @@ class(`Multiply__SWIG_5`) = c("SWIGFunction", class('Multiply__SWIG_5'))
 `Multiply__SWIG_6` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Multiply__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Multiply__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9430,7 +9430,7 @@ class(`Multiply__SWIG_6`) = c("SWIGFunction", class('Multiply__SWIG_6'))
 `recipr` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_recipr', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_recipr', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9447,7 +9447,7 @@ class(`recipr`) = c("SWIGFunction", class('recipr'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Divide__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9463,7 +9463,7 @@ class(`Divide__SWIG_3`) = c("SWIGFunction", class('Divide__SWIG_3'))
 `Divide__SWIG_4` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Divide__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9480,7 +9480,7 @@ class(`Divide__SWIG_4`) = c("SWIGFunction", class('Divide__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_Divide__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9497,7 +9497,7 @@ class(`Divide__SWIG_5`) = c("SWIGFunction", class('Divide__SWIG_5'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_Divide__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_Divide__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9558,7 +9558,7 @@ class(`Divide__SWIG_6`) = c("SWIGFunction", class('Divide__SWIG_6'))
 `exp__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_exp__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_exp__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9574,7 +9574,7 @@ class(`exp__SWIG_0`) = c("SWIGFunction", class('exp__SWIG_0'))
 `log__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_log__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9590,7 +9590,7 @@ class(`log__SWIG_0`) = c("SWIGFunction", class('log__SWIG_0'))
 `sqrt__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sqrt__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sqrt__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9606,7 +9606,7 @@ class(`sqrt__SWIG_0`) = c("SWIGFunction", class('sqrt__SWIG_0'))
 `sin__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sin__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sin__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9622,7 +9622,7 @@ class(`sin__SWIG_0`) = c("SWIGFunction", class('sin__SWIG_0'))
 `cos__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cos__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_cos__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9638,7 +9638,7 @@ class(`cos__SWIG_0`) = c("SWIGFunction", class('cos__SWIG_0'))
 `tan__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tan__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_tan__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9654,7 +9654,7 @@ class(`tan__SWIG_0`) = c("SWIGFunction", class('tan__SWIG_0'))
 `asin__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_asin__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_asin__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9670,7 +9670,7 @@ class(`asin__SWIG_0`) = c("SWIGFunction", class('asin__SWIG_0'))
 `acos__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_acos__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_acos__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9686,7 +9686,7 @@ class(`acos__SWIG_0`) = c("SWIGFunction", class('acos__SWIG_0'))
 `atan__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_atan__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_atan__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9703,7 +9703,7 @@ class(`atan__SWIG_0`) = c("SWIGFunction", class('atan__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_pow__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9719,7 +9719,7 @@ class(`pow__SWIG_3`) = c("SWIGFunction", class('pow__SWIG_3'))
 `log10__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log10__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_log10__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9736,7 +9736,7 @@ class(`log10__SWIG_0`) = c("SWIGFunction", class('log10__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_pow__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9752,7 +9752,7 @@ class(`pow__SWIG_4`) = c("SWIGFunction", class('pow__SWIG_4'))
 `sinh__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sinh__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sinh__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9768,7 +9768,7 @@ class(`sinh__SWIG_0`) = c("SWIGFunction", class('sinh__SWIG_0'))
 `cosh__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cosh__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_cosh__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9784,7 +9784,7 @@ class(`cosh__SWIG_0`) = c("SWIGFunction", class('cosh__SWIG_0'))
 `tanh__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tanh__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_tanh__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9800,7 +9800,7 @@ class(`tanh__SWIG_0`) = c("SWIGFunction", class('tanh__SWIG_0'))
 `fabs__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_fabs__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fabs__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9816,7 +9816,7 @@ class(`fabs__SWIG_0`) = c("SWIGFunction", class('fabs__SWIG_0'))
 `ceil__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_ceil__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_ceil__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9832,7 +9832,7 @@ class(`ceil__SWIG_0`) = c("SWIGFunction", class('ceil__SWIG_0'))
 `floor__SWIG_0` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_floor__SWIG_0', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_floor__SWIG_0', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9849,7 +9849,7 @@ class(`floor__SWIG_0`) = c("SWIGFunction", class('floor__SWIG_0'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_0', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_0', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9865,7 +9865,7 @@ class(`fmax__SWIG_0`) = c("SWIGFunction", class('fmax__SWIG_0'))
 `fmax__SWIG_1` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9882,7 +9882,7 @@ class(`fmax__SWIG_1`) = c("SWIGFunction", class('fmax__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_fmax__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9899,7 +9899,7 @@ class(`fmax__SWIG_2`) = c("SWIGFunction", class('fmax__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_0', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_0', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9915,7 +9915,7 @@ class(`fmin__SWIG_0`) = c("SWIGFunction", class('fmin__SWIG_0'))
 `fmin__SWIG_1` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9932,7 +9932,7 @@ class(`fmin__SWIG_1`) = c("SWIGFunction", class('fmin__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_fmin__SWIG_2', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_2', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9949,7 +9949,7 @@ class(`fmin__SWIG_2`) = c("SWIGFunction", class('fmin__SWIG_2'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9966,7 +9966,7 @@ class(`fmax__SWIG_3`) = c("SWIGFunction", class('fmax__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -9983,7 +9983,7 @@ class(`fmax__SWIG_4`) = c("SWIGFunction", class('fmax__SWIG_4'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_3', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_3', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10000,7 +10000,7 @@ class(`fmin__SWIG_3`) = c("SWIGFunction", class('fmin__SWIG_3'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_4', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_4', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10022,7 +10022,7 @@ class(`fmin__SWIG_4`) = c("SWIGFunction", class('fmin__SWIG_4'))
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_ldexp__SWIG_0', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_ldexp__SWIG_0', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10038,7 +10038,7 @@ class(`ldexp__SWIG_0`) = c("SWIGFunction", class('ldexp__SWIG_0'))
 `exp__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_exp__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_exp__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10085,7 +10085,7 @@ class(`exp__SWIG_1`) = c("SWIGFunction", class('exp__SWIG_1'))
 `log__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_log__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10129,7 +10129,7 @@ oldlog <- log
 `sqrt__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sqrt__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sqrt__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10173,7 +10173,7 @@ oldsqrt <- sqrt
 `sin__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sin__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sin__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10217,7 +10217,7 @@ oldsin <- sin
 `cos__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cos__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_cos__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10261,7 +10261,7 @@ oldcos <- cos
 `tan__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tan__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_tan__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10305,7 +10305,7 @@ oldtan <- tan
 `asin__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_asin__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_asin__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10349,7 +10349,7 @@ oldasin <- asin
 `acos__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_acos__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_acos__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10393,7 +10393,7 @@ oldacos <- acos
 `atan__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_atan__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_atan__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10438,7 +10438,7 @@ oldatan <- atan
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_pow__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_pow__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10500,7 +10500,7 @@ class(`pow__SWIG_5`) = c("SWIGFunction", class('pow__SWIG_5'))
 `log10__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_log10__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_log10__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10544,7 +10544,7 @@ class(`log10__SWIG_1`) = c("SWIGFunction", class('log10__SWIG_1'))
 `sinh__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_sinh__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_sinh__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10588,7 +10588,7 @@ class(`sinh__SWIG_1`) = c("SWIGFunction", class('sinh__SWIG_1'))
 `cosh__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_cosh__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_cosh__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10632,7 +10632,7 @@ class(`cosh__SWIG_1`) = c("SWIGFunction", class('cosh__SWIG_1'))
 `tanh__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_tanh__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_tanh__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10676,7 +10676,7 @@ class(`tanh__SWIG_1`) = c("SWIGFunction", class('tanh__SWIG_1'))
 `fabs__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_fabs__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fabs__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10720,7 +10720,7 @@ class(`fabs__SWIG_1`) = c("SWIGFunction", class('fabs__SWIG_1'))
 `ceil__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_ceil__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_ceil__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10764,7 +10764,7 @@ class(`ceil__SWIG_1`) = c("SWIGFunction", class('ceil__SWIG_1'))
 `floor__SWIG_1` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;ans = .Call('R_swig_floor__SWIG_1', s_arg1, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_floor__SWIG_1', s_arg1, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10809,7 +10809,7 @@ class(`floor__SWIG_1`) = c("SWIGFunction", class('floor__SWIG_1'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10825,7 +10825,7 @@ class(`fmax__SWIG_5`) = c("SWIGFunction", class('fmax__SWIG_5'))
 `fmax__SWIG_6` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmax__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10842,7 +10842,7 @@ class(`fmax__SWIG_6`) = c("SWIGFunction", class('fmax__SWIG_6'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_fmax__SWIG_7', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmax__SWIG_7', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10896,7 +10896,7 @@ class(`fmax__SWIG_7`) = c("SWIGFunction", class('fmax__SWIG_7'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_5', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_5', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10912,7 +10912,7 @@ class(`fmin__SWIG_5`) = c("SWIGFunction", class('fmin__SWIG_5'))
 `fmin__SWIG_6` = function(s_arg1, s_arg2)
 {
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
-  ;ans = .Call('R_swig_fmin__SWIG_6', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_6', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10929,7 +10929,7 @@ class(`fmin__SWIG_6`) = c("SWIGFunction", class('fmin__SWIG_6'))
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   
-  ;ans = .Call('R_swig_fmin__SWIG_7', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_fmin__SWIG_7', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -10988,7 +10988,7 @@ class(`fmin__SWIG_7`) = c("SWIGFunction", class('fmin__SWIG_7'))
     warning("using only the first element of s_arg2");
   };
   
-  ;ans = .Call('R_swig_ldexp__SWIG_1', s_arg1, s_arg2, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_ldexp__SWIG_1', s_arg1, s_arg2, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -11025,7 +11025,7 @@ class(`ldexp__SWIG_1`) = c("SWIGFunction", class('ldexp__SWIG_1'))
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
   if (inherits(s_arg2, "ExternalReference")) s_arg2 = slot(s_arg2,"ref") 
   if (inherits(s_arg3, "ExternalReference")) s_arg3 = slot(s_arg3,"ref") 
-  ;ans = .Call('R_swig_adolc_vec_dot', s_arg1, s_arg2, s_arg3, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_adolc_vec_dot', s_arg1, s_arg2, s_arg3, PACKAGE='radolc');
   ans <- new("_p_adub", ref=ans) ;
   
   ans
@@ -11040,7 +11040,7 @@ class(`adolc_vec_dot`) = c("SWIGFunction", class('adolc_vec_dot'))
 
 `mkparam` = function(pval)
 {
-  ;ans = .Call('R_swig_mkparam', pval, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_mkparam', pval, PACKAGE='radolc');
   ans <- new("_p_pdouble", ref=ans) ;
   
   ans
@@ -11056,7 +11056,7 @@ class(`mkparam`) = c("SWIGFunction", class('mkparam'))
 `getparam` = function(index)
 {
   if (inherits(index, "ExternalReference")) index = slot(index,"ref") 
-  ;ans = .Call('R_swig_getparam', index, PACKAGE='autodiffadolc');
+  ;ans = .Call('R_swig_getparam', index, PACKAGE='radolc');
   ans <- new("_p_pdouble", ref=ans) ;
   
   ans

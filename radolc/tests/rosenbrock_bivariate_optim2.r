@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-library('autodiffadolc')
+library('radolc')
 
 #--- testing ADOLC in the bi-variate case
 
@@ -27,4 +27,4 @@ grrADOLC <- function(x) { ## Gradient of 'fr'
 res6 <- optim(c(1.2,1), fr, grrADOLC, method = "L-BFGS-B", control = list(type = 3, trace = 2))
 
 #Always detach the package
-detach(package:autodiffadolc, unload=TRUE) 
+detach(package:radolc, unload=TRUE) 

@@ -1,4 +1,4 @@
-Package: autodiffadolc
+Package: radolc
 Type: Package
 Title: Provides automatic differentiation capability
 Version: 0.1.0
