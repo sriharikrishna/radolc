@@ -15,7 +15,7 @@ hess_vec(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, .copy = FALSE)
 
 \item{v}{vector of length n}
 
-\item{z}{resulting vector of lenth n \nabla^2F(x)}
+\item{z}{resulting vector of lenth n}
 }
 \value{
 None. the output is the the parameter z

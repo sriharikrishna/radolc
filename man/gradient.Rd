@@ -13,7 +13,7 @@ gradient(s_arg1, s_arg2, s_arg3, s_arg4, .copy = FALSE)
 
 \item{x}{independent vector of length n}
 
-\item{g}{resulting gradient (\gradF(x)) of length n}
+\item{g}{resulting gradient of length n}
 }
 \value{
 None. the output is the the parameter g

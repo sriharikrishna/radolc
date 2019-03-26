@@ -13,7 +13,7 @@ hessian(s_arg1, s_arg2, s_arg3, s_arg4, .copy = FALSE)
 
 \item{x}{independent vector of length n}
 
-\item{H}{resulting Hessian matrix (n*n) \nabla^2F(x)}
+\item{H}{resulting Hessian matrix (n*n)}
 }
 \value{
 None. the output is the the parameter H

@@ -15,9 +15,9 @@ hess_mat(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, s_arg6, .copy = FALSE)
 
 \item{v}{vector of length n}
 
-\item{z}{resulting vector of lenth n \nabla^2F(x)
+\item{z}{resulting vector of lenth n
 
-# hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nabla^2F(x)v}
+# hess_mat(tag, n, q, x[n], V[n][q], W[n][q])}
 }
 \value{
 None. the output is the the parameter z

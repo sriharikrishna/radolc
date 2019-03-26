@@ -6277,7 +6277,7 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
 #' @param tag integer for tape identification (used in trace_on())
 #' @param n  integer number of independents n and m = 1
 #' @param x  independent vector of length n
-#' @param  g  resulting gradient (\gradF(x)) of length n 
+#' @param  g  resulting gradient of length n 
 #' 
 #' @return None. the output is the the parameter g
 #'
@@ -6549,7 +6549,7 @@ class(`jac_vec`) = c("SWIGFunction", class('jac_vec'))
 #' @param tag integer for tape identification (used in \link{trace_on})
 #' @param n  integer number of independents and m = 1
 #' @param x  independent vector of length n
-#' @param H resulting Hessian matrix (n*n) \nabla^2F(x)
+#' @param H resulting Hessian matrix (n*n)
 #' 
 #' @return None. the output is the the parameter H
 #'
@@ -6625,7 +6625,7 @@ class(`hessian2`) = c("SWIGFunction", class('hessian2'))
 #' @param n  integer number of independents and m = 1
 #' @param x  independent vector of length n
 #' @param v  vector of length n
-#' @param z resulting vector of lenth n \nabla^2F(x)
+#' @param z resulting vector of lenth n
 #' 
 #' @return None. the output is the the parameter z
 #'
@@ -6676,9 +6676,9 @@ class(`hess_vec`) = c("SWIGFunction", class('hess_vec'))
 #' @param n  integer number of independents and m = 1
 #' @param x  independent vector of length n
 #' @param v  vector of length n
-#' @param z resulting vector of lenth n \nabla^2F(x)
+#' @param z resulting vector of lenth n
 #' 
-#' # hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nambla^2F(x)v
+#' # hess_mat(tag, n, q, x[n], V[n][q], W[n][q])
 # tag: integer, tape identification
 # n  : integer, number of independents n and m = 1
 # q  : dimension of matrix (n*q)
