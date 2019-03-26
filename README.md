@@ -16,7 +16,7 @@ This document serves as a brief introduction to radolc's interface calls to ADOL
 
 # Installation within R
 ```r
-remotes::install_gihub("https://github.com/sriharikrishna/radolc.git")
+remotes::install_github("https://github.com/sriharikrishna/radolc.git")
 ```
 
 # Phase 1: Preparing a Code Segment for Differentiation
