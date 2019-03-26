@@ -1,13 +1,3 @@
----
-title: "Getting started with radolc"
-output: html_document
-bibliography: ad.bib
-vignette: >
-  bibliography: ad.bib
-  %\VignetteIndexEntry{Introduction to radolc}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
----
 # Introduction
 
 
@@ -24,7 +14,7 @@ products.
 
 This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demostrates how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
 
-# Preparing a Code Segment for Differentiation
+# Phase 1: Preparing a Code Segment for Differentiation
 
 One must follow a four step process to prepare the code for differentiation with radolc. The steps are outlined below. 
 
@@ -96,7 +86,7 @@ detach(package:radolc, unload=TRUE)
 
 Derivatives are computed by invoking an appropriate driver provided by `radolc`. `gradient`, `hessian`, `hess_vec`, and `hess_mat`are appropriate when the computation has a single output i.e., it is scalar valued. They are explained below.
 
-##Derivatives for functions with single output
+## Derivatives for functions with single output
 
 ### Gradient
 `gradient` computes the derivatives of the output of a scalar valued function with respect to its input(s). It uses the reverse mode of automatic differentiation.
@@ -251,7 +241,7 @@ detach(package:radolc, unload=TRUE)
 ```
 
 
-##Derivatives for computation with multiple outputs
+## Derivatives for computation with multiple outputs
 
 
 ### Jacobian
