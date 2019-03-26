@@ -19,4 +19,6 @@ aclocal.m4
 *.tap
 .RData
 .DS_Store
-radolc/.Rbuildignore
+.Rbuildignores
+src/ADOLC/adol-c-swig-inst/*
+src/
