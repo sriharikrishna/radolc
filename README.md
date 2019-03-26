@@ -14,6 +14,11 @@ products.
 
 This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demostrates how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
 
+# Installation within R
+```r
+remotes::install_gihub("https://github.com/sriharikrishna/radolc.git")
+```
+
 # Phase 1: Preparing a Code Segment for Differentiation
 
 One must follow a four step process to prepare the code for differentiation with radolc. The steps are outlined below. 
