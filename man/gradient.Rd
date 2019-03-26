@@ -33,4 +33,4 @@ gradient(1,2,x,g)
         \code{\link{badouble_declareIndependent}},
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

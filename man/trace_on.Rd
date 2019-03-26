@@ -13,8 +13,8 @@ trace_on(...)
 None
 }
 \description{
-\code{trace_on} starts the \code{autodiffadolc} tracing process. Using 
-\code{autodiffadolc} consists of two phases (1) Tracing (also called taping), 
+\code{trace_on} starts the \code{radolc} tracing process. Using 
+\code{radolc} consists of two phases (1) Tracing (also called taping), 
 generally performed once and (2) Computation of derivatives, which can be performed. 
 \code{trace_on} is the initialization for the taping process. Creates buffers 
 for this tape, sets files names, and calls appropriate setup routines.
@@ -27,4 +27,4 @@ trace_on(1)
 {\code{\link{trace_off}}, \code{\link{badouble_declareIndependent}}, 
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

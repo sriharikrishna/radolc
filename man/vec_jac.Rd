@@ -35,4 +35,4 @@ vec_jac(tag,m,n,repeat,x,u,z)
         \code{\link{badouble_declareIndependent}},
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

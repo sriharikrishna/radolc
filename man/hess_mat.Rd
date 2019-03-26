@@ -34,4 +34,4 @@ hess_mat(tag, n, q, x, V, W)
         \code{\link{badouble_declareIndependent}},
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

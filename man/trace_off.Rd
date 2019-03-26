@@ -10,8 +10,8 @@ trace_off(...)
 None
 }
 \description{
-\code{trace_off} ends the \code{autodiffadolc} tracing process. Using 
-Using \code{autodiffadolc} consists of two phases (1) Tracing 
+\code{trace_off} ends the \code{radolc} tracing process. Using 
+Using \code{radolc} consists of two phases (1) Tracing 
 (also called taping), generally performed once and (2) Computation of 
 derivatives, which can be performed. \code{trace_off} marks where 
 the taping ends.  Cleans up, and turns off trace_flag.
@@ -25,4 +25,4 @@ trace_off()
         \code{\link{badouble_declareDependent}}}
 }
 \keyword{@export}
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

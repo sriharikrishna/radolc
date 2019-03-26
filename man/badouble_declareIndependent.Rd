@@ -28,4 +28,4 @@ badouble_declareIndependent(x,z)
 {\code{\link{trace_on}}, \code{\link{trace_off}}, 
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}

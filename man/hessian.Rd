@@ -31,4 +31,4 @@ hessian(tag,n,x,H)
         \code{\link{badouble_declareIndependent}},
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{{autodiffadolc}}
+\keyword{{radolc}}
