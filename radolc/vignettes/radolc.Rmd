@@ -93,17 +93,14 @@ trace_off(1)
 detach(package:radolc, unload=TRUE) 
 ```
 
-# Computing the derivatives
+# Phase 2: Computing the derivatives
 
-Derivatives can be computed using 
-The driver routine that should be used depends on the computation andthat can be calculated depend on the 
-The derivatives that can be computed depend on the function
-Calculate derivative objects after `trace_off(tag)` using
+Derivatives are computed by invoking an appropriate driver provided by `radolc`. `gradient`, `hessian`, `hess_vec`, and `hess_mat`are appropriate when the computation has a single output i.e., it is scalar valued. They are explained below.
 
-For the calculation of whole derivative vectors and matrices up to order 2
-there are the following procedures:
+##Derivatives for functions with single output
 
-## Gradient
+### Gradient
+`gradient` computes the derivatives of the output of a scalar valued function with respect to its input(s). It uses the reverse mode of automatic differentiation.
 ```{r eval=FALSE, include=TRUE}
 library(radolc)
 
@@ -135,7 +132,128 @@ gradient(1,2,x,g)
 detach(package:radolc, unload=TRUE) 
 ```
 
+### Hessian
+`hessian` computes the lower triangle of the second order derivatives of the output of a scalar valued function with respect to its input(s). Internally, it simply calls `hess_vec` multiple times.
+```{r eval=FALSE, include=TRUE}
+
+rm(list=ls())
+
+library('radolc')
+
+#--- testing ADOLC's hessian
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+yy <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
+hessian(1,2,xx,yy);
+#hessian(tag,n,x,H)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# double H[n][n]: resulting Hessian matrix \nabla^2F(x)
+print(yy)     
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
+
+```
+
+### Hessian Vector Product
+`hes_vec` computes the product of the second order derivatives of the output of a scalar valued function with respect to its input(s) on a vector. It uses the reverse mode of automatic differentiation.
+
+```{r eval=FALSE, include=TRUE}
+rm(list=ls())
+
+library('radolc')
+
+#--- testing ADOLC's hessian vector product
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+vv <- c(3.0,5.5)
+yy <- c(0.0,0.0)
+hess_vec(1,2,xx,vv,yy) # result z = \nambla^2F(x)v
+#hess_vec(tag,n,x,v,z)
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# x[n]: independent vector x
+# v[n]: vector
+# z[n]: resulting Hessian vector product
+
+print(yy)     
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
+```
+
+### Hessian Matrix Product
+`hes_mat` computes the product of the second order derivatives of the output of a scalar valued function with respect to its input(s) on a matrix. It uses the reverse mode of automatic differentiation.
+```{r eval=FALSE, include=TRUE}
+rm(list=ls())
+
+library('radolc')
+
+#--- testing ADOLC's Hessian matrix product
+fr <- function(x) {   ## Rosenbrock Banana function
+  x1 <- x[1]
+  x2 <- x[2]
+  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
+  y }
+
+trace_on(1)
+x <- adolc_createList(2,2.0)
+badouble_declareIndependent(x)
+y <- fr(x)
+badouble_declareDependent(y)
+trace_off()
+
+xx <- c(1.0,2.0)
+V <- matrix(c(2.2, 1.4, 3.4, 7.4), nrow = 2, ncol = 2)
+W <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
+hess_mat(1,2,2,xx,V,W) 
+# hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nambla^2F(x)v
+# tag: integer, tape identification
+# n  : integer, number of independents n and m = 1
+# q  : dimension of matrix (n*q)
+# x[n]: independent vector x
+# V[n][q]: matrix
+# W[n][q]: resulting Hessian matrix product
+
+print(W)     
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
+```
+
+
+##Derivatives for computation with multiple outputs
+
+
 ### Jacobian
+`jacobian` computes the derivatives of the output of a function that takes one or more inputs and produces one or more outputs. It uses the forward mode of automatic differentiation. 
+
 ```{r eval=FALSE, include=TRUE}
 
 rm(list=ls())
@@ -176,43 +294,8 @@ print(yy)
 detach(package:radolc, unload=TRUE) 
 ```
 
-### Hessian
-```{r eval=FALSE, include=TRUE}
-
-rm(list=ls())
-
-library('radolc')
-
-#--- testing ADOLC's hessian
-fr <- function(x) {   ## Rosenbrock Banana function
-  x1 <- x[1]
-  x2 <- x[2]
-  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
-  y }
-
-trace_on(1)
-x <- adolc_createList(2,2.0)
-badouble_declareIndependent(x)
-y <- fr(x)
-badouble_declareDependent(y)
-trace_off()
-
-xx <- c(1.0,2.0)
-yy <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
-hessian(1,2,xx,yy);
-#hessian(tag,n,x,H)
-# tag: integer, tape identification
-# n  : integer, number of independents n and m = 1
-# x[n]: independent vector x
-# double H[n][n]: resulting Hessian matrix \nabla^2F(x)
-print(yy)     
-
-#Always detach the package
-detach(package:radolc, unload=TRUE) 
-
-```
-
 ### Jacobian Vector Product
+`jac_vec` computes the product of the first order derivatives of the output of a scalar valued function with respect to its input(s) on a vector. It uses the forward mode of automatic differentiation.
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
@@ -257,6 +340,7 @@ detach(package:radolc, unload=TRUE)
 ```
 
 ### Vector Transpose Jacobian Product
+`vec_jac` computes the action of a vector on the the first order derivatives of the output of a scalar valued function with respect to its input(s). It uses the reverse mode of automatic differentiation.
 ```{r eval=FALSE, include=TRUE}
 rm(list=ls())
 
@@ -301,82 +385,6 @@ print(yy)
 detach(package:radolc, unload=TRUE) 
 ```
 
-### Hessian Vector Product
-```{r eval=FALSE, include=TRUE}
-rm(list=ls())
-
-library('radolc')
-
-#--- testing ADOLC's hessian vector product
-fr <- function(x) {   ## Rosenbrock Banana function
-  x1 <- x[1]
-  x2 <- x[2]
-  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
-  y }
-
-trace_on(1)
-x <- adolc_createList(2,2.0)
-badouble_declareIndependent(x)
-y <- fr(x)
-badouble_declareDependent(y)
-trace_off()
-
-xx <- c(1.0,2.0)
-vv <- c(3.0,5.5)
-yy <- c(0.0,0.0)
-hess_vec(1,2,xx,vv,yy) # result z = \nambla^2F(x)v
-#hess_vec(tag,n,x,v,z)
-# tag: integer, tape identification
-# n  : integer, number of independents n and m = 1
-# x[n]: independent vector x
-# v[n]: vector
-# z[n]: resulting Hessian vector product
-
-print(yy)     
-
-#Always detach the package
-detach(package:radolc, unload=TRUE) 
-```
-
-### Hessian Matrix Product
-```{r eval=FALSE, include=TRUE}
-rm(list=ls())
-
-library('radolc')
-
-#--- testing ADOLC's Hessian matrix product
-fr <- function(x) {   ## Rosenbrock Banana function
-  x1 <- x[1]
-  x2 <- x[2]
-  y <- 100 * (x2 - x1 * x1)* (x2 - x1 * x1) + (1 - x1)*(1 - x1)
-  y }
-
-trace_on(1)
-x <- adolc_createList(2,2.0)
-badouble_declareIndependent(x)
-y <- fr(x)
-badouble_declareDependent(y)
-trace_off()
-
-xx <- c(1.0,2.0)
-V <- matrix(c(2.2, 1.4, 3.4, 7.4), nrow = 2, ncol = 2)
-W <- matrix(rep(0.0,4), nrow = 2, ncol = 2)
-hess_mat(1,2,2,xx,V,W) 
-# hess_mat(tag, n, q, x[n], V[n][q], W[n][q]) # result z = \nambla^2F(x)v
-# tag: integer, tape identification
-# n  : integer, number of independents n and m = 1
-# q  : dimension of matrix (n*q)
-# x[n]: independent vector x
-# V[n][q]: matrix
-# W[n][q]: resulting Hessian matrix product
-
-print(W)     
-
-#Always detach the package
-detach(package:radolc, unload=TRUE) 
-```
-
-
 # Comparisons to alternatives
 
 Compared to finite differences:
@@ -405,7 +413,19 @@ Compared to `madness`:
 
 * `madness` does not allow operations between variables of differing dimensions, i.e. scalar-vector multiplication, which is critical in a lot of modelling situations.
 
+# Future work
+We plan to address shortcomings such as the lack of support of function such as `solve`.
+
 # Acknowlegement
+We thank Prasanna Balaprakash, Paul Hovland, Joseph Wang, 
+and Richard Beare for their suggestions. 
+
+# Funding Sources
+This work was funded in part by a grant from DAAD
+Project Based Personnel Exchange Programme, the  National Science Foundation
+Mathematical Sciences Graduate Internship, and by 
+support from the U.S. Department of Energy, 
+Office of Science, under contract DE-AC02-06CH11357.
 
 # References
 1. [A. Griewank and A. Walther, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation, 2nd ed., Society for Industrial and Applied Mathematics, Philadelphia, PA, USA, 2008.][https://doi.org/10.1137/1.9780898717761]
