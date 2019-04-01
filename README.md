@@ -8,8 +8,8 @@ Derivatives are required in many contexts:
 * Parameter Estimation.
 
 The radolc package is an interface to ADOL-C -- a C++ library that facilitates the evaluation of 
-first and higher derivatives of vector functions that are defined by computer programs. ADOL-C can computes
-gradient, the Jacobian matrix, the Hessian matrix, Jacobian × vector products, and Hessian × vector
+first and higher derivatives of vector functions that are defined by computer programs. ADOL-C can compute
+gradients, the Jacobian matrix, the Hessian matrix, Jacobian × vector products, and Hessian × vector
 products.
 
 This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demostrates how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
