@@ -16,7 +16,7 @@ Description: The package interfaces the automatic differentiation tool
   the Jacobian as well the Hessian. Derivatives are useful in the context
   of optimizaton, parameter estimation, sensitivity analysis, uncertainty
   quantification, etc. 
-License: EPL-1.0 OR GPL-2.0+
+License: BSD_3_clause
 VignetteBuilder: knitr
 NeedsCompilation: yes
 SystemRequirements: C++11
