@@ -15,13 +15,13 @@ hess_vec(s_arg1, s_arg2, s_arg3, s_arg4, s_arg5, .copy = FALSE)
 
 \item{v}{vector of length n}
 
-\item{z}{resulting vector of lenth n}
+\item{z}{resulting vector of length n}
 }
 \value{
 None. the output is the the parameter z
 }
 \description{
-\code{hess_vec} computes the product of Hessain matrix with a vector of suitable size
+\code{hess_vec} computes the product of Hessian matrix with a vector of suitable size
 }
 \examples{
 rm(list=ls())
