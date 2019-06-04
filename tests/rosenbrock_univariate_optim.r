@@ -38,23 +38,9 @@ res2 <- optim(c(-1), fr, grrADOLC, method = "L-BFGS-B", control = list(type = 3,
 #Always detach the package
 detach(package:radolc, unload=TRUE) 
 
-
-library('numDeriv')
-
-grrNumDeriv <- function(x) { ## Gradient of 'fr'
-  g = grad(func=fr,x=x)
-  g     }
-
-#---- NumDeriv gradient
-grrNumDeriv(3)
-
-#---- optim with the gradients 
-res3 <- optim(c(-1), fr, grrNumDeriv, method = "L-BFGS-B", control = list(type = 3, trace = 2))
-
 print(res0)
 
 print(res1)
 
 print(res2)
 
-print(res3)
