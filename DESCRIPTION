@@ -9,12 +9,12 @@ Authors@R: c(person("Narayanan", "Sri Hari Krishna", email = "sriharikrishna@gma
              person("Banerjee", "Chitrak", email = "", role = "aut"))
 Author: Sri Hari Krishna Narayanan, [aut, cre]
 Maintainer: Sri Hari Krishna Narayanan <sriharikrishna@gmail.com>
-Description: The package interfaces the automatic differentiation tool 
+Description: Interfaces the automatic differentiation tool 
   ADOL-C (written in C++) and provides methods to compute derivatives 
   efficiently in using forward mode and reverse (adjoint) mode automatic
   differentiation. The package can be used to compute the gradient, 
   the Jacobian as well the Hessian. Derivatives are useful in the context
-  of optimizaton, parameter estimation, sensitivity analysis, uncertainty
+  of optimization, parameter estimation, sensitivity analysis, uncertainty
   quantification, etc. 
 License: BSD_3_clause
 VignetteBuilder: knitr
