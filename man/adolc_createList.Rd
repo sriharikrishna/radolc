@@ -4,7 +4,14 @@
 \alias{adolc_createList}
 \title{Constructor to create a list of adoubles}
 \usage{
+rm(list=ls())
+
+library(radolc)
+
 adolc_createList(count, val)
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
 }
 \arguments{
 \item{count}{number of elements of the list}
