@@ -1,6 +1,6 @@
 Package: radolc
 Type: Package
-Title: Provides automatic differentiation capability
+Title: Provides Automatic Differentiation Capability
 Version: 0.1.0
 Date: 2018-04-13
 Authors@R: c(person("Narayanan", "Sri Hari Krishna", email = "sriharikrishna@gmail.com", role = c("aut", "cre")), 
