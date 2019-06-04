@@ -21,7 +21,16 @@ variables with respect to the identified input variables
 (using \code{badouble_declareIndependent}).
 }
 \examples{
-badouble_declareDependent(x,z)
+library(radolc)
+
+trace_on(1)
+x <- c(adouble(1.0),adouble(2.0))
+badouble_declareIndependent(x)
+#... calculations.
+trace_off(1);
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
 
 }
 \seealso{
