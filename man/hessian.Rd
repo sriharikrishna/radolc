@@ -19,7 +19,7 @@ hessian(s_arg1, s_arg2, s_arg3, s_arg4, .copy = FALSE)
 None. the output is the the parameter H
 }
 \description{
-\code{hessian} computes the Hessain matrix values for m dependents with respect to
+\code{hessian} computes the Hessian matrix values for m dependents with respect to
 n independents for the computation that has been traced.
 }
 \examples{
