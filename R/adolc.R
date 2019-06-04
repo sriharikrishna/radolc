@@ -6271,7 +6271,7 @@ class(`eval_func`) = c("SWIGFunction", class('eval_func'))
 #' Compute the gradient of the dependent with respect to the independent variable(s)
 #' 
 #'
-#' \code{gradient} computes the derivaties for dependent varible with respect to
+#' \code{gradient} computes the derivatives for dependent varible with respect to
 #' n independents for the computation that has been traced.
 #'
 #' @param tag integer for tape identification (used in trace_on())
