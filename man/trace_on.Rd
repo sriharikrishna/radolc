@@ -20,7 +20,16 @@ generally performed once and (2) Computation of derivatives, which can be perfor
 for this tape, sets files names, and calls appropriate setup routines.
 }
 \examples{
+rm(list=ls())
+
+library(radolc)
+
 trace_on(1)
+
+trace_off(1)
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
 
 }
 \seealso{

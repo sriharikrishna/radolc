@@ -17,12 +17,20 @@ derivatives, which can be performed. \code{trace_off} marks where
 the taping ends.  Cleans up, and turns off trace_flag.
 }
 \examples{
-trace_off()
+rm(list=ls())
+
+library(radolc)
+
+trace_on(1)
+
+trace_off(1)
+
+#Always detach the package
+detach(package:radolc, unload=TRUE) 
 
 }
 \seealso{
 {\code{\link{trace_on}}, \code{\link{badouble_declareIndependent}}, 
         \code{\link{badouble_declareDependent}}}
 }
-\keyword{@export}
 \keyword{{radolc}}
