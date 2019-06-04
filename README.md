@@ -12,7 +12,7 @@ first and higher derivatives of vector functions that are defined by computer pr
 gradients, the Jacobian matrix, the Hessian matrix, Jacobian × vector products, and Hessian × vector
 products.
 
-This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demostrates how to preare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
+This document serves as a brief introduction to radolc's interface calls to ADOL-C drivers and demonstrates how to prepare your code for differentiation. It is based on a similar document for ADOL-C itself [4]. A description on how the interface was created is provided in [2]. [1] and [3] are good resources on automatic differentiation (also popularly called autodiff).
 
 # Installation within R
 ```r
@@ -412,12 +412,12 @@ Compared to `madness`:
 
 * radolc can efficiently compute adjoints using the reverse mode of automatic differentiation. using the reverse mode is more efficient when the code involves more independents than dependents.
 
-* `madness` does not allow operations between variables of differing dimensions, i.e. scalar-vector multiplication, which is critical in a lot of modelling situations.
+* `madness` does not allow operations between variables of differing dimensions, i.e. scalar-vector multiplication, which is critical in many modeling situations.
 
 # Future work
 We plan to address shortcomings such as the lack of support of function such as `solve`.
 
-# Acknowlegement
+# Acknowledgement
 We thank Prasanna Balaprakash, Paul Hovland, Joseph Wang, 
 and Richard Beare for their suggestions. 
 
