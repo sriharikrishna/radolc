@@ -10,7 +10,7 @@ default: all
 
 
 get:
-	echo 'download.file(url="https://github.com/CSCsw/ColPack/archive/ec52afcd93b96f35c0f3edb562c090f67485e5d2.zip", destfile="archive.zip", method="wget", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|R --vanilla -slave
+	echo 'download.file(url="https://github.com/CSCsw/ColPack/archive/ec52afcd93b96f35c0f3edb562c090f67485e5d2.zip", destfile="archive.zip", method="auto", quiet = FALSE, mode = "w", cacheOK = TRUE, extra = getOption("download.file.extra"))'|$(R_HOME)/bin/R --vanilla -slave
 	unzip archive.zip
 	mv ColPack-* ColPack-master
 
