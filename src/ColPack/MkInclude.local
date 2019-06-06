@@ -1,0 +1,3 @@
+
+PATH:=${PWD}/m4-latest-inst/bin:${PWD}/autoconf-latest-inst/bin:${PWD}/automake-latest-inst/bin:${PWD}/libtool-latest-inst/bin:${PATH}
+

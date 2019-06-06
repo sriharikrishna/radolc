@@ -114,7 +114,7 @@ sublibs: subclean sublibraries
 sublibraries: subclean
 	echo ${prefix}
 	@for d in $(SUBDIRS); do \
-	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)" -f Makefile library) || exit 1; \
+	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f ${PWD}/$${d}/MkInclude.local -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)"  -f ${PWD}/$${d}/MkInclude.local -f Makefile library) || exit 1; \
 	done
 
 clean: subclean
