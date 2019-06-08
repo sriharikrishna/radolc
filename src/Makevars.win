@@ -1,5 +1,4 @@
 LIBADOLCOBJDIR= $(CURDIR)/ADOLC/adol-c-swig/ADOL-C
-#COLPACKDIR=$(CURDIR)/ColPack/ColPack-master
 CXX_STD = CXX11
 PKG_CPPFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
 PKG_CFLAGS = -I. -I$(LIBADOLCOBJDIR)/include
@@ -66,35 +65,6 @@ libadolcsrc_la_OBJ = $(LIBADOLCOBJDIR)/src/drivers/.libs/psdrivers.o\
 					$(LIBADOLCOBJDIR)/src/.libs/fov_pl_sig_forward.o\
 					$(LIBADOLCOBJDIR)/src/.libs/tape_handling.o\
 					$(LIBADOLCOBJDIR)/src/.libs/convolut.o
-#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloring.o\
-#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphBicoloringInterface.o\
-#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphCore.o\
-#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphInputOutput.o\
-#					$(COLPACKDIR)/BipartiteGraphBicoloring/.libs/BipartiteGraphVertexCover.o\
-#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoring.o\
-#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialColoringInterface.o\
-#					$(COLPACKDIR)/BipartiteGraphPartialColoring/.libs/BipartiteGraphPartialOrdering.o\
-#					$(COLPACKDIR)/GraphColoring/.libs/GraphColoring.o\
-#					$(COLPACKDIR)/GraphColoring/.libs/GraphColoringInterface.o\
-#					$(COLPACKDIR)/GraphColoring/.libs/GraphCore.o\
-#					$(COLPACKDIR)/GraphColoring/.libs/GraphInputOutput.o\
-#					$(COLPACKDIR)/GraphColoring/.libs/GraphOrdering.o\
-#					$(COLPACKDIR)/Main/Main.o\
-#					$(COLPACKDIR)/Recovery/.libs/HessianRecovery.o\
-#					$(COLPACKDIR)/Recovery/.libs/JacobianRecovery1D.o\
-#					$(COLPACKDIR)/Recovery/.libs/JacobianRecovery2D.o\
-#					$(COLPACKDIR)/Recovery/.libs/RecoveryCore.o\
-#					$(COLPACKDIR)/Utilities/.libs/command_line_parameter_processor.o\
-#					$(COLPACKDIR)/Utilities/.libs/CoutLock.o\
-#					$(COLPACKDIR)/Utilities/.libs/current_time.o\
-#					$(COLPACKDIR)/Utilities/.libs/extra.o\
-#					$(COLPACKDIR)/Utilities/.libs/File.o\
-#					$(COLPACKDIR)/Utilities/.libs/MatrixDeallocation.o\
-#					$(COLPACKDIR)/Utilities/.libs/mmio.o\
-#					$(COLPACKDIR)/Utilities/.libs/Pause.o\
-#					$(COLPACKDIR)/Utilities/.libs/stat.o\
-#					$(COLPACKDIR)/Utilities/.libs/StringTokenizer.o\
-#					$(COLPACKDIR)/Utilities/.libs/Timer.o
 
 SOURCES = adolc_r_wrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o) $(libadolcsrc_la_OBJ)
