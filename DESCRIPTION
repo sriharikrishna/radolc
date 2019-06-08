@@ -20,8 +20,7 @@ License: BSD_3_clause
 VignetteBuilder: knitr
 NeedsCompilation: yes
 SystemRequirements: C++11
-Imports: knitr, rmarkdown
-Suggests: knitr, rmarkdown
+Imports: knitr, rmarkdown, git2r
 Packaged: 2018-04-18 12:36:28 UTC; snarayan
 RoxygenNote: 6.1.1
 Encoding: UTF-8
