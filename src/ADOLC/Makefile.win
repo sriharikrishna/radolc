@@ -27,8 +27,8 @@ ifeq (, $(shell which autoreconf))
 endif
  
 all: get
-	( cd $(CURDIR)\\adol-c-swig ; sh autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
-	#( cd $(CURDIR)\\adol-c-swig ; sh $(CURDIR)\\autoconf-latest-inst\\bin\autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	#( cd $(CURDIR)\\adol-c-swig ; sh autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	( cd $(CURDIR)\\adol-c-swig ; sh $(CURDIR)\\autoconf-latest-inst\\bin\autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 	#( cd $(CURDIR)\\adol-c-swig ; sh aclocal -Iautoconf;  sh autconf; sh automake ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 	#( cp $(CURDIR)\\..\\configure.win $(CURDIR)\\adol-c-swig\\ ; cd $(CURDIR)\\adol-c-swig ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
 	#( cp $(CURDIR)/configure.win $(CURDIR)/adol-c-swig/configure ; cd $(CURDIR)/adol-c-swig ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
