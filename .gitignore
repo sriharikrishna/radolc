@@ -10,6 +10,8 @@ doc
 .deps
 .libs
 *~
+*.zip
+*.tar.gz
 *.bak
 *.Rcheck/
 autom4te.cache/
@@ -22,5 +24,9 @@ aclocal.m4
 .RData
 .DS_Store
 .Rbuildignores
+config.log
+config.status
 src/ADOLC/adol-c-swig-inst/*
-src/
+src/ADOLC/adol-c-swig/*
+src/ColPack/ColPack*
+src/Makevars
