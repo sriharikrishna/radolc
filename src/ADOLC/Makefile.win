@@ -1,0 +1,47 @@
+#-------------------------------------------------------------------------------
+# ADOLC Makefile
+#-------------------------------------------------------------------------------
+
+.PHONY : default all get library purge clean distclean ccode
+
+default: all
+
+# Compile the C-callable libraries and the Demo programs.
+
+get:
+	echo 'download.file(url="https://gitlab.com/adol-c/adol-c/repository/swig/archive.tar.gz", destfile="archive.tar.gz", method="auto", quiet = FALSE, mode = "wb", cacheOK = TRUE, extra = getOption("download.file.extra"))'|$(R_HOME)/bin/R --vanilla --slave
+	gzip -d archive.tar.gz
+	tar -xvf archive.tar
+	mv adol-c-swig* adol-c-swig
+
+ifeq (, $(shell which autoreconf))
+	echo 'download.file(url="https://ftp.gnu.org/gnu/autoconf/autoconf-latest.tar.gz", destfile="autoconf-latest.tar.gz", method="auto", quiet = FALSE, mode = "wb", cacheOK = TRUE, extra = getOption("download.file.extra"))    '|$(R_HOME)/bin/R --vanilla --slave
+	gzip -d autoconf-latest.tar.gz
+	tar -xvf autoconf-latest.tar
+	( cd $(CURDIR)\\autoconf-2.69  ; sh ./configure --prefix=$(CURDIR)\\autoconf-latest-inst; $(MAKE); $(MAKE) install )
+	echo 'download.file(url="https://ftp.gnu.org/gnu/automake/automake-1.16.tar.gz", destfile="automake-1.16.tar.gz", method="auto", quiet = FALSE, mode = "wb", cacheOK = TRUE, extra = getOption("download.file.extra"))    '|$(R_HOME)/bin/R --vanilla --slave
+	gzip -d automake-1.16.tar.gz
+	tar -xvf automake-1.16.tar
+	( cd $(CURDIR)\\automake-1.16  ; sh ./configure --prefix=$(CURDIR)\\automake-latest-inst; $(MAKE); $(MAKE) install )
+	
+endif
+ 
+all: get
+	( cd $(CURDIR)\\adol-c-swig ; sh autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	#( cd $(CURDIR)\\adol-c-swig ; sh $(CURDIR)\\autoconf-latest-inst\\bin\autoreconf -fi ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	#( cd $(CURDIR)\\adol-c-swig ; sh aclocal -Iautoconf;  sh autconf; sh automake ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	#( cp $(CURDIR)\\..\\configure.win $(CURDIR)\\adol-c-swig\\ ; cd $(CURDIR)\\adol-c-swig ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+	#( cp $(CURDIR)/configure.win $(CURDIR)/adol-c-swig/configure ; cd $(CURDIR)/adol-c-swig ; sh configure --enable-sparse --prefix=$(CURDIR)/adol-c-swig-inst; $(MAKE); $(MAKE) install )
+
+# Compile the C-callable libraries only.
+library: all
+
+# Remove all files not in the original distribution
+purge:
+	( rm -Rf adol-c-swig* archive* *.tar.gz *.tar.bz2 *.tar )
+
+# Remove all files not in the original distribution 
+clean: purge
+
+distclean: purge
+
