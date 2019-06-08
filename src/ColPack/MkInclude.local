@@ -1,3 +1,4 @@
 
-PATH:=${PWD}/m4-latest-inst/bin:${PWD}/autoconf-latest-inst/bin:${PWD}/automake-latest-inst/bin:${PWD}/libtool-latest-inst/bin:${PATH}
+AUTOTOOLSPREFIX:=${PWD}/../autotools/
+PATH:=${AUTOTOOLSPREFIX}/m4-latest-inst/bin:${AUTOTOOLSPREFIX}/autoconf-latest-inst/bin:${AUTOTOOLSPREFIX}/automake-latest-inst/bin:${AUTOTOOLSPREFIX}/libtool-latest-inst/bin:${PATH}
 

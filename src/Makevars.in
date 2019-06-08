@@ -105,6 +105,9 @@ SOURCES = adolc_r_wrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o) $(libadolcsrc_la_OBJ) 
 SUBDIRS = ColPack ADOLC
 SUBLIBS = $(SUBDIRS:=.a)
+ifeq (, $(shell which autoreconf))
+AUTOTOOLSDIR=autotools
+endif
 
 all: $(SHLIB)
 $(SHLIB): sublibs $(OBJECTS)
@@ -113,6 +116,9 @@ $(OBJECTS) :sublibs
 sublibs: subclean sublibraries
 sublibraries: subclean
 	echo ${prefix}
+	@for d in $(AUTOTOOLSDIR); do \
+	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f ${PWD}/$${d}/MkInclude.local -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)"  -f ${PWD}/$${d}/MkInclude.local -f Makefile library) || exit 1; \
+	done
 	@for d in $(SUBDIRS); do \
 	  (cd $${d} && CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" MAKE="$(MAKE) -f ${PWD}/$${d}/MkInclude.local -f \"$(MkInclude)\" -f Makefile" $(MAKE) -f "$(MkInclude)"  -f ${PWD}/$${d}/MkInclude.local -f Makefile library) || exit 1; \
 	done
@@ -123,6 +129,9 @@ clean: subclean
 
 subclean:
 	@-rm -f *.a
+	@for d in $(AUTOTOOLSDIR); do \
+	  (cd $${d} && MkInclude="$(MkInclude)" $(MAKE) clean) || exit 1; \
+	done
 	@for d in $(SUBDIRS); do \
 	  (cd $${d} && MkInclude="$(MkInclude)" $(MAKE) clean) || exit 1; \
 	done
